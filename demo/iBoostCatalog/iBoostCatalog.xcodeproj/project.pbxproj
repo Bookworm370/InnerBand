@@ -23,21 +23,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = FF3934651220879B0048310B /* iBoost.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libiBoost.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = iBoost;
 		};
 		FF39346C1220879B0048310B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF3934651220879B0048310B /* iBoost.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FFCC37691216D06D00AAF3BF /* Tests.app */;
+			remoteGlobalIDString = FFCC37691216D06D00AAF3BF;
 			remoteInfo = Tests;
 		};
 		FF39348512208A270048310B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF3934651220879B0048310B /* iBoost.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* iBoost */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = iBoost;
 		};
 /* End PBXContainerItemProxy section */

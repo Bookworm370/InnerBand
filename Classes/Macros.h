@@ -42,6 +42,10 @@
 
 #define RECT_OFFSET_BY_X_Y(rect, x, y) CGRectMake(rect.origin.x + (x), rect.origin.y + (y), rect.size.width, rect.size.height)
 
+// SELECTORS
+
+#define SEL(x) @selector(x)
+
 // STRINGS
 
 #define IS_EMPTY_STRING(str) (!(str) || ![(str) isKindOfClass:NSString.class] || [(str) length] == 0)

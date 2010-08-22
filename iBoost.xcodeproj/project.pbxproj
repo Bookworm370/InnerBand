@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
+		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
+		FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549DD12214FC9007E052F /* UIColor+Additions.h */; };
+		FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549DE12214FC9007E052F /* UIColor+Additions.m */; };
+		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
+		FF254A0412215343007E052F /* ArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3934F4122091510048310B /* ArrayTest.m */; };
 		FF3933D5122075230048310B /* UIView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3933D3122075230048310B /* UIView+Additions.h */; };
 		FF3933D6122075230048310B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3933D4122075230048310B /* UIView+Additions.m */; };
 		FF393446122086190048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF393445122086190048310B /* QuartzCore.framework */; };
@@ -76,6 +82,11 @@
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libiBoost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBoost.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2549731220DB90007E052F /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
+		FF2549741220DB90007E052F /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
+		FF2549DD12214FC9007E052F /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		FF2549DE12214FC9007E052F /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
 		FF3933D3122075230048310B /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		FF3933D4122075230048310B /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		FF393445122086190048310B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -209,20 +220,34 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		FF3934F3122091440048310B /* Arrays */ = {
+		FF2549721220DB6A007E052F /* HTML Label */ = {
+			isa = PBXGroup;
+			children = (
+				FF2549731220DB90007E052F /* IBHTMLLabel.h */,
+				FF2549741220DB90007E052F /* IBHTMLLabel.m */,
+			);
+			name = "HTML Label";
+			sourceTree = "<group>";
+		};
+		FF254A00122152AD007E052F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				FF3934F4122091510048310B /* ArrayTest.m */,
+				FF9EA5A7121AC6C4002F8A31 /* SortTest.m */,
+				FF69036F1219898A00EC7D37 /* MemoryTest.m */,
+				FF69035A121986FE00EC7D37 /* StringTest.m */,
+				FF254A01122152E7007E052F /* ColorTest.m */,
 			);
-			name = Arrays;
+			name = Categories;
 			sourceTree = "<group>";
 		};
-		FF6902CC12197E1900EC7D37 /* Bounds */ = {
+		FF6902CC12197E1900EC7D37 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */,
 				FF6902D112197E6700EC7D37 /* BoundsTest.m */,
 			);
-			name = Bounds;
+			name = Macros;
 			sourceTree = "<group>";
 		};
 		FF6902E912197EEB00EC7D37 /* Macros */ = {
@@ -249,43 +274,13 @@
 				FF3933D4122075230048310B /* UIView+Additions.m */,
 				FF3936351220B1D10048310B /* UIImage+Additions.h */,
 				FF3936361220B1D10048310B /* UIImage+Additions.m */,
+				FF2549DD12214FC9007E052F /* UIColor+Additions.h */,
+				FF2549DE12214FC9007E052F /* UIColor+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		FF690359121986E300EC7D37 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				FF69035A121986FE00EC7D37 /* StringTest.m */,
-			);
-			name = Strings;
-			sourceTree = "<group>";
-		};
-		FF69036E1219897100EC7D37 /* Memory Management */ = {
-			isa = PBXGroup;
-			children = (
-				FF69036F1219898A00EC7D37 /* MemoryTest.m */,
-			);
-			name = "Memory Management";
-			sourceTree = "<group>";
-		};
-		FF9EA5A3121AC6A2002F8A31 /* Sorting */ = {
-			isa = PBXGroup;
-			children = (
-				FF9EA5A7121AC6C4002F8A31 /* SortTest.m */,
-			);
-			name = Sorting;
-			sourceTree = "<group>";
-		};
-		FF9EA5D7121ADBCE002F8A31 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */,
-			);
-			name = Types;
-			sourceTree = "<group>";
-		};
-		FF9EA795121C269D002F8A31 /* Web View */ = {
+		FF9EA795121C269D002F8A31 /* Image View */ = {
 			isa = PBXGroup;
 			children = (
 				FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */,
@@ -311,13 +306,14 @@
 				FF3935FE1220B16B0048310B /* IBUserInfo.h */,
 				FF3935FF1220B16B0048310B /* IBUserInfo.m */,
 			);
-			name = "Web View";
+			name = "Image View";
 			sourceTree = "<group>";
 		};
 		FFF568AB1216E437007F800F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FF9EA795121C269D002F8A31 /* Web View */,
+				FF2549721220DB6A007E052F /* HTML Label */,
+				FF9EA795121C269D002F8A31 /* Image View */,
 				FF6903431219861900EC7D37 /* Categories */,
 				FF6902E912197EEB00EC7D37 /* Macros */,
 			);
@@ -327,12 +323,8 @@
 		FFF568AC1216E441007F800F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FF3934F3122091440048310B /* Arrays */,
-				FF9EA5D7121ADBCE002F8A31 /* Types */,
-				FF9EA5A3121AC6A2002F8A31 /* Sorting */,
-				FF69036E1219897100EC7D37 /* Memory Management */,
-				FF690359121986E300EC7D37 /* Strings */,
-				FF6902CC12197E1900EC7D37 /* Bounds */,
+				FF254A00122152AD007E052F /* Categories */,
+				FF6902CC12197E1900EC7D37 /* Macros */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -389,6 +381,8 @@
 				FF3936131220B16B0048310B /* IBURLResponse.h in Headers */,
 				FF3936141220B16B0048310B /* IBUserInfo.h in Headers */,
 				FF3936371220B1D10048310B /* UIImage+Additions.h in Headers */,
+				FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */,
+				FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +474,8 @@
 				FF3936121220B16B0048310B /* IBURLRequestQueue.m in Sources */,
 				FF3936151220B16B0048310B /* IBUserInfo.m in Sources */,
 				FF3936381220B1D10048310B /* UIImage+Additions.m in Sources */,
+				FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */,
+				FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +494,8 @@
 				FF39351C122093760048310B /* NSString+Additions.m in Sources */,
 				FF39351D122093760048310B /* UIView+Additions.m in Sources */,
 				FF3935A4122097EC0048310B /* NSObject+Additions.m in Sources */,
+				FF254A0312215343007E052F /* ColorTest.m in Sources */,
+				FF254A0412215343007E052F /* ArrayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

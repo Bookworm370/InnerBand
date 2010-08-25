@@ -18,6 +18,8 @@
 		F10062041225B60E00F6BE54 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061FE1225B60E00F6BE54 /* IBButton.m */; };
 		F10062081225B62800F6BE54 /* ViewUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = F10062061225B62800F6BE54 /* ViewUtil.h */; };
 		F10062091225B62800F6BE54 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062071225B62800F6BE54 /* ViewUtil.m */; };
+		F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = F10062951225C6A200F6BE54 /* UIColor+Boost.h */; };
+		F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062961225C6A200F6BE54 /* UIColor+Boost.m */; };
 		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
@@ -94,6 +96,8 @@
 		F10061FE1225B60E00F6BE54 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
 		F10062061225B62800F6BE54 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
 		F10062071225B62800F6BE54 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
+		F10062951225C6A200F6BE54 /* UIColor+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Boost.h"; sourceTree = "<group>"; };
+		F10062961225C6A200F6BE54 /* UIColor+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Boost.m"; sourceTree = "<group>"; };
 		FF2549731220DB90007E052F /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		FF2549741220DB90007E052F /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
 		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 		FF6903431219861900EC7D37 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F10062951225C6A200F6BE54 /* UIColor+Boost.h */,
+				F10062961225C6A200F6BE54 /* UIColor+Boost.m */,
 				F10061F01225B53D00F6BE54 /* CGContext+Boost.h */,
 				F10061F11225B53D00F6BE54 /* CGContext+Boost.m */,
 				FF4484EE1225ABA10066E827 /* NSArray+Boost.h */,
@@ -451,6 +457,7 @@
 				F10062031225B60E00F6BE54 /* IBButton.h in Headers */,
 				F10062081225B62800F6BE54 /* ViewUtil.h in Headers */,
 				FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */,
+				F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +550,7 @@
 				F10062041225B60E00F6BE54 /* IBButton.m in Sources */,
 				F10062091225B62800F6BE54 /* ViewUtil.m in Sources */,
 				FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */,
+				F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  UIImage+Additions.h
+//  UIImage+Boost.h
 //  iBoost
 //
 //  Created by John Blanco on 8/21/10.

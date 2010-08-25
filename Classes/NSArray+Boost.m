@@ -1,13 +1,13 @@
 //
-//  NSArray+Additions.m
-//  ROIDS
+//  NSArray+Boost.m
+//  iBoost
 //
 //  Created by John Blanco on 8/16/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "NSArray+Additions.h"
-#import "NSString+Additions.h"
+#import "NSArray+Boost.h"
+#import "NSString+Boost.h"
 
 @implementation NSArray (Additions)
 

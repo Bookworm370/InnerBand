@@ -1,12 +1,12 @@
 //
-//  UIView+Additions.m
+//  UIView+Boost.m
 //  iBoost
 //
 //  Created by John Blanco on 8/21/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "UIView+Additions.h"
+#import "UIView+Boost.h"
 
 @implementation UIView (Additions)
 

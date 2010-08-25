@@ -24,7 +24,7 @@
 
 #import "IBRequestLoader.h"
 #import "Macros.h"
-#import "NSString+Additions.h"
+#import "NSString+Boost.h"
 
 static const NSTimeInterval kFlushDelay = 0.3;
 static const NSTimeInterval kTimeout = 300.0;

@@ -1,12 +1,12 @@
 //
-//  NSObject+Additions.m
+//  NSObject+Boost.m
 //  iBoost
 //
 //  Created by John Blanco on 8/21/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "NSObject+Additions.h"
+#import "NSObject+Boost.h"
 
 
 @implementation NSObject (Additions)

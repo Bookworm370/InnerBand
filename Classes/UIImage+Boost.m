@@ -1,12 +1,12 @@
 //
-//  UIImage+Additions.m
+//  UIImage+Boost.m
 //  iBoost
 //
 //  Created by John Blanco on 8/21/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "UIImage+Additions.h"
+#import "UIImage+Boost.h"
 
 
 @implementation UIImage (Additions)

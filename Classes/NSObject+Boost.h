@@ -1,5 +1,5 @@
 //
-//  NSObject+Additions.h
+//  NSObject+Boost.h
 //  iBoost
 //
 //  Created by John Blanco on 8/21/10.

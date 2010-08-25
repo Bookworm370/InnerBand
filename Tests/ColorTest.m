@@ -1,6 +1,6 @@
 //
 //  ColorTest.m
-//  ROIDS
+//  iBoost
 //
 //  Created by John Blanco on 6/4/10.
 //  Copyright 2010 Effective UI. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "GHUnit.h"
 #import "Macros.h"
-#import "UIColor+Additions.h"
+#import "UIColor+Boost.h"
 
 @interface ColorTest : GHTestCase
 @end

@@ -245,6 +245,9 @@
 		F10061F81225B5E200F6BE54 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF9EA795121C269D002F8A31 /* Image View */,
+				FF2549731220DB90007E052F /* IBHTMLLabel.h */,
+				FF2549741220DB90007E052F /* IBHTMLLabel.m */,
 				F10061F91225B60E00F6BE54 /* IBHTableView.h */,
 				F10061FA1225B60E00F6BE54 /* IBHTableView.m */,
 				F10061FB1225B60E00F6BE54 /* IBLineChart.h */,
@@ -262,15 +265,6 @@
 				F10062071225B62800F6BE54 /* ViewUtil.m */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		FF2549721220DB6A007E052F /* HTML Label */ = {
-			isa = PBXGroup;
-			children = (
-				FF2549731220DB90007E052F /* IBHTMLLabel.h */,
-				FF2549741220DB90007E052F /* IBHTMLLabel.m */,
-			);
-			name = "HTML Label";
 			sourceTree = "<group>";
 		};
 		FF254A00122152AD007E052F /* Categories */ = {
@@ -385,8 +379,6 @@
 			children = (
 				F10061F81225B5E200F6BE54 /* Components */,
 				FF4485FA1225B4480066E827 /* Core Data Store */,
-				FF2549721220DB6A007E052F /* HTML Label */,
-				FF9EA795121C269D002F8A31 /* Image View */,
 				F10062051225B61400F6BE54 /* Utils */,
 				FF6903431219861900EC7D37 /* Categories */,
 				FF6902E912197EEB00EC7D37 /* Macros */,

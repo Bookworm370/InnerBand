@@ -7,7 +7,7 @@
 //
 
 #import "IBHTMLLabel.h"
-#import "UIColor+Additions.h"
+#import "UIColor+Boost.h"
 
 @interface IBHTMLLabel (PRIVATE)
 
@@ -85,7 +85,7 @@
 	}
 	
 	if (_textColor) {
-		htmlText = [NSString stringWithFormat:@"<span style=\"color:%@;\">%@</span>", [_textColor toHexString], htmlText];
+		htmlText = [NSString stringWithFormat:@"<span style=\"color:%@;\">%@</span>", [_textColor hexString], htmlText];
 	}
 
 	if (htmlAlignmentValue) {
@@ -93,7 +93,7 @@
 	}
 
 	if (_linkColor) {
-		htmlText = [NSString stringWithFormat:@"<style type=\"text/css\">a { color: %@; }</style>%@", [_linkColor toHexString], htmlText];
+		htmlText = [NSString stringWithFormat:@"<style type=\"text/css\">a { color: %@; }</style>%@", [_linkColor hexString], htmlText];
 	}
 		
 	[self loadHTMLString:htmlText baseURL:nil];

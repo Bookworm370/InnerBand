@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		F10061F41225B53D00F6BE54 /* CGContext+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = F10061F01225B53D00F6BE54 /* CGContext+Boost.h */; };
+		F10061F51225B53D00F6BE54 /* CGContext+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061F11225B53D00F6BE54 /* CGContext+Boost.m */; };
+		F10061F61225B53D00F6BE54 /* UIColor+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = F10061F21225B53D00F6BE54 /* UIColor+Boost.h */; };
+		F10061F71225B53D00F6BE54 /* UIColor+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061F31225B53D00F6BE54 /* UIColor+Boost.m */; };
+		F10061FF1225B60E00F6BE54 /* IBHTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = F10061F91225B60E00F6BE54 /* IBHTableView.h */; };
+		F10062001225B60E00F6BE54 /* IBHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061FA1225B60E00F6BE54 /* IBHTableView.m */; };
+		F10062011225B60E00F6BE54 /* IBLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = F10061FB1225B60E00F6BE54 /* IBLineChart.h */; };
+		F10062021225B60E00F6BE54 /* IBLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061FC1225B60E00F6BE54 /* IBLineChart.m */; };
+		F10062031225B60E00F6BE54 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F10061FD1225B60E00F6BE54 /* IBButton.h */; };
+		F10062041225B60E00F6BE54 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F10061FE1225B60E00F6BE54 /* IBButton.m */; };
+		F10062081225B62800F6BE54 /* ViewUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = F10062061225B62800F6BE54 /* ViewUtil.h */; };
+		F10062091225B62800F6BE54 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062071225B62800F6BE54 /* ViewUtil.m */; };
 		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
-		FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549DD12214FC9007E052F /* UIColor+Additions.h */; };
-		FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549DE12214FC9007E052F /* UIColor+Additions.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
 		FF254A0412215343007E052F /* ArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3934F4122091510048310B /* ArrayTest.m */; };
 		FF3933D5122075230048310B /* UIView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3933D3122075230048310B /* UIView+Additions.h */; };
@@ -82,10 +92,20 @@
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libiBoost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBoost.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10061F01225B53D00F6BE54 /* CGContext+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGContext+Boost.h"; sourceTree = "<group>"; };
+		F10061F11225B53D00F6BE54 /* CGContext+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGContext+Boost.m"; sourceTree = "<group>"; };
+		F10061F21225B53D00F6BE54 /* UIColor+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Boost.h"; sourceTree = "<group>"; };
+		F10061F31225B53D00F6BE54 /* UIColor+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Boost.m"; sourceTree = "<group>"; };
+		F10061F91225B60E00F6BE54 /* IBHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTableView.h; sourceTree = "<group>"; };
+		F10061FA1225B60E00F6BE54 /* IBHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTableView.m; sourceTree = "<group>"; };
+		F10061FB1225B60E00F6BE54 /* IBLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLineChart.h; sourceTree = "<group>"; };
+		F10061FC1225B60E00F6BE54 /* IBLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLineChart.m; sourceTree = "<group>"; };
+		F10061FD1225B60E00F6BE54 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
+		F10061FE1225B60E00F6BE54 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
+		F10062061225B62800F6BE54 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
+		F10062071225B62800F6BE54 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		FF2549731220DB90007E052F /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		FF2549741220DB90007E052F /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
-		FF2549DD12214FC9007E052F /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
-		FF2549DE12214FC9007E052F /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
 		FF3933D3122075230048310B /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		FF3933D4122075230048310B /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
@@ -220,6 +240,28 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		F10061F81225B5E200F6BE54 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F10061F91225B60E00F6BE54 /* IBHTableView.h */,
+				F10061FA1225B60E00F6BE54 /* IBHTableView.m */,
+				F10061FB1225B60E00F6BE54 /* IBLineChart.h */,
+				F10061FC1225B60E00F6BE54 /* IBLineChart.m */,
+				F10061FD1225B60E00F6BE54 /* IBButton.h */,
+				F10061FE1225B60E00F6BE54 /* IBButton.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		F10062051225B61400F6BE54 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F10062061225B62800F6BE54 /* ViewUtil.h */,
+				F10062071225B62800F6BE54 /* ViewUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		FF2549721220DB6A007E052F /* HTML Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +304,10 @@
 		FF6903431219861900EC7D37 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F10061F01225B53D00F6BE54 /* CGContext+Boost.h */,
+				F10061F11225B53D00F6BE54 /* CGContext+Boost.m */,
+				F10061F21225B53D00F6BE54 /* UIColor+Boost.h */,
+				F10061F31225B53D00F6BE54 /* UIColor+Boost.m */,
 				FF39358A1220973D0048310B /* NSObject+Additions.h */,
 				FF39358B1220973D0048310B /* NSObject+Additions.m */,
 				FF6903441219863B00EC7D37 /* NSString+Additions.h */,
@@ -274,8 +320,6 @@
 				FF3933D4122075230048310B /* UIView+Additions.m */,
 				FF3936351220B1D10048310B /* UIImage+Additions.h */,
 				FF3936361220B1D10048310B /* UIImage+Additions.m */,
-				FF2549DD12214FC9007E052F /* UIColor+Additions.h */,
-				FF2549DE12214FC9007E052F /* UIColor+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -312,8 +356,10 @@
 		FFF568AB1216E437007F800F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F10061F81225B5E200F6BE54 /* Components */,
 				FF2549721220DB6A007E052F /* HTML Label */,
 				FF9EA795121C269D002F8A31 /* Image View */,
+				F10062051225B61400F6BE54 /* Utils */,
 				FF6903431219861900EC7D37 /* Categories */,
 				FF6902E912197EEB00EC7D37 /* Macros */,
 			);
@@ -382,7 +428,12 @@
 				FF3936141220B16B0048310B /* IBUserInfo.h in Headers */,
 				FF3936371220B1D10048310B /* UIImage+Additions.h in Headers */,
 				FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */,
-				FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */,
+				F10061F41225B53D00F6BE54 /* CGContext+Boost.h in Headers */,
+				F10061F61225B53D00F6BE54 /* UIColor+Boost.h in Headers */,
+				F10061FF1225B60E00F6BE54 /* IBHTableView.h in Headers */,
+				F10062011225B60E00F6BE54 /* IBLineChart.h in Headers */,
+				F10062031225B60E00F6BE54 /* IBButton.h in Headers */,
+				F10062081225B62800F6BE54 /* ViewUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +526,12 @@
 				FF3936151220B16B0048310B /* IBUserInfo.m in Sources */,
 				FF3936381220B1D10048310B /* UIImage+Additions.m in Sources */,
 				FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */,
-				FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */,
+				F10061F51225B53D00F6BE54 /* CGContext+Boost.m in Sources */,
+				F10061F71225B53D00F6BE54 /* UIColor+Boost.m in Sources */,
+				F10062001225B60E00F6BE54 /* IBHTableView.m in Sources */,
+				F10062021225B60E00F6BE54 /* IBLineChart.m in Sources */,
+				F10062041225B60E00F6BE54 /* IBButton.m in Sources */,
+				F10062091225B62800F6BE54 /* ViewUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

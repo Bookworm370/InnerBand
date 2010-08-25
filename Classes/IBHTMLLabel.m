@@ -7,7 +7,7 @@
 //
 
 #import "IBHTMLLabel.h"
-#import "UIColor+Additions.h"
+#import "UIColor+Boost.h"
 
 @interface IBHTMLLabel (PRIVATE)
 

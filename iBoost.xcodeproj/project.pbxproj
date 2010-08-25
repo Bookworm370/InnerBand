@@ -10,22 +10,9 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
-		FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549DD12214FC9007E052F /* UIColor+Additions.h */; };
-		FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549DE12214FC9007E052F /* UIColor+Additions.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
 		FF254A0412215343007E052F /* ArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3934F4122091510048310B /* ArrayTest.m */; };
-		FF3933D5122075230048310B /* UIView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3933D3122075230048310B /* UIView+Additions.h */; };
-		FF3933D6122075230048310B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3933D4122075230048310B /* UIView+Additions.m */; };
 		FF393446122086190048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF393445122086190048310B /* QuartzCore.framework */; };
-		FF3934C6122090C70048310B /* NSMutableArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA548121A4374002F8A31 /* NSMutableArray+Additions.m */; };
-		FF3934C7122090C80048310B /* NSMutableArray+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9EA547121A4374002F8A31 /* NSMutableArray+Additions.h */; };
-		FF3934C8122090C80048310B /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA545121A4367002F8A31 /* NSArray+Additions.m */; };
-		FF3934C9122090C90048310B /* NSArray+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9EA544121A4367002F8A31 /* NSArray+Additions.h */; };
-		FF39351C122093760048310B /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6903451219863B00EC7D37 /* NSString+Additions.m */; };
-		FF39351D122093760048310B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3933D4122075230048310B /* UIView+Additions.m */; };
-		FF39358C1220973D0048310B /* NSObject+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF39358A1220973D0048310B /* NSObject+Additions.h */; };
-		FF39358D1220973D0048310B /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF39358B1220973D0048310B /* NSObject+Additions.m */; };
-		FF3935A4122097EC0048310B /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF39358B1220973D0048310B /* NSObject+Additions.m */; };
 		FF3935CD1220AA260048310B /* iBoost_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = FF3935CC1220AA260048310B /* iBoost_Prefix.pch */; };
 		FF3936001220B16B0048310B /* IBGlobalNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */; };
 		FF3936011220B16B0048310B /* IBGlobalNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */; };
@@ -49,16 +36,22 @@
 		FF3936131220B16B0048310B /* IBURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935FD1220B16B0048310B /* IBURLResponse.h */; };
 		FF3936141220B16B0048310B /* IBUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935FE1220B16B0048310B /* IBUserInfo.h */; };
 		FF3936151220B16B0048310B /* IBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3935FF1220B16B0048310B /* IBUserInfo.m */; };
-		FF3936371220B1D10048310B /* UIImage+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3936351220B1D10048310B /* UIImage+Additions.h */; };
-		FF3936381220B1D10048310B /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3936361220B1D10048310B /* UIImage+Additions.m */; };
+		FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484E31225A5630066E827 /* CoreDataTest.m */; };
+		FF4484FC1225ABA10066E827 /* NSArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484EF1225ABA10066E827 /* NSArray+Boost.m */; };
+		FF4484FD1225ABA10066E827 /* NSMutableArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F11225ABA10066E827 /* NSMutableArray+Boost.m */; };
+		FF4484FE1225ABA10066E827 /* NSObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F31225ABA10066E827 /* NSObject+Boost.m */; };
+		FF4484FF1225ABA10066E827 /* NSString+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F51225ABA10066E827 /* NSString+Boost.m */; };
+		FF4485001225ABA10066E827 /* UIColor+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F71225ABA10066E827 /* UIColor+Boost.m */; };
+		FF4485011225ABA10066E827 /* UIImage+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F91225ABA10066E827 /* UIImage+Boost.m */; };
+		FF4485021225ABA10066E827 /* UIView+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484FB1225ABA10066E827 /* UIView+Boost.m */; };
+		FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FF4485C31225B1B70066E827 /* TestableDataModel.xcdatamodel */; };
+		FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4486491225B63A0066E827 /* CoreDataStore.h */; };
+		FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF44864A1225B63A0066E827 /* CoreDataStore.m */; };
+		FF44866E1225B8BB0066E827 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4486681225B8B20066E827 /* CoreData.framework */; };
 		FF6902D212197E6700EC7D37 /* BoundsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6902D112197E6700EC7D37 /* BoundsTest.m */; };
 		FF6902EF12197F4400EC7D37 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6902EE12197F4400EC7D37 /* Constants.h */; };
-		FF6903461219863B00EC7D37 /* NSString+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6903441219863B00EC7D37 /* NSString+Additions.h */; };
-		FF6903471219863B00EC7D37 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6903451219863B00EC7D37 /* NSString+Additions.m */; };
 		FF6903701219898A00EC7D37 /* MemoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69036F1219898A00EC7D37 /* MemoryTest.m */; };
 		FF6903711219899100EC7D37 /* StringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69035A121986FE00EC7D37 /* StringTest.m */; };
-		FF9EA546121A4367002F8A31 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA545121A4367002F8A31 /* NSArray+Additions.m */; };
-		FF9EA549121A4374002F8A31 /* NSMutableArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA548121A4374002F8A31 /* NSMutableArray+Additions.m */; };
 		FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5A7121AC6C4002F8A31 /* SortTest.m */; };
 		FF9EA5DA121ADBEA002F8A31 /* TypesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */; };
 		FFCC37C71216D25100AAF3BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */; };
@@ -84,15 +77,9 @@
 		D2AAC07E0554694100DB518D /* libiBoost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBoost.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2549731220DB90007E052F /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		FF2549741220DB90007E052F /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
-		FF2549DD12214FC9007E052F /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
-		FF2549DE12214FC9007E052F /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
-		FF3933D3122075230048310B /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
-		FF3933D4122075230048310B /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		FF393445122086190048310B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF3934F4122091510048310B /* ArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTest.m; sourceTree = "<group>"; };
-		FF39358A1220973D0048310B /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
-		FF39358B1220973D0048310B /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		FF3935CC1220AA260048310B /* iBoost_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBoost_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBGlobalNetwork.h; path = Classes/IBGlobalNetwork.h; sourceTree = SOURCE_ROOT; };
 		FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBGlobalNetwork.m; path = Classes/IBGlobalNetwork.m; sourceTree = SOURCE_ROOT; };
@@ -116,19 +103,30 @@
 		FF3935FD1220B16B0048310B /* IBURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBURLResponse.h; path = Classes/IBURLResponse.h; sourceTree = SOURCE_ROOT; };
 		FF3935FE1220B16B0048310B /* IBUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBUserInfo.h; path = Classes/IBUserInfo.h; sourceTree = SOURCE_ROOT; };
 		FF3935FF1220B16B0048310B /* IBUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBUserInfo.m; path = Classes/IBUserInfo.m; sourceTree = SOURCE_ROOT; };
-		FF3936351220B1D10048310B /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
-		FF3936361220B1D10048310B /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		FF4484E31225A5630066E827 /* CoreDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTest.m; sourceTree = "<group>"; };
+		FF4484EE1225ABA10066E827 /* NSArray+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Boost.h"; sourceTree = "<group>"; };
+		FF4484EF1225ABA10066E827 /* NSArray+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Boost.m"; sourceTree = "<group>"; };
+		FF4484F01225ABA10066E827 /* NSMutableArray+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Boost.h"; sourceTree = "<group>"; };
+		FF4484F11225ABA10066E827 /* NSMutableArray+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Boost.m"; sourceTree = "<group>"; };
+		FF4484F21225ABA10066E827 /* NSObject+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Boost.h"; sourceTree = "<group>"; };
+		FF4484F31225ABA10066E827 /* NSObject+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Boost.m"; sourceTree = "<group>"; };
+		FF4484F41225ABA10066E827 /* NSString+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Boost.h"; sourceTree = "<group>"; };
+		FF4484F51225ABA10066E827 /* NSString+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Boost.m"; sourceTree = "<group>"; };
+		FF4484F61225ABA10066E827 /* UIColor+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Boost.h"; sourceTree = "<group>"; };
+		FF4484F71225ABA10066E827 /* UIColor+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Boost.m"; sourceTree = "<group>"; };
+		FF4484F81225ABA10066E827 /* UIImage+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Boost.h"; sourceTree = "<group>"; };
+		FF4484F91225ABA10066E827 /* UIImage+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Boost.m"; sourceTree = "<group>"; };
+		FF4484FA1225ABA10066E827 /* UIView+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Boost.h"; sourceTree = "<group>"; };
+		FF4484FB1225ABA10066E827 /* UIView+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Boost.m"; sourceTree = "<group>"; };
+		FF4485C31225B1B70066E827 /* TestableDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = TestableDataModel.xcdatamodel; sourceTree = "<group>"; };
+		FF4486491225B63A0066E827 /* CoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStore.h; sourceTree = "<group>"; };
+		FF44864A1225B63A0066E827 /* CoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStore.m; sourceTree = "<group>"; };
+		FF4486681225B8B20066E827 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FF6902D112197E6700EC7D37 /* BoundsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundsTest.m; sourceTree = "<group>"; };
 		FF6902EC12197F0700EC7D37 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		FF6902EE12197F4400EC7D37 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		FF6903441219863B00EC7D37 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		FF6903451219863B00EC7D37 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		FF69035A121986FE00EC7D37 /* StringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTest.m; sourceTree = "<group>"; };
 		FF69036F1219898A00EC7D37 /* MemoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTest.m; sourceTree = "<group>"; };
-		FF9EA544121A4367002F8A31 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
-		FF9EA545121A4367002F8A31 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
-		FF9EA547121A4374002F8A31 /* NSMutableArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Additions.h"; sourceTree = "<group>"; };
-		FF9EA548121A4374002F8A31 /* NSMutableArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Additions.m"; sourceTree = "<group>"; };
 		FF9EA5A7121AC6C4002F8A31 /* SortTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortTest.m; sourceTree = "<group>"; };
 		FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesTest.m; sourceTree = "<group>"; };
 		FFCC37691216D06D00AAF3BF /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +171,7 @@
 				FFCC37DF1216D4E000AAF3BF /* libiBoost.a in Frameworks */,
 				FFF569371216E4A3007F800F /* libGHUnitIPhone4_0.a in Frameworks */,
 				FF393446122086190048310B /* QuartzCore.framework in Frameworks */,
+				FF44866E1225B8BB0066E827 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +192,12 @@
 			children = (
 				FFF568AC1216E441007F800F /* Tests */,
 				FFF568AB1216E437007F800F /* Classes */,
+				FF4485C01225B13E0066E827 /* Core Data */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				FF393445122086190048310B /* QuartzCore.framework */,
+				FF4486681225B8B20066E827 /* CoreData.framework */,
 			);
 			name = ROIDS;
 			sourceTree = "<group>";
@@ -241,6 +242,31 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		FF4485C01225B13E0066E827 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FF4485C31225B1B70066E827 /* TestableDataModel.xcdatamodel */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		FF4485FA1225B4480066E827 /* Core Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				FF4486491225B63A0066E827 /* CoreDataStore.h */,
+				FF44864A1225B63A0066E827 /* CoreDataStore.m */,
+			);
+			name = "Core Data Store";
+			sourceTree = "<group>";
+		};
+		FF44864F1225B8070066E827 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				FF4484E31225A5630066E827 /* CoreDataTest.m */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
 		FF6902CC12197E1900EC7D37 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,20 +288,20 @@
 		FF6903431219861900EC7D37 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				FF39358A1220973D0048310B /* NSObject+Additions.h */,
-				FF39358B1220973D0048310B /* NSObject+Additions.m */,
-				FF6903441219863B00EC7D37 /* NSString+Additions.h */,
-				FF6903451219863B00EC7D37 /* NSString+Additions.m */,
-				FF9EA544121A4367002F8A31 /* NSArray+Additions.h */,
-				FF9EA545121A4367002F8A31 /* NSArray+Additions.m */,
-				FF9EA547121A4374002F8A31 /* NSMutableArray+Additions.h */,
-				FF9EA548121A4374002F8A31 /* NSMutableArray+Additions.m */,
-				FF3933D3122075230048310B /* UIView+Additions.h */,
-				FF3933D4122075230048310B /* UIView+Additions.m */,
-				FF3936351220B1D10048310B /* UIImage+Additions.h */,
-				FF3936361220B1D10048310B /* UIImage+Additions.m */,
-				FF2549DD12214FC9007E052F /* UIColor+Additions.h */,
-				FF2549DE12214FC9007E052F /* UIColor+Additions.m */,
+				FF4484EE1225ABA10066E827 /* NSArray+Boost.h */,
+				FF4484EF1225ABA10066E827 /* NSArray+Boost.m */,
+				FF4484F01225ABA10066E827 /* NSMutableArray+Boost.h */,
+				FF4484F11225ABA10066E827 /* NSMutableArray+Boost.m */,
+				FF4484F21225ABA10066E827 /* NSObject+Boost.h */,
+				FF4484F31225ABA10066E827 /* NSObject+Boost.m */,
+				FF4484F41225ABA10066E827 /* NSString+Boost.h */,
+				FF4484F51225ABA10066E827 /* NSString+Boost.m */,
+				FF4484F61225ABA10066E827 /* UIColor+Boost.h */,
+				FF4484F71225ABA10066E827 /* UIColor+Boost.m */,
+				FF4484F81225ABA10066E827 /* UIImage+Boost.h */,
+				FF4484F91225ABA10066E827 /* UIImage+Boost.m */,
+				FF4484FA1225ABA10066E827 /* UIView+Boost.h */,
+				FF4484FB1225ABA10066E827 /* UIView+Boost.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -312,6 +338,7 @@
 		FFF568AB1216E437007F800F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF4485FA1225B4480066E827 /* Core Data Store */,
 				FF2549721220DB6A007E052F /* HTML Label */,
 				FF9EA795121C269D002F8A31 /* Image View */,
 				FF6903431219861900EC7D37 /* Categories */,
@@ -323,6 +350,7 @@
 		FFF568AC1216E441007F800F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FF44864F1225B8070066E827 /* Systems */,
 				FF254A00122152AD007E052F /* Categories */,
 				FF6902CC12197E1900EC7D37 /* Macros */,
 			);
@@ -362,11 +390,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6902EF12197F4400EC7D37 /* Constants.h in Headers */,
-				FF6903461219863B00EC7D37 /* NSString+Additions.h in Headers */,
-				FF3933D5122075230048310B /* UIView+Additions.h in Headers */,
-				FF3934C7122090C80048310B /* NSMutableArray+Additions.h in Headers */,
-				FF3934C9122090C90048310B /* NSArray+Additions.h in Headers */,
-				FF39358C1220973D0048310B /* NSObject+Additions.h in Headers */,
 				FF3935CD1220AA260048310B /* iBoost_Prefix.pch in Headers */,
 				FF3936001220B16B0048310B /* IBGlobalNetwork.h in Headers */,
 				FF3936021220B16B0048310B /* IBImageLayer.h in Headers */,
@@ -380,9 +403,8 @@
 				FF3936111220B16B0048310B /* IBURLRequestQueue.h in Headers */,
 				FF3936131220B16B0048310B /* IBURLResponse.h in Headers */,
 				FF3936141220B16B0048310B /* IBUserInfo.h in Headers */,
-				FF3936371220B1D10048310B /* UIImage+Additions.h in Headers */,
 				FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */,
-				FF2549DF12214FC9007E052F /* UIColor+Additions.h in Headers */,
+				FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,11 +480,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF6903471219863B00EC7D37 /* NSString+Additions.m in Sources */,
-				FF3933D6122075230048310B /* UIView+Additions.m in Sources */,
-				FF3934C6122090C70048310B /* NSMutableArray+Additions.m in Sources */,
-				FF3934C8122090C80048310B /* NSArray+Additions.m in Sources */,
-				FF39358D1220973D0048310B /* NSObject+Additions.m in Sources */,
 				FF3936011220B16B0048310B /* IBGlobalNetwork.m in Sources */,
 				FF3936031220B16B0048310B /* IBImageLayer.m in Sources */,
 				FF3936051220B16B0048310B /* IBImageView.m in Sources */,
@@ -473,9 +490,8 @@
 				FF39360F1220B16B0048310B /* IBURLRequest.m in Sources */,
 				FF3936121220B16B0048310B /* IBURLRequestQueue.m in Sources */,
 				FF3936151220B16B0048310B /* IBUserInfo.m in Sources */,
-				FF3936381220B1D10048310B /* UIImage+Additions.m in Sources */,
 				FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */,
-				FF2549E012214FC9007E052F /* UIColor+Additions.m in Sources */,
+				FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,15 +503,19 @@
 				FF6902D212197E6700EC7D37 /* BoundsTest.m in Sources */,
 				FF6903701219898A00EC7D37 /* MemoryTest.m in Sources */,
 				FF6903711219899100EC7D37 /* StringTest.m in Sources */,
-				FF9EA546121A4367002F8A31 /* NSArray+Additions.m in Sources */,
-				FF9EA549121A4374002F8A31 /* NSMutableArray+Additions.m in Sources */,
 				FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */,
 				FF9EA5DA121ADBEA002F8A31 /* TypesTest.m in Sources */,
-				FF39351C122093760048310B /* NSString+Additions.m in Sources */,
-				FF39351D122093760048310B /* UIView+Additions.m in Sources */,
-				FF3935A4122097EC0048310B /* NSObject+Additions.m in Sources */,
 				FF254A0312215343007E052F /* ColorTest.m in Sources */,
 				FF254A0412215343007E052F /* ArrayTest.m in Sources */,
+				FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */,
+				FF4484FC1225ABA10066E827 /* NSArray+Boost.m in Sources */,
+				FF4484FD1225ABA10066E827 /* NSMutableArray+Boost.m in Sources */,
+				FF4484FE1225ABA10066E827 /* NSObject+Boost.m in Sources */,
+				FF4484FF1225ABA10066E827 /* NSString+Boost.m in Sources */,
+				FF4485001225ABA10066E827 /* UIColor+Boost.m in Sources */,
+				FF4485011225ABA10066E827 /* UIImage+Boost.m in Sources */,
+				FF4485021225ABA10066E827 /* UIView+Boost.m in Sources */,
+				FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

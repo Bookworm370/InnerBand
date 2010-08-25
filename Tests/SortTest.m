@@ -1,13 +1,13 @@
 //
 //  SortTest.m
-//  ROIDS
+//  iBoost
 //
 //  Created by John Blanco on 6/4/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
 #import "GHUnit.h"
-#import "NSArray+Additions.h"
+#import "NSArray+Boost.h"
 #import "Macros.h"
 
 @interface SortTest : GHTestCase

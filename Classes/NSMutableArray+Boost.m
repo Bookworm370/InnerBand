@@ -1,13 +1,13 @@
 //
-//  NSMutableArray+Additions.m
-//  ROIDS
+//  NSMutableArray+Boost.m
+//  iBoost
 //
 //  Created by John Blanco on 8/16/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "NSMutableArray+Additions.h"
-#import "NSString+Additions.h"
+#import "NSMutableArray+Boost.h"
+#import "NSString+Boost.h"
 
 // no-ops
 static const void* IBRetainNoOp(CFAllocatorRef allocator, const void *value) { return value; }

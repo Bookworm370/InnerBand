@@ -1,12 +1,12 @@
 //
-//  NSString+Additions.m
-//  ROIDS
+//  NSString+Boost.m
+//  iBoost
 //
 //  Created by John Blanco on 8/16/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "NSString+Additions.h"
+#import "NSString+Boost.h"
 
 
 @implementation NSString (Additions)

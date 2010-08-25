@@ -21,7 +21,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Macros.h"
-#import "NSString+Additions.h"
+#import "NSString+Boost.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
   

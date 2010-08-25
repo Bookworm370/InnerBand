@@ -1,5 +1,5 @@
 //
-//  UIColor+Additions.h
+//  UIColor+Boost.h
 //  iBoost
 //
 //  Created by John Blanco on 8/22/10.

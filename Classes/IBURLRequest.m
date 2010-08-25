@@ -18,7 +18,7 @@
 
 #import "IBURLResponse.h"
 #import "IBURLRequestQueue.h"
-#import "NSMutableArray+Additions.h"
+#import "NSMutableArray+Boost.h"
 #import "Macros.h"
 
 #import <CommonCrypto/CommonDigest.h>

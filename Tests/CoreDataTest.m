@@ -1,5 +1,5 @@
 //
-//  ArrayTest.m
+//  CoreDataTest.m
 //  iBoost
 //
 //  Created by John Blanco on 6/4/10.
@@ -9,14 +9,16 @@
 #import "GHUnit.h"
 #import "Macros.h"
 #import "NSMutableArray+Boost.h"
+#import "CoreDataStore.h"
 
-@interface ArrayTest : GHTestCase
+@interface CoreDataTest : GHTestCase
 @end
 
-@implementation ArrayTest
+@implementation CoreDataTest
 
 - (void)setUpClass {
     // Run at start of all tests in the class
+	[CoreDataStore clearAllData];
 }
 
 - (void)tearDownClass {
@@ -31,10 +33,12 @@
     // Run after each test method
 }   
 
-- (void)testUnretainingArray {
-	NSMutableArray *array = [NSMutableArray arrayUnretaining];
+- (void)testInitialization {
+	NSArray *widgets;
+	NSError *error = nil;
 	
-	[array addObject:BOX_INT(5)];
+	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	GHAssertEquals(0U, widgets.count, nil);
 }
 
 @end

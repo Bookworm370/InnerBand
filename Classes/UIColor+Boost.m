@@ -1,12 +1,12 @@
 //
-//  UIColor+Additions.m
+//  UIColor+Boost.m
 //  iBoost
 //
 //  Created by John Blanco on 8/22/10.
 //  Copyright 2010 Effective UI. All rights reserved.
 //
 
-#import "UIColor+Additions.h"
+#import "UIColor+Boost.h"
 
 
 @implementation UIColor (Additions)

@@ -21,7 +21,7 @@
 #import "IBURLRequestQueue.h"
 #import "IBURLResponse.h"
 #import "Macros.h"
-#import "NSObject+Additions.h"
+#import "NSObject+Boost.h"
 
 static const NSInteger kLoadMaxRetries = 2;
 

@@ -108,8 +108,8 @@
 		FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBGlobalNetwork.m; path = Classes/IBGlobalNetwork.m; sourceTree = SOURCE_ROOT; };
 		FF3935EC1220B16B0048310B /* IBImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBImageLayer.h; path = Classes/IBImageLayer.h; sourceTree = SOURCE_ROOT; };
 		FF3935ED1220B16B0048310B /* IBImageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBImageLayer.m; path = Classes/IBImageLayer.m; sourceTree = SOURCE_ROOT; };
-		FF3935EE1220B16B0048310B /* IBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBImageView.h; path = Classes/IBImageView.h; sourceTree = SOURCE_ROOT; };
-		FF3935EF1220B16B0048310B /* IBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBImageView.m; path = Classes/IBImageView.m; sourceTree = SOURCE_ROOT; };
+		FF3935EE1220B16B0048310B /* IBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageView.h; sourceTree = "<group>"; };
+		FF3935EF1220B16B0048310B /* IBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageView.m; sourceTree = "<group>"; };
 		FF3935F01220B16B0048310B /* IBImageViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBImageViewInternal.h; path = Classes/IBImageViewInternal.h; sourceTree = SOURCE_ROOT; };
 		FF3935F11220B16B0048310B /* IBImageViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBImageViewInternal.m; path = Classes/IBImageViewInternal.m; sourceTree = SOURCE_ROOT; };
 		FF3935F21220B16B0048310B /* IBRequestLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBRequestLoader.h; path = Classes/IBRequestLoader.h; sourceTree = SOURCE_ROOT; };
@@ -245,9 +245,10 @@
 		F10061F81225B5E200F6BE54 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				FF9EA795121C269D002F8A31 /* Image View */,
 				FF2549731220DB90007E052F /* IBHTMLLabel.h */,
 				FF2549741220DB90007E052F /* IBHTMLLabel.m */,
+				FF3935EE1220B16B0048310B /* IBImageView.h */,
+				FF3935EF1220B16B0048310B /* IBImageView.m */,
 				F10061F91225B60E00F6BE54 /* IBHTableView.h */,
 				F10061FA1225B60E00F6BE54 /* IBHTableView.m */,
 				F10061FB1225B60E00F6BE54 /* IBLineChart.h */,
@@ -345,15 +346,13 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		FF9EA795121C269D002F8A31 /* Image View */ = {
+		FF9EA795121C269D002F8A31 /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
 				FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */,
 				FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */,
 				FF3935EC1220B16B0048310B /* IBImageLayer.h */,
 				FF3935ED1220B16B0048310B /* IBImageLayer.m */,
-				FF3935EE1220B16B0048310B /* IBImageView.h */,
-				FF3935EF1220B16B0048310B /* IBImageView.m */,
 				FF3935F01220B16B0048310B /* IBImageViewInternal.h */,
 				FF3935F11220B16B0048310B /* IBImageViewInternal.m */,
 				FF3935F21220B16B0048310B /* IBRequestLoader.h */,
@@ -371,7 +370,7 @@
 				FF3935FE1220B16B0048310B /* IBUserInfo.h */,
 				FF3935FF1220B16B0048310B /* IBUserInfo.m */,
 			);
-			name = "Image View";
+			name = "Support Classes";
 			sourceTree = "<group>";
 		};
 		FFF568AB1216E437007F800F /* Classes */ = {
@@ -382,6 +381,7 @@
 				F10062051225B61400F6BE54 /* Utils */,
 				FF6903431219861900EC7D37 /* Categories */,
 				FF6902E912197EEB00EC7D37 /* Macros */,
+				FF9EA795121C269D002F8A31 /* Support Classes */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

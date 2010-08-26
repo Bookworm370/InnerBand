@@ -8,26 +8,30 @@
 
 #import "UIColor+Boost.h"
 
+// constants
+const NSInteger MAX_RGB_COLOR_VALUE = 0xff;
+const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
+
 @implementation UIColor (Boost)
 
 
 + (UIColor *) colorWithRGBA:(uint) hex {
-	return [UIColor colorWithRed:((hex>>24)&0xFF)/255.0 
-						   green:((hex>>16)&0xFF)/255.0 
-							blue:((hex>>8)&0xFF)/255.0 
-						   alpha:((hex)&0xFF)/255.0];
+	return [UIColor colorWithRed:(CGFloat)((hex>>24) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+						   green:(CGFloat)((hex>>16) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+							blue:(CGFloat)((hex>>8) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+						   alpha:(CGFloat)((hex) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT];
 }
 
 + (UIColor *) colorWithHex:(uint) hex {
 	if (hex > 16777215) {
-		return [UIColor colorWithRed:((hex>>16)&0xFF)/255.0 
-							   green:((hex>>8)&0xFF)/255.0 
-								blue:(hex&0xFF)/255.0 
-							   alpha:((hex>>24)&0xFF)/255.0];
+		return [UIColor colorWithRed:(CGFloat)((hex>>16) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+							   green:(CGFloat)((hex>>8) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+								blue:(CGFloat)(hex & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+							   alpha:(CGFloat)((hex>>24) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT];
 	}else{
-		return [UIColor colorWithRed:((hex>>16)&0xFF)/255.0 
-							   green:((hex>>8)&0xFF)/255.0 
-								blue:(hex&0xFF)/255.0 
+		return [UIColor colorWithRed:(CGFloat)((hex>>16) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+							   green:(CGFloat)((hex>>8) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
+								blue:(CGFloat)(hex & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
 							   alpha:1.0];
 	}
 }
@@ -45,10 +49,10 @@
 - (NSString *) hexString {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	
-	NSInteger red = (int)(components[0] * 255.0);
-	NSInteger green = (int)(components[1] * 255.0);
-	NSInteger blue = (int)(components[2] * 255.0);
-	NSInteger alpha = (int)(components[3] * 255.0);
+	NSInteger red = (int)(components[0] * MAX_RGB_COLOR_VALUE);
+	NSInteger green = (int)(components[1] * MAX_RGB_COLOR_VALUE);
+	NSInteger blue = (int)(components[2] * MAX_RGB_COLOR_VALUE);
+	NSInteger alpha = (int)(components[3] * MAX_RGB_COLOR_VALUE);
 	
 	if (alpha < 255) {
 		return [NSString stringWithFormat:@"#%02x%02x%02x%02x", red, green, blue, alpha];
@@ -79,6 +83,26 @@
 	CGFloat newG = g-(g*percent);
 	CGFloat newB = b-(b*percent);
 	return [UIColor colorWithRed:newR green:newG blue:newB alpha:a];
+}
+
+- (CGFloat)r {
+	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
+	return rgba[0];
+}
+
+- (CGFloat)g {
+	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
+	return rgba[1];
+}
+
+- (CGFloat)b {
+	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
+	return rgba[2];
+}
+
+- (CGFloat)a {
+	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
+	return rgba[3];
 }
 
 @end

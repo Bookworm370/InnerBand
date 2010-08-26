@@ -42,4 +42,9 @@
 
 - (UIColor*) darken:(float) percent;
 
+@property (nonatomic, readonly) CGFloat r;
+@property (nonatomic, readonly) CGFloat g;
+@property (nonatomic, readonly) CGFloat b;
+@property (nonatomic, readonly) CGFloat a;
+
 @end

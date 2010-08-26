@@ -37,7 +37,7 @@
 + (NSManagedObject *)entityByName:(NSString *)entityName error:(NSError **)error;
 
 /* Returns a single entity with the specified key/value. */
-+ (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSString *)value error:(NSError **)error;
++ (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSObject *)value error:(NSError **)error;
 
 /* Create a new entity by name. */
 + (NSManagedObject *)createNewEntityByName:(NSString *)entityName;

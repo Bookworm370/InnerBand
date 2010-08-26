@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "IBImageView.h"
+#import "IBHTMLLabel.h"
+
 
 @interface IBImageViewDemo : UIViewController {
 	IBImageView *_imageView;
+	IBHTMLLabel *_htmlLabel;
 }
 
 @end

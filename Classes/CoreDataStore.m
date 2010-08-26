@@ -41,7 +41,11 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	NSURL *storeURL = [NSURL fileURLWithPath:storeLocation];
 	
 	// remove
-	[[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:error];
+	@try {
+		[[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
+	} @catch (NSException *exception) {
+		// ignore, totally normal
+	}
 	
 	// init some fields
 	self.managedObjectContext;
@@ -85,7 +89,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
  If the coordinator doesn't already exist, it is created and the application's store added to it.
  */
 + (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-	NSError *error;
+	NSError *error = nil;
 
     if (gPersistentStoreCoordinator != nil) {
         return gPersistentStoreCoordinator;
@@ -96,7 +100,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	NSString *storeLocation = [[CoreDataStore applicationDocumentsDirectory] stringByAppendingPathComponent:@"CoreDataStore.sqlite"];
 	NSURL *storeURL = [NSURL fileURLWithPath:storeLocation];
 
-	if (![gPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:error]) {
+	if (![gPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
 		/*
 		 Replace this implementation with code to handle the error appropriately.
 		 
@@ -122,7 +126,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	NSManagedObjectContext *context = [CoreDataStore managedObjectContext];
 	
 	if (context != nil) {
-		if ([context hasChanges] && ![context save:error]) {
+		if ([context hasChanges] && ![context save:&error]) {
 			NSArray* detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
 			
 			if(detailedErrors != nil && [detailedErrors count] > 0) {
@@ -206,7 +210,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	return nil;
 }
 
-+ (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSString *)value error:(NSError **)error {
++ (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSObject *)value error:(NSError **)error {
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", key, value];
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	
@@ -242,7 +246,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	
 	// get all objects for entity
 	// TODO: we can fetch these in a more minimalistic way, would be faster, so do it if we have time
-	NSArray *objects = [CoreDataStore allForEntity:entityName error:error];
+	NSArray *objects = [CoreDataStore allForEntity:entityName error:&error];
 	
 	for (NSManagedObject *iObject in objects) {
 		[gManagedObjectContext deleteObject:iObject];

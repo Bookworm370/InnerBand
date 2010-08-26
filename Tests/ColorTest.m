@@ -32,11 +32,11 @@
 }   
 
 - (void)testHexStrings {
-	GHAssertEqualStrings(@"#ff0000", [[UIColor redColor] toHexString], nil);
-	GHAssertEqualStrings(@"#00ff00", [[UIColor greenColor] toHexString], nil);
-	GHAssertEqualStrings(@"#0000ff", [[UIColor blueColor] toHexString], nil);
+	GHAssertEqualStrings(@"#ff0000", [[UIColor redColor] hexString], nil);
+	GHAssertEqualStrings(@"#00ff00", [[UIColor greenColor] hexString], nil);
+	GHAssertEqualStrings(@"#0000ff", [[UIColor blueColor] hexString], nil);
 
-	GHAssertEqualStrings(@"#10204080", [[UIColor colorWithRed:(16.0/255.0) green:(32.0/255.0) blue:(64.0/255.0) alpha:(128.0/255.0)] toHexString], nil);
+	GHAssertEqualStrings(@"#10204080", [[UIColor colorWithRed:(16.0/255.0) green:(32.0/255.0) blue:(64.0/255.0) alpha:(128.0/255.0)] hexString], nil);
 }
 
 @end

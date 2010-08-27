@@ -9,10 +9,10 @@
 #import "GHUnit.h"
 #import "Macros.h"
 
-@interface BoundsTest : GHTestCase
+@interface MacroTest : GHTestCase
 @end
 
-@implementation BoundsTest
+@implementation MacroTest
 
 - (void)setUpClass {
     // Run at start of all tests in the class
@@ -64,5 +64,29 @@
 	rect = RECT_INSET_BY(RECT_50_X_100_SIZED_200_BY_400, 25);
 	GHAssertEquals(CGRectMake(75, 125, 150, 350), rect, nil);
 }
+
+- (void)testBoxing {
+	GHAssertEquals(NO, UNBOX_BOOL(BOX_BOOL(NO)), nil);
+	GHAssertEquals(0, UNBOX_INT(BOX_INT(0)), nil);
+	GHAssertEquals(0L, UNBOX_LONG(BOX_LONG(0L)), nil);
+	GHAssertEquals(0U, UNBOX_UINT(BOX_UINT(0U)), nil);
+	GHAssertEqualsWithAccuracy(0.0F, UNBOX_FLOAT(BOX_FLOAT(0.0F)), 0.000001, nil);
+	GHAssertEqualsWithAccuracy(0.0, UNBOX_DOUBLE(BOX_DOUBLE(0.0)), 0.000001, nil);
 	
+	GHAssertEquals(YES, UNBOX_BOOL(BOX_BOOL(YES)), nil);
+	GHAssertEquals(1, UNBOX_INT(BOX_INT(1)), nil);
+	GHAssertEquals(1L, UNBOX_LONG(BOX_LONG(1L)), nil);
+	GHAssertEquals(1U, UNBOX_UINT(BOX_UINT(1U)), nil);
+	GHAssertEqualsWithAccuracy(1.0F, UNBOX_FLOAT(BOX_FLOAT(1.0F)), 0.000001, nil);
+	GHAssertEqualsWithAccuracy(1.0, UNBOX_DOUBLE(BOX_DOUBLE(1.0)), 0.000001, nil);
+}
+
+- (void)testDumps {
+	CGRect rect = CGRectMake(10.0, 15.0, 200.0, 250.0);
+
+	GHAssertEqualStrings(@"X=10.0 Y=15.0 W=200.0 H=250.0", RECT_TO_STR(rect), nil);
+	GHAssertEqualStrings(@"X=10.0 Y=15.0", POINT_TO_STR(rect.origin), nil);
+	GHAssertEqualStrings(@"W=200.0 H=250.0", SIZE_TO_STR(rect.size), nil);
+}
+
 @end

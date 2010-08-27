@@ -64,6 +64,11 @@
 #define ORIENTATION_SCREEN_WIDTH
 #define ORIENTATION_SCREEN_HEIGHT
 
+// DUMPS
+#define RECT_TO_STR(r) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f W=%0.1f H=%0.1f", (r).origin.x, (r).origin.y, (r).size.width, (r).size.height])
+#define POINT_TO_STR(p) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f", (p).x, (p).y])
+#define SIZE_TO_STR(s) ([NSString stringWithFormat:@"W=%0.1f H=%0.1f", (s).width, (s).height])
+
 // HARDWARE/OS SUPPORT
 
 #define DEVICE_UDID ([UIDevice currentDevice].uniqueIdentifier)

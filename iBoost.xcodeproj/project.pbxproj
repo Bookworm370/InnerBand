@@ -59,12 +59,11 @@
 		FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4486491225B63A0066E827 /* CoreDataStore.h */; };
 		FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF44864A1225B63A0066E827 /* CoreDataStore.m */; };
 		FF44866E1225B8BB0066E827 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4486681225B8B20066E827 /* CoreData.framework */; };
-		FF6902D212197E6700EC7D37 /* BoundsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6902D112197E6700EC7D37 /* BoundsTest.m */; };
+		FF6902D212197E6700EC7D37 /* MacroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6902D112197E6700EC7D37 /* MacroTest.m */; };
 		FF6902EF12197F4400EC7D37 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6902EE12197F4400EC7D37 /* Constants.h */; };
 		FF6903701219898A00EC7D37 /* MemoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69036F1219898A00EC7D37 /* MemoryTest.m */; };
 		FF6903711219899100EC7D37 /* StringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69035A121986FE00EC7D37 /* StringTest.m */; };
 		FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5A7121AC6C4002F8A31 /* SortTest.m */; };
-		FF9EA5DA121ADBEA002F8A31 /* TypesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */; };
 		FFCC37C71216D25100AAF3BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */; };
 		FFCC37C81216D25100AAF3BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		FFCC37CA1216D25100AAF3BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C91216D25100AAF3BF /* UIKit.framework */; };
@@ -143,13 +142,12 @@
 		FF4486491225B63A0066E827 /* CoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStore.h; sourceTree = "<group>"; };
 		FF44864A1225B63A0066E827 /* CoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStore.m; sourceTree = "<group>"; };
 		FF4486681225B8B20066E827 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FF6902D112197E6700EC7D37 /* BoundsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundsTest.m; sourceTree = "<group>"; };
+		FF6902D112197E6700EC7D37 /* MacroTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacroTest.m; sourceTree = "<group>"; };
 		FF6902EC12197F0700EC7D37 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		FF6902EE12197F4400EC7D37 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FF69035A121986FE00EC7D37 /* StringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTest.m; sourceTree = "<group>"; };
 		FF69036F1219898A00EC7D37 /* MemoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTest.m; sourceTree = "<group>"; };
 		FF9EA5A7121AC6C4002F8A31 /* SortTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortTest.m; sourceTree = "<group>"; };
-		FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesTest.m; sourceTree = "<group>"; };
 		FFCC37691216D06D00AAF3BF /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCC376B1216D06D00AAF3BF /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -308,8 +306,7 @@
 		FF6902CC12197E1900EC7D37 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
-				FF9EA5D9121ADBEA002F8A31 /* TypesTest.m */,
-				FF6902D112197E6700EC7D37 /* BoundsTest.m */,
+				FF6902D112197E6700EC7D37 /* MacroTest.m */,
 			);
 			name = Macros;
 			sourceTree = "<group>";
@@ -551,11 +548,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF569361216E4A3007F800F /* GHUnitIPhoneTestMain.m in Sources */,
-				FF6902D212197E6700EC7D37 /* BoundsTest.m in Sources */,
+				FF6902D212197E6700EC7D37 /* MacroTest.m in Sources */,
 				FF6903701219898A00EC7D37 /* MemoryTest.m in Sources */,
 				FF6903711219899100EC7D37 /* StringTest.m in Sources */,
 				FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */,
-				FF9EA5DA121ADBEA002F8A31 /* TypesTest.m in Sources */,
 				FF254A0312215343007E052F /* ColorTest.m in Sources */,
 				FF254A0412215343007E052F /* ArrayTest.m in Sources */,
 				FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */,

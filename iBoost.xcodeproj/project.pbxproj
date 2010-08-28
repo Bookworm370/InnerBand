@@ -20,6 +20,15 @@
 		F10062091225B62800F6BE54 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062071225B62800F6BE54 /* ViewUtil.m */; };
 		F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = F10062951225C6A200F6BE54 /* UIColor+Boost.h */; };
 		F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062961225C6A200F6BE54 /* UIColor+Boost.m */; };
+		FF0AB7901227594600EBFE75 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7871227594600EBFE75 /* MessageCenter.m */; };
+		FF0AB7911227594600EBFE75 /* HTTPGetRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7891227594600EBFE75 /* HTTPGetRequestMessage.m */; };
+		FF0AB7921227594600EBFE75 /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78B1227594600EBFE75 /* DispatchMessage.m */; };
+		FF0AB7931227594600EBFE75 /* MessageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78D1227594600EBFE75 /* MessageProcessor.m */; };
+		FF0AB7941227594600EBFE75 /* SequencedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78F1227594600EBFE75 /* SequencedMessage.m */; };
+		FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */; };
+		FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F612275BEB00EBFE75 /* Widget.m */; };
+		FF0AB7FB12275BEB00EBFE75 /* HarnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F712275BEB00EBFE75 /* HarnessTests.m */; };
+		FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F812275BEB00EBFE75 /* MessageTests.m */; };
 		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
@@ -97,6 +106,22 @@
 		F10062071225B62800F6BE54 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		F10062951225C6A200F6BE54 /* UIColor+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Boost.h"; sourceTree = "<group>"; };
 		F10062961225C6A200F6BE54 /* UIColor+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Boost.m"; sourceTree = "<group>"; };
+		FF0AB7861227594600EBFE75 /* MessageCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenter.h; sourceTree = "<group>"; };
+		FF0AB7871227594600EBFE75 /* MessageCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenter.m; sourceTree = "<group>"; };
+		FF0AB7881227594600EBFE75 /* HTTPGetRequestMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPGetRequestMessage.h; sourceTree = "<group>"; };
+		FF0AB7891227594600EBFE75 /* HTTPGetRequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPGetRequestMessage.m; sourceTree = "<group>"; };
+		FF0AB78A1227594600EBFE75 /* DispatchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchMessage.h; sourceTree = "<group>"; };
+		FF0AB78B1227594600EBFE75 /* DispatchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchMessage.m; sourceTree = "<group>"; };
+		FF0AB78C1227594600EBFE75 /* MessageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProcessor.h; sourceTree = "<group>"; };
+		FF0AB78D1227594600EBFE75 /* MessageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProcessor.m; sourceTree = "<group>"; };
+		FF0AB78E1227594600EBFE75 /* SequencedMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencedMessage.h; sourceTree = "<group>"; };
+		FF0AB78F1227594600EBFE75 /* SequencedMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencedMessage.m; sourceTree = "<group>"; };
+		FF0AB7F312275BEB00EBFE75 /* StringAppenderMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringAppenderMessage.h; sourceTree = "<group>"; };
+		FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringAppenderMessage.m; sourceTree = "<group>"; };
+		FF0AB7F512275BEB00EBFE75 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		FF0AB7F612275BEB00EBFE75 /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
+		FF0AB7F712275BEB00EBFE75 /* HarnessTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarnessTests.m; sourceTree = "<group>"; };
+		FF0AB7F812275BEB00EBFE75 /* MessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTests.m; sourceTree = "<group>"; };
 		FF2549731220DB90007E052F /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		FF2549741220DB90007E052F /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
 		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
@@ -266,6 +291,52 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		FF0AB777122758DB00EBFE75 /* Message Center */ = {
+			isa = PBXGroup;
+			children = (
+				FF0AB7861227594600EBFE75 /* MessageCenter.h */,
+				FF0AB7871227594600EBFE75 /* MessageCenter.m */,
+				FF0AB78C1227594600EBFE75 /* MessageProcessor.h */,
+				FF0AB78D1227594600EBFE75 /* MessageProcessor.m */,
+				FF0AB7971227597900EBFE75 /* Dispatch Message */,
+			);
+			name = "Message Center";
+			sourceTree = "<group>";
+		};
+		FF0AB7971227597900EBFE75 /* Dispatch Message */ = {
+			isa = PBXGroup;
+			children = (
+				FF0AB78A1227594600EBFE75 /* DispatchMessage.h */,
+				FF0AB78B1227594600EBFE75 /* DispatchMessage.m */,
+				FF0AB78E1227594600EBFE75 /* SequencedMessage.h */,
+				FF0AB78F1227594600EBFE75 /* SequencedMessage.m */,
+				FF0AB7881227594600EBFE75 /* HTTPGetRequestMessage.h */,
+				FF0AB7891227594600EBFE75 /* HTTPGetRequestMessage.m */,
+			);
+			name = "Dispatch Message";
+			sourceTree = "<group>";
+		};
+		FF0AB7F112275BEB00EBFE75 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FF0AB7F712275BEB00EBFE75 /* HarnessTests.m */,
+				FF0AB7F812275BEB00EBFE75 /* MessageTests.m */,
+				FF0AB7F212275BEB00EBFE75 /* Mocks */,
+			);
+			name = MessageCenter;
+			sourceTree = "<group>";
+		};
+		FF0AB7F212275BEB00EBFE75 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FF0AB7F312275BEB00EBFE75 /* StringAppenderMessage.h */,
+				FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */,
+				FF0AB7F512275BEB00EBFE75 /* Widget.h */,
+				FF0AB7F612275BEB00EBFE75 /* Widget.m */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		FF254A00122152AD007E052F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				F10061F81225B5E200F6BE54 /* Components */,
+				FF0AB777122758DB00EBFE75 /* Message Center */,
 				FF4485FA1225B4480066E827 /* Core Data Store */,
 				F10062051225B61400F6BE54 /* Utils */,
 				FF6903431219861900EC7D37 /* Categories */,
@@ -389,6 +461,7 @@
 				FF44864F1225B8070066E827 /* Systems */,
 				FF254A00122152AD007E052F /* Categories */,
 				FF6902CC12197E1900EC7D37 /* Macros */,
+				FF0AB7F112275BEB00EBFE75 /* MessageCenter */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -562,6 +635,15 @@
 				FF4485011225ABA10066E827 /* UIImage+Boost.m in Sources */,
 				FF4485021225ABA10066E827 /* UIView+Boost.m in Sources */,
 				FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */,
+				FF0AB7901227594600EBFE75 /* MessageCenter.m in Sources */,
+				FF0AB7911227594600EBFE75 /* HTTPGetRequestMessage.m in Sources */,
+				FF0AB7921227594600EBFE75 /* DispatchMessage.m in Sources */,
+				FF0AB7931227594600EBFE75 /* MessageProcessor.m in Sources */,
+				FF0AB7941227594600EBFE75 /* SequencedMessage.m in Sources */,
+				FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */,
+				FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */,
+				FF0AB7FB12275BEB00EBFE75 /* HarnessTests.m in Sources */,
+				FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

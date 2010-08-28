@@ -79,9 +79,9 @@
 		highColor = [self.shineColor darken:0.40];
 	}
 	if (!self.enabled && self.adjustsImageWhenDisabled) {
-		baseColor = [UIColor colorWithHex:0x999999];
-		edgeColor = [UIColor colorWithHex:0x777777];
-		highColor = [UIColor colorWithHex:0xEEEEEE];
+		baseColor = [UIColor colorWithRGB:0x999999];
+		edgeColor = [UIColor colorWithRGB:0x777777];
+		highColor = [UIColor colorWithRGB:0xEEEEEE];
 	}
 	
 	float half = (float)self.borderSize/2;

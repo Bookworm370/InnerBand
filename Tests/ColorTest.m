@@ -84,42 +84,42 @@
 }
 
 - (void)testHexColors {
-	UIColor *opaqueRed = [UIColor colorWithHex:0xffff0000];
+	UIColor *opaqueRed = [UIColor colorWithARGB:0xffff0000];
 	
 	GHAssertEqualsWithAccuracy(1.0f, opaqueRed.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.0f, opaqueRed.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.0f, opaqueRed.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueRed.a, 0.01, nil);
 	
-	UIColor *opaqueGreen = [UIColor colorWithHex:0xff00ff00];
+	UIColor *opaqueGreen = [UIColor colorWithARGB:0xff00ff00];
 	
 	GHAssertEqualsWithAccuracy(0.0f, opaqueGreen.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueGreen.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.0f, opaqueGreen.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueGreen.a, 0.01, nil);
 	
-	UIColor *opaqueBlue = [UIColor colorWithHex:0xff0000ff];
+	UIColor *opaqueBlue = [UIColor colorWithARGB:0xff0000ff];
 	
 	GHAssertEqualsWithAccuracy(0.0f, opaqueBlue.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.0f, opaqueBlue.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueBlue.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueBlue.a, 0.01, nil);
 	
-	UIColor *opaqueWhite = [UIColor colorWithHex:0xffffffff];
+	UIColor *opaqueWhite = [UIColor colorWithARGB:0xffffffff];
 	
 	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.a, 0.01, nil);
 	
-	UIColor *translucentWhite = [UIColor colorWithHex:0x80ffffff];
+	UIColor *translucentWhite = [UIColor colorWithARGB:0x80ffffff];
 	
 	GHAssertEqualsWithAccuracy(1.0f, translucentWhite.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, translucentWhite.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, translucentWhite.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.5f, translucentWhite.a, 0.01, nil);
 	
-	UIColor *transparentWhite = [UIColor colorWithHex:0x00ffffff];
+	UIColor *transparentWhite = [UIColor colorWithARGB:0x00ffffff];
 	
 	GHAssertEqualsWithAccuracy(1.0f, transparentWhite.r, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, transparentWhite.g, 0.01, nil);

@@ -23,11 +23,16 @@
 + (UIColor *) colorWithRGBA:(uint) hex;
 
 /*usage
- ARGB style hex value, safe to omit alpha
- UIColor *solidColor = [UIColor colorWithHex:0xFF0000];
+ ARGB style hex value
  UIColor *alphaColor = [UIColor colorWithHex:0x99FF0000];
  */
-+ (UIColor *) colorWithHex:(uint) hex;
++ (UIColor *) colorWithARGB:(uint) hex;
+
+/*usage
+ RGB style hex value, alpha set to full
+ UIColor *solidColor = [UIColor colorWithHex:0xFF0000];
+ */
++ (UIColor *) colorWithRGB:(uint) hex;
 
 /*usage 
  UIColor *solidColor = [UIColor colorWithWeb:@"#FF0000"];

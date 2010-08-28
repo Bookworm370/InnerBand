@@ -19,7 +19,7 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 	CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
 	callbacks.retain = IBRetainNoOp;
 	callbacks.release = IBReleaseNoOp;
-	return (NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks);
+	return [(NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks) autorelease];
 }
 
 - (void)sortDiacriticInsensitiveCaseInsensitive {

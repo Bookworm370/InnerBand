@@ -238,9 +238,9 @@
 - (void)testDarker {
 	UIColor *grayColor = [UIColor colorWithHexString:@"#887766"];
 	grayColor = [grayColor colorDarkerByPercent:20.0f];
-	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 0.2f, grayColor.r, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 0.2f, grayColor.g, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 0.2f, grayColor.b, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 0.8f, grayColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 0.8f, grayColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 0.8f, grayColor.b, 0.01, nil);
 }
 
 @end

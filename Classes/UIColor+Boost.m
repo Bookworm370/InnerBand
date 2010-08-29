@@ -114,9 +114,9 @@ const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
 	CGFloat g = rgba[1];
 	CGFloat b = rgba[2];
 	CGFloat a = rgba[3];
-	CGFloat newR = r * percent;
-	CGFloat newG = g * percent;
-	CGFloat newB = b * percent;
+	CGFloat newR = r - (r * percent);
+	CGFloat newG = g - (g * percent);
+	CGFloat newB = b - (b * percent);
 	return [UIColor colorWithRed:newR green:newG blue:newB alpha:a];
 }
 

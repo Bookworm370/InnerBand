@@ -36,14 +36,45 @@ const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
 						   alpha:1.0];
 }
 
-+ (UIColor *) colorWithWeb:(NSString*) webHex {
++ (UIColor *)colorWithHexString:(NSString *)hexString {
 	uint hex;
-	if([webHex characterAtIndex:0] == '#'){
-		hex = strtoul([[webHex substringFromIndex:1] UTF8String],NULL,16);
-	}else {
-		hex = strtoul([webHex UTF8String],NULL,16);
+	
+	// chop off hash
+	if ([hexString characterAtIndex:0] == '#') {
+		hexString = [hexString substringFromIndex:1];
 	}
-	return [UIColor colorWithHex:hex];
+	
+	// depending on character count, generate a color
+	NSInteger hexStringLength = hexString.length;
+	
+	if (hexStringLength == 3) {
+		// RGB, once character each (each should be repeated)
+		hexString = [NSString stringWithFormat:@"%c%c%c%c%c%c", [hexString characterAtIndex:0], [hexString characterAtIndex:0], [hexString characterAtIndex:1], [hexString characterAtIndex:1], [hexString characterAtIndex:2], [hexString characterAtIndex:2]];
+		hex = strtoul([hexString UTF8String], NULL, 16);	
+
+		return [self colorWithRGB:hex];
+	} else if (hexStringLength == 4) {
+		// RGBA, once character each (each should be repeated)
+		hexString = [NSString stringWithFormat:@"%c%c%c%c%c%c%c%c", [hexString characterAtIndex:0], [hexString characterAtIndex:0], [hexString characterAtIndex:1], [hexString characterAtIndex:1], [hexString characterAtIndex:2], [hexString characterAtIndex:2], [hexString characterAtIndex:3], [hexString characterAtIndex:3]];
+		hex = strtoul([hexString UTF8String], NULL, 16);		
+
+		return [self colorWithRGBA:hex];
+	} else if (hexStringLength == 6) {
+		// RGB
+		hex = strtoul([hexString UTF8String], NULL, 16);		
+		
+		return [self colorWithRGB:hex];
+	} else if (hexStringLength == 8) {
+		// RGBA
+		hex = strtoul([hexString UTF8String], NULL, 16);		
+
+		return [self colorWithRGBA:hex];
+	}
+	
+	// illegal
+	[NSException raise:@"Invalid Hex String" format:@"Hex string invalid: %@", hexString];
+	
+	return nil;
 }
 
 - (NSString *) hexString {
@@ -61,27 +92,31 @@ const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
 	return [NSString stringWithFormat:@"#%02x%02x%02x", red, green, blue];
 }
 
-- (UIColor*) brighten:(float) percent {
+- (UIColor*) colorBrighterByPercent:(float) percent {
+	percent = MAX(percent, 0.0f);
+	percent = (percent + 100.0f) / 100.0f;
 	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
 	CGFloat r = rgba[0];
 	CGFloat g = rgba[1];
 	CGFloat b = rgba[2];
 	CGFloat a = rgba[3];
-	CGFloat newR = r+((1.0-r)*percent);
-	CGFloat newG = g+((1.0-g)*percent);
-	CGFloat newB = b+((1.0-b)*percent);
+	CGFloat newR = r * percent;
+	CGFloat newG = g * percent;
+	CGFloat newB = b * percent;
 	return [UIColor colorWithRed:newR green:newG blue:newB alpha:a];
 }
 
-- (UIColor*) darken:(float) percent {
+- (UIColor*) colorDarkerByPercent:(float) percent {
+	percent = MAX(percent, 0.0f);
+	percent /= 100.0f;
 	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
 	CGFloat r = rgba[0];
 	CGFloat g = rgba[1];
 	CGFloat b = rgba[2];
 	CGFloat a = rgba[3];
-	CGFloat newR = r-(r*percent);
-	CGFloat newG = g-(g*percent);
-	CGFloat newB = b-(b*percent);
+	CGFloat newR = r * percent;
+	CGFloat newG = g * percent;
+	CGFloat newB = b * percent;
 	return [UIColor colorWithRed:newR green:newG blue:newB alpha:a];
 }
 

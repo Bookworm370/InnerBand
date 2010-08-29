@@ -39,13 +39,12 @@
  safe to omit # sign as well
  UIColor *solidColor = [UIColor colorWithWeb:@"FF0000"];
  */
-+ (UIColor *) colorWithWeb:(NSString*) webHex;
++ (UIColor *)colorWithHexString:(NSString *)hexString;
 
 - (NSString *) hexString;
 
-- (UIColor*) brighten:(float) percent;
-
-- (UIColor*) darken:(float) percent;
+- (UIColor*) colorBrighterByPercent:(float) percent;
+- (UIColor*) colorDarkerByPercent:(float) percent;
 
 @property (nonatomic, readonly) CGFloat r;
 @property (nonatomic, readonly) CGFloat g;

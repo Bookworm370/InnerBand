@@ -23,10 +23,10 @@
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeGlossy;
 	button.color = color;
-	button.shineColor = [color brighten:0.65];
+	button.shineColor = [color colorBrighterByPercent:65.0];
 	button.cornerRadius = 10;
 	button.borderSize = 1;
-	button.borderColor = [color darken:0.15];
+	button.borderColor = [color colorDarkerByPercent:15.0];
 	button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
 	button.titleLabel.shadowOffset = CGSizeMake (-1.0, -0.0);
 	return button;
@@ -36,10 +36,10 @@
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeSoft;
 	button.color = color;
-	button.shineColor = [color brighten:0.5];
+	button.shineColor = [color colorBrighterByPercent:50.0];
 	button.cornerRadius = 10;
 	button.borderSize = 1;
-	button.borderColor = [color darken:0.15];
+	button.borderColor = [color colorDarkerByPercent:15.0];
 	button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
 	button.titleLabel.shadowOffset = CGSizeMake (-1.0, -0.0);
 	return button;
@@ -51,7 +51,7 @@
 	button.color = color;
 	button.cornerRadius = 10;
 	button.borderSize =	1;
-	button.borderColor = [color darken:0.15];
+	button.borderColor = [color colorDarkerByPercent:15.0];
 	button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
 	button.titleLabel.shadowOffset = CGSizeMake (-1.0, -0.0);
 	return button;
@@ -74,9 +74,9 @@
 	UIColor *highColor = self.shineColor;
 
 	if (self.highlighted && self.adjustsImageWhenHighlighted) {
-		baseColor = [self.color darken:0.40];
-		edgeColor = [self.borderColor darken:0.40];
-		highColor = [self.shineColor darken:0.40];
+		baseColor = [self.color colorDarkerByPercent:40.0];
+		edgeColor = [self.borderColor colorDarkerByPercent:40.0];
+		highColor = [self.shineColor colorDarkerByPercent:40.0];
 	}
 	if (!self.enabled && self.adjustsImageWhenDisabled) {
 		baseColor = [UIColor colorWithRGB:0x999999];

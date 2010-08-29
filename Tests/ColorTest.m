@@ -83,7 +83,7 @@
 	GHAssertEqualsWithAccuracy(0.0f, transparentWhite.a, 0.01, nil);
 }
 
-- (void)testHexColors {
+- (void)testARGBColors {
 	UIColor *opaqueRed = [UIColor colorWithARGB:0xffff0000];
 	
 	GHAssertEqualsWithAccuracy(1.0f, opaqueRed.r, 0.01, nil);
@@ -125,6 +125,122 @@
 	GHAssertEqualsWithAccuracy(1.0f, transparentWhite.g, 0.01, nil);
 	GHAssertEqualsWithAccuracy(1.0f, transparentWhite.b, 0.01, nil);
 	GHAssertEqualsWithAccuracy(0.0f, transparentWhite.a, 0.01, nil);
+}
+
+- (void)testRGBColors {
+	UIColor *opaqueRed = [UIColor colorWithARGB:0xff0000];
+	
+	GHAssertEqualsWithAccuracy(1.0f, opaqueRed.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, opaqueRed.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, opaqueRed.b, 0.01, nil);
+	
+	UIColor *opaqueGreen = [UIColor colorWithARGB:0x00ff00];
+	
+	GHAssertEqualsWithAccuracy(0.0f, opaqueGreen.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, opaqueGreen.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, opaqueGreen.b, 0.01, nil);
+	
+	UIColor *opaqueBlue = [UIColor colorWithARGB:0x0000ff];
+	
+	GHAssertEqualsWithAccuracy(0.0f, opaqueBlue.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, opaqueBlue.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, opaqueBlue.b, 0.01, nil);
+	
+	UIColor *opaqueWhite = [UIColor colorWithARGB:0xffffff];
+	
+	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, opaqueWhite.b, 0.01, nil);	
+}
+
+- (void)testHexStringColors {
+	UIColor *redColor = [UIColor colorWithHexString:@"#ff0000"];
+
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+
+	redColor = [UIColor colorWithHexString:@"ff0000"];
+	
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+	
+	redColor = [UIColor colorWithHexString:@"#f00"];
+	
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+
+	redColor = [UIColor colorWithHexString:@"f00"];
+	
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+	
+	redColor = [UIColor colorWithHexString:@"#FF0000"];
+	
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+
+	redColor = [UIColor colorWithHexString:@"FF0000"];
+	
+	GHAssertEqualsWithAccuracy(1.0f, redColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, redColor.b, 0.01, nil);
+
+	UIColor *blueColor = [UIColor colorWithHexString:@"#0000ff"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+	
+	blueColor = [UIColor colorWithHexString:@"0000ff"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+	
+	blueColor = [UIColor colorWithHexString:@"#00f"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+	
+	blueColor = [UIColor colorWithHexString:@"00f"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+	
+	blueColor = [UIColor colorWithHexString:@"#0000FF"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+	
+	blueColor = [UIColor colorWithHexString:@"0000FF"];
+	
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0.0f, blueColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(1.0f, blueColor.b, 0.01, nil);
+}
+
+- (void)testBrighter {
+	UIColor *grayColor = [UIColor colorWithHexString:@"#887766"];
+	grayColor = [grayColor colorBrighterByPercent:20.0f];
+	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 1.2f, grayColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 1.2f, grayColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 1.2f, grayColor.b, 0.01, nil);
+}
+
+- (void)testDarker {
+	UIColor *grayColor = [UIColor colorWithHexString:@"#887766"];
+	grayColor = [grayColor colorDarkerByPercent:20.0f];
+	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 0.2f, grayColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 0.2f, grayColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 0.2f, grayColor.b, 0.01, nil);
 }
 
 @end

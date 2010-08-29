@@ -31,6 +31,22 @@
     // Run after each test method
 }   
 
+- (void)testComponents {
+	UIColor *color = [UIColor colorWithRGBA:0x10203040];
+
+	GHAssertEquals(16 / 255.0f, color.r, nil);
+	GHAssertEquals(32 / 255.0f, color.g, nil);
+	GHAssertEquals(48 / 255.0f, color.b, nil);
+	GHAssertEquals(64 / 255.0f, color.a, nil);
+
+	color = [UIColor colorWithARGB:0x10203040];
+	
+	GHAssertEquals(16 / 255.0f, color.a, nil);
+	GHAssertEquals(32 / 255.0f, color.r, nil);
+	GHAssertEquals(48 / 255.0f, color.g, nil);
+	GHAssertEquals(64 / 255.0f, color.b, nil);
+}	
+	
 - (void)testHexStrings {
 	GHAssertEqualStrings(@"#ff0000", [[UIColor redColor] hexString], nil);
 	GHAssertEqualStrings(@"#00ff00", [[UIColor greenColor] hexString], nil);
@@ -39,6 +55,23 @@
 	GHAssertEqualStrings(@"#10204080", [[UIColor colorWithRed:(16.0/255.0) green:(32.0/255.0) blue:(64.0/255.0) alpha:(128.0/255.0)] hexString], nil);
 }
 
+- (void)test256Colors {
+	UIColor *a256Red = [UIColor colorWith256Red:255 green:0 blue:0];
+	UIColor *nativeRed = [UIColor redColor];
+	
+	GHAssertEqualStrings([nativeRed hexString], [a256Red hexString], nil);
+
+	UIColor *a256Green = [UIColor colorWith256Red:0 green:255 blue:0];
+	UIColor *nativeGreen = [UIColor greenColor];
+	
+	GHAssertEqualStrings([nativeGreen hexString], [a256Green hexString], nil);
+
+	UIColor *a256Blue = [UIColor colorWith256Red:0 green:0 blue:255];
+	UIColor *nativeBlue = [UIColor blueColor];
+	
+	GHAssertEqualStrings([nativeBlue hexString], [a256Blue hexString], nil);
+}
+	
 - (void)testRGBAColors {
 	UIColor *opaqueRed = [UIColor colorWithRGBA:0xff0000ff];
 	
@@ -230,17 +263,17 @@
 - (void)testBrighter {
 	UIColor *grayColor = [UIColor colorWithHexString:@"#887766"];
 	grayColor = [grayColor colorBrighterByPercent:20.0f];
-	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 1.2f, grayColor.r, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 1.2f, grayColor.g, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 1.2f, grayColor.b, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x88) * 1.2f, grayColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x77) * 1.2f, grayColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x66) * 1.2f, grayColor.b, 0.01, nil);
 }
 
 - (void)testDarker {
 	UIColor *grayColor = [UIColor colorWithHexString:@"#887766"];
 	grayColor = [grayColor colorDarkerByPercent:20.0f];
-	GHAssertEqualsWithAccuracy(0x88 / 255.0f * 0.8f, grayColor.r, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x77 / 255.0f * 0.8f, grayColor.g, 0.01, nil);
-	GHAssertEqualsWithAccuracy(0x66 / 255.0f * 0.8f, grayColor.b, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x88) * 0.8f, grayColor.r, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x77) * 0.8f, grayColor.g, 0.01, nil);
+	GHAssertEqualsWithAccuracy(RGB256_TO_COL(0x66) * 0.8f, grayColor.b, 0.01, nil);
 }
 
 @end

@@ -89,4 +89,10 @@
 	GHAssertEqualStrings(@"W=200.0 H=250.0", SIZE_TO_STR(rect.size), nil);
 }
 
+- (void)testColorConversions {
+	GHAssertEquals(1.0f, RGB256_TO_COL(COL_TO_RGB256(1.0)), nil);
+	GHAssertEquals(0.0f, RGB256_TO_COL(0), nil);
+	GHAssertEquals(1.0f, RGB256_TO_COL(255), nil);
+}
+
 @end

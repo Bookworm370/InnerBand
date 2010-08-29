@@ -15,6 +15,9 @@
 
 @interface UIColor (Hex)
 
++ (UIColor *)colorWith256Red:(NSInteger)r green:(NSInteger)g blue:(NSInteger)b;
++ (UIColor *)colorWith256Red:(NSInteger)r green:(NSInteger)g blue:(NSInteger)b alpha:(NSInteger)a;
+
 /*usage
  RGBA style hex value
  UIColor *solidColor = [UIColor colorWithRGBA:0xFF0000FF];

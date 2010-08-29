@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+Boost.h"
+#import "Macros.h"
 
 // constants
 const NSInteger MAX_RGB_COLOR_VALUE = 0xff;
@@ -14,7 +15,14 @@ const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
 
 @implementation UIColor (Boost)
 
++ (UIColor *)colorWith256Red:(NSInteger)r green:(NSInteger)g blue:(NSInteger)b {
+	return [UIColor colorWithRed:RGB256_TO_COL(r) green:RGB256_TO_COL(g) blue:RGB256_TO_COL(b) alpha:1.0];
+}
 
++ (UIColor *)colorWith256Red:(NSInteger)r green:(NSInteger)g blue:(NSInteger)b alpha:(NSInteger)a {
+	return [UIColor colorWithRed:RGB256_TO_COL(r) green:RGB256_TO_COL(g) blue:RGB256_TO_COL(b) alpha:RGB256_TO_COL(a)];
+}
+			
 + (UIColor *) colorWithRGBA:(uint) hex {
 	return [UIColor colorWithRed:(CGFloat)((hex>>24) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
 						   green:(CGFloat)((hex>>16) & MAX_RGB_COLOR_VALUE) / MAX_RGB_COLOR_VALUE_FLOAT 
@@ -139,5 +147,5 @@ const NSInteger MAX_RGB_COLOR_VALUE_FLOAT = 255.0f;
 	const CGFloat* rgba = CGColorGetComponents(self.CGColor);
 	return rgba[3];
 }
-
+						
 @end

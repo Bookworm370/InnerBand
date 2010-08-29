@@ -76,6 +76,10 @@
 #define IS_CLASSIC_DISPLAY (([UIScreen mainScreen].scale < 1.5F))
 #define IS_RETINAL_DISPLAY (([UIScreen mainScreen].scale > 1.5F))
 
+// COLORS
+#define RGB256_TO_COL(col) ((col) / 255.0f)
+#define COL_TO_RGB256(col) ((int)((col) * 255.0))
+
 /*
 #define IS_OS_2_0_CAPABLE
 #define IS_OS_3_0_CAPABLE

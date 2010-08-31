@@ -83,10 +83,77 @@
 	return time->tm_sec;
 }
 
-- (NSTimeInterval)utcTimeIntervalSince1970 {
-	time_t rawTime = [self timeIntervalSince1970];
-	struct tm *time = gmtime(&rawTime);
-	return (NSTimeInterval)timegm(time);
+- (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:dateStyle];
+	[format setTimeStyle:NSDateFormatterNoStyle];
+	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedUTCTimeStyle:(NSDateFormatterStyle)timeStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:NSDateFormatterNoStyle];
+	[format setTimeStyle:timeStyle];
+	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:dateStyle];
+	[format setTimeStyle:timeStyle];
+	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedUTCDatePattern:(NSString *)datePattern {
+	//
+	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
+	//
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateFormat:datePattern];
+	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:dateStyle];
+	[format setTimeStyle:NSDateFormatterNoStyle];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedTimeStyle:(NSDateFormatterStyle)timeStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:NSDateFormatterNoStyle];
+	[format setTimeStyle:timeStyle];
+
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateStyle:dateStyle];
+	[format setTimeStyle:timeStyle];
+	
+	return [format stringFromDate:self];
+}
+
+- (NSString *)formattedDatePattern:(NSString *)datePattern {
+	//
+	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
+	//
+	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+	[format setDateFormat:datePattern];
+	
+	return [format stringFromDate:self];
 }
 
 @end
+

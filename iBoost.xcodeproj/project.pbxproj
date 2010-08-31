@@ -74,6 +74,9 @@
 		FF9964D5122AF2810001CA66 /* NSDate+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9964D3122AF2810001CA66 /* NSDate+Boost.h */; };
 		FF9964D6122AF2810001CA66 /* NSDate+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9964D4122AF2810001CA66 /* NSDate+Boost.m */; };
 		FF9964EB122AF2FD0001CA66 /* DateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9964E9122AF2FD0001CA66 /* DateTest.m */; };
+		FF996781122D64100001CA66 /* NSNumber+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF99677F122D64100001CA66 /* NSNumber+Boost.h */; };
+		FF996782122D64100001CA66 /* NSNumber+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF996780122D64100001CA66 /* NSNumber+Boost.m */; };
+		FF9967CB122D6D7D0001CA66 /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9967CA122D6D7D0001CA66 /* NumberTest.m */; };
 		FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5A7121AC6C4002F8A31 /* SortTest.m */; };
 		FFCC37C71216D25100AAF3BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */; };
 		FFCC37C81216D25100AAF3BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -177,6 +180,9 @@
 		FF9964D3122AF2810001CA66 /* NSDate+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Boost.h"; sourceTree = "<group>"; };
 		FF9964D4122AF2810001CA66 /* NSDate+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Boost.m"; sourceTree = "<group>"; };
 		FF9964E9122AF2FD0001CA66 /* DateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTest.m; sourceTree = "<group>"; };
+		FF99677F122D64100001CA66 /* NSNumber+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Boost.h"; sourceTree = "<group>"; };
+		FF996780122D64100001CA66 /* NSNumber+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Boost.m"; sourceTree = "<group>"; };
+		FF9967CA122D6D7D0001CA66 /* NumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberTest.m; sourceTree = "<group>"; };
 		FF9EA5A7121AC6C4002F8A31 /* SortTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortTest.m; sourceTree = "<group>"; };
 		FFCC37691216D06D00AAF3BF /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCC376B1216D06D00AAF3BF /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -351,6 +357,7 @@
 				FF69035A121986FE00EC7D37 /* StringTest.m */,
 				FF254A01122152E7007E052F /* ColorTest.m */,
 				FF9964E9122AF2FD0001CA66 /* DateTest.m */,
+				FF9967CA122D6D7D0001CA66 /* NumberTest.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -416,6 +423,8 @@
 				FF4484F91225ABA10066E827 /* UIImage+Boost.m */,
 				FF4484FA1225ABA10066E827 /* UIView+Boost.h */,
 				FF4484FB1225ABA10066E827 /* UIView+Boost.m */,
+				FF99677F122D64100001CA66 /* NSNumber+Boost.h */,
+				FF996780122D64100001CA66 /* NSNumber+Boost.m */,
 				FF9964D3122AF2810001CA66 /* NSDate+Boost.h */,
 				FF9964D4122AF2810001CA66 /* NSDate+Boost.m */,
 			);
@@ -529,6 +538,7 @@
 				FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */,
 				F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */,
 				FF9964D5122AF2810001CA66 /* NSDate+Boost.h in Headers */,
+				FF996781122D64100001CA66 /* NSNumber+Boost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +634,8 @@
 				F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */,
 				FF9964D6122AF2810001CA66 /* NSDate+Boost.m in Sources */,
 				FF9964EB122AF2FD0001CA66 /* DateTest.m in Sources */,
+				FF996782122D64100001CA66 /* NSNumber+Boost.m in Sources */,
+				FF9967CB122D6D7D0001CA66 /* NumberTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

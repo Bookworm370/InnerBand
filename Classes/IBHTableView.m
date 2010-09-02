@@ -45,8 +45,8 @@
 -(void) setContentOffset:(CGPoint)contentOffset {
 	super.contentOffset = contentOffset;
 	CGFloat xpos = contentOffset.x;
-	int newLeftIndex;
-	int newRightIndex;
+	int newLeftIndex = 0;
+	int newRightIndex = 0;
 	if(!_variableWidths){
 		if (xpos == 0.0) {
 			newLeftIndex = 0;

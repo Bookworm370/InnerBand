@@ -84,20 +84,10 @@ static NSString* kStringBoundary = @"3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f";
   return self;
 }
 
-static const void* IBRetainNoOp(CFAllocatorRef allocator, const void *value) { return value; }
-static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
-
-NSMutableArray* IBCreateNonRetainingArray() {
-	CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
-	callbacks.retain = IBRetainNoOp;
-	callbacks.release = IBReleaseNoOp;
-	return (NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks);
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
   if (self = [super init]) {
-    _delegates = IBCreateNonRetainingArray();
+    _delegates = [[NSMutableArray arrayUnretaining] retain];
     _cachePolicy = IBURLRequestCachePolicyDefault;
     _cacheExpirationAge = IB_DEFAULT_CACHE_EXPIRATION_AGE;
     _isLoading = NO;

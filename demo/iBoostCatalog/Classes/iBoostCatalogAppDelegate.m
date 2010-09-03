@@ -7,7 +7,7 @@
 //
 
 #import "iBoostCatalogAppDelegate.h"
-#import "IBImageViewDemo.h"
+#import "FeatureSelectorVC.h"
 
 @implementation iBoostCatalogAppDelegate
 
@@ -18,9 +18,10 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-	IBImageViewDemo *demo = [[IBImageViewDemo alloc] init];
-	[window addSubview:demo.view];
+    featureListController = [[FeatureSelectorVC alloc] initWithStyle:UITableViewStylePlain];
+	navController = [[UINavigationController alloc] initWithRootViewController:featureListController];
+
+	[window addSubview:navController.view];
     [window makeKeyAndVisible];
 	
 	return YES;
@@ -76,6 +77,8 @@
 
 
 - (void)dealloc {
+	[featureListController release];
+	[navController release];
     [window release];
     [super dealloc];
 }

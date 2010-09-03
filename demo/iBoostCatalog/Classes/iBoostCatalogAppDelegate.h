@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class FeatureSelectorVC;
+
 @interface iBoostCatalogAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+    FeatureSelectorVC *featureListController;
+	UINavigationController *navController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

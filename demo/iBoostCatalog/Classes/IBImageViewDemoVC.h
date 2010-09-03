@@ -1,5 +1,5 @@
 //
-//  IBImageViewDemo.h
+//  IBImageViewDemoVC.h
 //  iBoostCatalog
 //
 //  Created by John Blanco on 8/21/10.
@@ -11,9 +11,7 @@
 #import "IBHTMLLabel.h"
 
 
-@interface IBImageViewDemo : UIViewController {
-	IBImageView *_imageView;
-	IBHTMLLabel *_htmlLabel;
+@interface IBImageViewDemoVC : UIViewController {
 }
 
 @end

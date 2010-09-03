@@ -28,6 +28,31 @@
 		FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */; };
 		FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F612275BEB00EBFE75 /* Widget.m */; };
 		FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F812275BEB00EBFE75 /* MessageTests.m */; };
+		FF0C4CA512313ED900C3960E /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9967CA122D6D7D0001CA66 /* NumberTest.m */; };
+		FF0C4CA612313EDD00C3960E /* DateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9964E9122AF2FD0001CA66 /* DateTest.m */; };
+		FF0C4D2D1231489100C3960E /* NSArray+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484EE1225ABA10066E827 /* NSArray+Boost.h */; };
+		FF0C4D2E1231489100C3960E /* NSArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484EF1225ABA10066E827 /* NSArray+Boost.m */; };
+		FF0C4D2F1231489700C3960E /* DispatchMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0AB78A1227594600EBFE75 /* DispatchMessage.h */; };
+		FF0C4D301231489800C3960E /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78B1227594600EBFE75 /* DispatchMessage.m */; };
+		FF0C4D311231489800C3960E /* HTTPGetRequestMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0AB7881227594600EBFE75 /* HTTPGetRequestMessage.h */; };
+		FF0C4D321231489900C3960E /* HTTPGetRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7891227594600EBFE75 /* HTTPGetRequestMessage.m */; };
+		FF0C4D331231489E00C3960E /* Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6902EC12197F0700EC7D37 /* Macros.h */; };
+		FF0C4D341231489E00C3960E /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0AB7861227594600EBFE75 /* MessageCenter.h */; };
+		FF0C4D351231489F00C3960E /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7871227594600EBFE75 /* MessageCenter.m */; };
+		FF0C4D36123148A000C3960E /* MessageProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0AB78C1227594600EBFE75 /* MessageProcessor.h */; };
+		FF0C4D37123148A000C3960E /* MessageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78D1227594600EBFE75 /* MessageProcessor.m */; };
+		FF0C4D38123148A300C3960E /* NSMutableArray+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484F01225ABA10066E827 /* NSMutableArray+Boost.h */; };
+		FF0C4D39123148A400C3960E /* NSMutableArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F11225ABA10066E827 /* NSMutableArray+Boost.m */; };
+		FF0C4D3A123148A500C3960E /* NSObject+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484F21225ABA10066E827 /* NSObject+Boost.h */; };
+		FF0C4D3B123148A600C3960E /* NSObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F31225ABA10066E827 /* NSObject+Boost.m */; };
+		FF0C4D3C123148A600C3960E /* NSString+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484F41225ABA10066E827 /* NSString+Boost.h */; };
+		FF0C4D3D123148A700C3960E /* NSString+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F51225ABA10066E827 /* NSString+Boost.m */; };
+		FF0C4D3E123148A800C3960E /* SequencedMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0AB78E1227594600EBFE75 /* SequencedMessage.h */; };
+		FF0C4D3F123148A900C3960E /* SequencedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78F1227594600EBFE75 /* SequencedMessage.m */; };
+		FF0C4D40123148AC00C3960E /* UIImage+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484F81225ABA10066E827 /* UIImage+Boost.h */; };
+		FF0C4D41123148AC00C3960E /* UIView+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4484FA1225ABA10066E827 /* UIView+Boost.h */; };
+		FF0C4D42123148AD00C3960E /* UIImage+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F91225ABA10066E827 /* UIImage+Boost.m */; };
+		FF0C4D43123148AE00C3960E /* UIView+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484FB1225ABA10066E827 /* UIView+Boost.m */; };
 		FF2549751220DB90007E052F /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2549731220DB90007E052F /* IBHTMLLabel.h */; };
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
@@ -73,10 +98,8 @@
 		FF6903711219899100EC7D37 /* StringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69035A121986FE00EC7D37 /* StringTest.m */; };
 		FF9964D5122AF2810001CA66 /* NSDate+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9964D3122AF2810001CA66 /* NSDate+Boost.h */; };
 		FF9964D6122AF2810001CA66 /* NSDate+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9964D4122AF2810001CA66 /* NSDate+Boost.m */; };
-		FF9964EB122AF2FD0001CA66 /* DateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9964E9122AF2FD0001CA66 /* DateTest.m */; };
 		FF996781122D64100001CA66 /* NSNumber+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF99677F122D64100001CA66 /* NSNumber+Boost.h */; };
 		FF996782122D64100001CA66 /* NSNumber+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF996780122D64100001CA66 /* NSNumber+Boost.m */; };
-		FF9967CB122D6D7D0001CA66 /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9967CA122D6D7D0001CA66 /* NumberTest.m */; };
 		FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5A7121AC6C4002F8A31 /* SortTest.m */; };
 		FFCC37C71216D25100AAF3BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */; };
 		FFCC37C81216D25100AAF3BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -539,6 +562,18 @@
 				F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */,
 				FF9964D5122AF2810001CA66 /* NSDate+Boost.h in Headers */,
 				FF996781122D64100001CA66 /* NSNumber+Boost.h in Headers */,
+				FF0C4D2D1231489100C3960E /* NSArray+Boost.h in Headers */,
+				FF0C4D2F1231489700C3960E /* DispatchMessage.h in Headers */,
+				FF0C4D311231489800C3960E /* HTTPGetRequestMessage.h in Headers */,
+				FF0C4D331231489E00C3960E /* Macros.h in Headers */,
+				FF0C4D341231489E00C3960E /* MessageCenter.h in Headers */,
+				FF0C4D36123148A000C3960E /* MessageProcessor.h in Headers */,
+				FF0C4D38123148A300C3960E /* NSMutableArray+Boost.h in Headers */,
+				FF0C4D3A123148A500C3960E /* NSObject+Boost.h in Headers */,
+				FF0C4D3C123148A600C3960E /* NSString+Boost.h in Headers */,
+				FF0C4D3E123148A800C3960E /* SequencedMessage.h in Headers */,
+				FF0C4D40123148AC00C3960E /* UIImage+Boost.h in Headers */,
+				FF0C4D41123148AC00C3960E /* UIView+Boost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,9 +668,18 @@
 				FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */,
 				F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */,
 				FF9964D6122AF2810001CA66 /* NSDate+Boost.m in Sources */,
-				FF9964EB122AF2FD0001CA66 /* DateTest.m in Sources */,
 				FF996782122D64100001CA66 /* NSNumber+Boost.m in Sources */,
-				FF9967CB122D6D7D0001CA66 /* NumberTest.m in Sources */,
+				FF0C4D2E1231489100C3960E /* NSArray+Boost.m in Sources */,
+				FF0C4D301231489800C3960E /* DispatchMessage.m in Sources */,
+				FF0C4D321231489900C3960E /* HTTPGetRequestMessage.m in Sources */,
+				FF0C4D351231489F00C3960E /* MessageCenter.m in Sources */,
+				FF0C4D37123148A000C3960E /* MessageProcessor.m in Sources */,
+				FF0C4D39123148A400C3960E /* NSMutableArray+Boost.m in Sources */,
+				FF0C4D3B123148A600C3960E /* NSObject+Boost.m in Sources */,
+				FF0C4D3D123148A700C3960E /* NSString+Boost.m in Sources */,
+				FF0C4D3F123148A900C3960E /* SequencedMessage.m in Sources */,
+				FF0C4D42123148AD00C3960E /* UIImage+Boost.m in Sources */,
+				FF0C4D43123148AE00C3960E /* UIView+Boost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +710,8 @@
 				FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */,
 				FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */,
 				FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */,
+				FF0C4CA512313ED900C3960E /* NumberTest.m in Sources */,
+				FF0C4CA612313EDD00C3960E /* DateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@
 		FF3934B312208ECE0048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3934B212208ECE0048310B /* QuartzCore.framework */; };
 		FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */; };
 		FF7AB15A12320B4D0000669C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB15912320B4D0000669C /* CoreText.framework */; };
+		FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		FF7AB14F123205600000669C /* IBCoreTextLabelDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabelDemoVC.h; sourceTree = "<group>"; };
 		FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCoreTextLabelDemoVC.m; sourceTree = "<group>"; };
 		FF7AB15912320B4D0000669C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FFBDCB1B12528F7800C6AD94 /* OrientationDetectionDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationDetectionDemoVC.h; sourceTree = "<group>"; };
+		FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationDetectionDemoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				FF0C4CC312313F8600C3960E /* Styled Text */,
 				FF0C4CCD1231414E00C3960E /* Image View */,
 				FF7AB14E1232054A0000669C /* Core Text */,
+				FFBDCB1A12528F6100C6AD94 /* Orientation Detection */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -213,6 +217,15 @@
 			name = "Core Text";
 			sourceTree = "<group>";
 		};
+		FFBDCB1A12528F6100C6AD94 /* Orientation Detection */ = {
+			isa = PBXGroup;
+			children = (
+				FFBDCB1B12528F7800C6AD94 /* OrientationDetectionDemoVC.h */,
+				FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */,
+			);
+			name = "Orientation Detection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +317,7 @@
 				FF0C4CE7123145C000C3960E /* IBHTMLLabelDemoVC.m in Sources */,
 				FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */,
 				FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */,
+				FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

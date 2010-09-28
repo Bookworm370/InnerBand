@@ -52,7 +52,6 @@
 #define RECT_INSET_BY(rect, inset) CGRectMake(rect.origin.x + (inset), rect.origin.y + (inset), rect.size.width - (inset) * 2, rect.size.height - (inset) * 2)
 #define RECT_DUPLICATED_AND_OFFSET_FROM_BY_X(rect, offset) CGRectMake(rect.origin.x + rect.size.width + (offset), rect.origin.y, rect.size.width, rect.size.height)
 #define RECT_DUPLICATED_AND_OFFSET_FROM_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
-
 #define RECT_OFFSET_BY_X_Y(rect, x, y) CGRectMake(rect.origin.x + (x), rect.origin.y + (y), rect.size.width, rect.size.height)
 
 // SELECTORS
@@ -66,13 +65,15 @@
 
 // SCREEN/DISPLAY
 
-/*
-#define IS_ORIENTATION_PORTRAIT
-#define IS_ORIENTATION_LANDSCAPE
-#define IS_ORIENTATION_LANDSCAPE_LEFT
-#define IS_ORIENTATION_LANDSCAPE_RIGHT
-#define IS_ORIENTATION_PORTRAIT_UPSIDE_DOWN
+#define IS_DEVICE_ORIENTATION_PORTRAIT() ([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+#define IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN() ([UIDevice currentDevice].orientation == UIDeviceOrientationPortraitUpsideDown)
+#define IS_DEVICE_ORIENTATION_FACE_UP() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceUp)
+#define IS_DEVICE_ORIENTATION_FACE_DOWN() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceDown)
 
+/*
 #define HARDWARE_SCREEN_WIDTH
 #define HARDWARE_SCREEN_HEIGHT
 #define ORIENTATION_SCREEN_WIDTH

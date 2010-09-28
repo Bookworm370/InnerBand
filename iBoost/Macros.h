@@ -36,7 +36,7 @@
 // MEMORY
 
 #define RELEASE_AND_NIL(obj) ([obj release], obj = nil)
-#define RELEASE_AND_ASSIGN_TO(obj, expr) ([(expr) retain], [obj release], obj = (expr))
+#define RETAIN_RELEASE_AND_ASSIGN_TO(obj, expr) ([(expr) retain], [obj release], obj = (expr))
 
 // BOUNDS
 

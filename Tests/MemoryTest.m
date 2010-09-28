@@ -64,14 +64,14 @@
 	oldPtr = ptr = [[[NSDate alloc] init] retain];
 	newPtr = [NSDate date];
 	GHAssertTrue([oldPtr retainCount] == 2, nil);
-	ptr = RELEASE_AND_ASSIGN_TO(ptr, newPtr);
+	ptr = RETAIN_RELEASE_AND_ASSIGN_TO(ptr, newPtr);
 	GHAssertEquals(ptr, newPtr, nil);
 	GHAssertTrue([oldPtr retainCount] == 1, nil);
 
 	oldPtr = ptr = [[[NSDate alloc] init] retain];
 	newPtr = nil;
 	GHAssertTrue([oldPtr retainCount] == 2, nil);
-	ptr = RELEASE_AND_ASSIGN_TO(ptr, newPtr);
+	ptr = RETAIN_RELEASE_AND_ASSIGN_TO(ptr, newPtr);
 	GHAssertNil(ptr, nil);
 	GHAssertTrue([oldPtr retainCount] == 1, nil);
 }

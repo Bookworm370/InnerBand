@@ -73,12 +73,9 @@
 #define IS_DEVICE_ORIENTATION_FACE_UP() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceUp)
 #define IS_DEVICE_ORIENTATION_FACE_DOWN() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceDown)
 
-/*
-#define HARDWARE_SCREEN_WIDTH
-#define HARDWARE_SCREEN_HEIGHT
-#define ORIENTATION_SCREEN_WIDTH
-#define ORIENTATION_SCREEN_HEIGHT
-*/
+#define HARDWARE_SCREEN_WIDTH() ([UIScreen mainScreen].bounds.size.width)
+#define HARDWARE_SCREEN_HEIGHT() ([UIScreen mainScreen].bounds.size.height)
+
 // DUMPS
 #define RECT_TO_STR(r) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f W=%0.1f H=%0.1f", (r).origin.x, (r).origin.y, (r).size.width, (r).size.height])
 #define POINT_TO_STR(p) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f", (p).x, (p).y])

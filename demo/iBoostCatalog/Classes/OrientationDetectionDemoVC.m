@@ -9,6 +9,12 @@
 #import "OrientationDetectionDemoVC.h"
 #import "Macros.h"
 
+@interface OrientationDetectionDemoVC (PRIVATE)
+
+- (void)updateOrientationString;
+
+@end
+
 @implementation OrientationDetectionDemoVC
 
 - (void)loadView {
@@ -18,6 +24,7 @@
 	_label.textColor = [UIColor blackColor];
 	_label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	_label.textAlignment = UITextAlignmentCenter;
+	_label.numberOfLines = 2;
 	[self.view addSubview:_label];	
 
 	[self updateOrientationString];	
@@ -49,17 +56,22 @@
 #pragma mark -
 
 - (void)updateOrientationString {
+	NSString *orientationStr = nil;
+	NSString *screenSizeStr = [NSString stringWithFormat:@"W=%0.2f, H=%0.2f", HARDWARE_SCREEN_WIDTH(), HARDWARE_SCREEN_HEIGHT()];
+	
 	if (IS_DEVICE_ORIENTATION_PORTRAIT()) {
-		_label.text = @"Device orientation is Portrait.";
+		orientationStr = @"Device orientation is Portrait.";
 	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT()) {
-		_label.text = @"Device orientation is Landscape (Left).";
+		orientationStr = @"Device orientation is Landscape (Left).";
 	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT()) {
-		_label.text = @"Device orientation is Landscape (Right).";
+		orientationStr = @"Device orientation is Landscape (Right).";
 	} else if (IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN()) {
-		_label.text = @"Device orientation is Portrait (UD).";		
+		orientationStr = @"Device orientation is Portrait (UD).";		
 	} else {
-		_label.text = @"Device orientation is known.";
+		orientationStr = @"Device orientation is known.";
 	}
+	
+	_label.text = [NSString stringWithFormat:@"%@\n%@", orientationStr, screenSizeStr];
 }
 
 @end

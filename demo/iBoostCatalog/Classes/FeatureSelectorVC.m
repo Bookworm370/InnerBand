@@ -11,6 +11,7 @@
 #import "IBImageViewDemoVC.h"
 #import "IBButtonDemoVC.h"
 #import "IBHTMLLabelDemoVC.h"
+#import "IBCoreTextLabelDemoVC.h"
 
 // feature labels
 static NSArray *gFeatureLabels = nil;
@@ -33,7 +34,7 @@ static NSArray *gFeatureLabels = nil;
 
 	// initialize labels
 	if (!gFeatureLabels) {
-		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"Styled Text", nil), NSLocalizedString(@"URL-Loadable Image View", nil), nil];
+		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"HTML Styled Text Label", nil), NSLocalizedString(@"URL-Loadable Image View", nil), NSLocalizedString(@"Core Text Styled Label", nil), nil];
 	}
 }
 
@@ -113,6 +114,11 @@ static NSArray *gFeatureLabels = nil;
 
 		case 2: {
 			demo = [[[IBImageViewDemoVC alloc] init] autorelease];
+			break;
+		}
+
+		case 3: {
+			demo = [[[IBCoreTextLabelDemoVC alloc] init] autorelease];
 			break;
 		}
 	}

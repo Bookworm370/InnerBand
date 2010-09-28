@@ -20,11 +20,6 @@
 		F10062091225B62800F6BE54 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062071225B62800F6BE54 /* ViewUtil.m */; };
 		F10062971225C6A200F6BE54 /* UIColor+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = F10062951225C6A200F6BE54 /* UIColor+Boost.h */; };
 		F10062981225C6A200F6BE54 /* UIColor+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = F10062961225C6A200F6BE54 /* UIColor+Boost.m */; };
-		FF0AB7901227594600EBFE75 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7871227594600EBFE75 /* MessageCenter.m */; };
-		FF0AB7911227594600EBFE75 /* HTTPGetRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7891227594600EBFE75 /* HTTPGetRequestMessage.m */; };
-		FF0AB7921227594600EBFE75 /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78B1227594600EBFE75 /* DispatchMessage.m */; };
-		FF0AB7931227594600EBFE75 /* MessageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78D1227594600EBFE75 /* MessageProcessor.m */; };
-		FF0AB7941227594600EBFE75 /* SequencedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB78F1227594600EBFE75 /* SequencedMessage.m */; };
 		FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */; };
 		FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F612275BEB00EBFE75 /* Widget.m */; };
 		FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F812275BEB00EBFE75 /* MessageTests.m */; };
@@ -57,7 +52,6 @@
 		FF2549761220DB90007E052F /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2549741220DB90007E052F /* IBHTMLLabel.m */; };
 		FF254A0312215343007E052F /* ColorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF254A01122152E7007E052F /* ColorTest.m */; };
 		FF254A0412215343007E052F /* ArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3934F4122091510048310B /* ArrayTest.m */; };
-		FF393446122086190048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF393445122086190048310B /* QuartzCore.framework */; };
 		FF3935CD1220AA260048310B /* iBoost_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = FF3935CC1220AA260048310B /* iBoost_Prefix.pch */; };
 		FF3936001220B16B0048310B /* IBGlobalNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */; };
 		FF3936011220B16B0048310B /* IBGlobalNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */; };
@@ -82,16 +76,9 @@
 		FF3936141220B16B0048310B /* IBUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935FE1220B16B0048310B /* IBUserInfo.h */; };
 		FF3936151220B16B0048310B /* IBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3935FF1220B16B0048310B /* IBUserInfo.m */; };
 		FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484E31225A5630066E827 /* CoreDataTest.m */; };
-		FF4484FC1225ABA10066E827 /* NSArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484EF1225ABA10066E827 /* NSArray+Boost.m */; };
-		FF4484FD1225ABA10066E827 /* NSMutableArray+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F11225ABA10066E827 /* NSMutableArray+Boost.m */; };
-		FF4484FE1225ABA10066E827 /* NSObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F31225ABA10066E827 /* NSObject+Boost.m */; };
-		FF4484FF1225ABA10066E827 /* NSString+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F51225ABA10066E827 /* NSString+Boost.m */; };
-		FF4485011225ABA10066E827 /* UIImage+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484F91225ABA10066E827 /* UIImage+Boost.m */; };
-		FF4485021225ABA10066E827 /* UIView+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484FB1225ABA10066E827 /* UIView+Boost.m */; };
 		FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FF4485C31225B1B70066E827 /* TestableDataModel.xcdatamodel */; };
 		FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4486491225B63A0066E827 /* CoreDataStore.h */; };
 		FF44864C1225B63A0066E827 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF44864A1225B63A0066E827 /* CoreDataStore.m */; };
-		FF44866E1225B8BB0066E827 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4486681225B8B20066E827 /* CoreData.framework */; };
 		FF6902D212197E6700EC7D37 /* MacroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6902D112197E6700EC7D37 /* MacroTest.m */; };
 		FF6902EF12197F4400EC7D37 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6902EE12197F4400EC7D37 /* Constants.h */; };
 		FF6903701219898A00EC7D37 /* MemoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF69036F1219898A00EC7D37 /* MemoryTest.m */; };
@@ -101,12 +88,17 @@
 		FF996781122D64100001CA66 /* NSNumber+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = FF99677F122D64100001CA66 /* NSNumber+Boost.h */; };
 		FF996782122D64100001CA66 /* NSNumber+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = FF996780122D64100001CA66 /* NSNumber+Boost.m */; };
 		FF9EA5A8121AC6C4002F8A31 /* SortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9EA5A7121AC6C4002F8A31 /* SortTest.m */; };
+		FFBDC97A125251A400C6AD94 /* libGHUnitIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBDC979125251A400C6AD94 /* libGHUnitIOS.a */; };
+		FFBDCAC81252873600C6AD94 /* IBCoreTextLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBDCAC61252873600C6AD94 /* IBCoreTextLabel.h */; };
+		FFBDCAC91252873600C6AD94 /* IBCoreTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDCAC71252873600C6AD94 /* IBCoreTextLabel.m */; };
+		FFBDCAE8125287E100C6AD94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBDCAE7125287E100C6AD94 /* CoreData.framework */; };
+		FFBDCAEA125287E100C6AD94 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBDCAE9125287E100C6AD94 /* CoreText.framework */; };
+		FFBDCAEC125287E100C6AD94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBDCAEB125287E100C6AD94 /* QuartzCore.framework */; };
 		FFCC37C71216D25100AAF3BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */; };
 		FFCC37C81216D25100AAF3BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		FFCC37CA1216D25100AAF3BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCC37C91216D25100AAF3BF /* UIKit.framework */; };
 		FFCC37DF1216D4E000AAF3BF /* libiBoost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libiBoost.a */; };
 		FFF569361216E4A3007F800F /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF569321216E4A3007F800F /* GHUnitIPhoneTestMain.m */; };
-		FFF569371216E4A3007F800F /* libGHUnitIPhone4_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF569331216E4A3007F800F /* libGHUnitIPhone4_0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +199,12 @@
 		FF996780122D64100001CA66 /* NSNumber+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Boost.m"; sourceTree = "<group>"; };
 		FF9967CA122D6D7D0001CA66 /* NumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberTest.m; sourceTree = "<group>"; };
 		FF9EA5A7121AC6C4002F8A31 /* SortTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortTest.m; sourceTree = "<group>"; };
+		FFBDC979125251A400C6AD94 /* libGHUnitIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIOS.a; sourceTree = "<group>"; };
+		FFBDCAC61252873600C6AD94 /* IBCoreTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabel.h; sourceTree = "<group>"; };
+		FFBDCAC71252873600C6AD94 /* IBCoreTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCoreTextLabel.m; sourceTree = "<group>"; };
+		FFBDCAE7125287E100C6AD94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FFBDCAE9125287E100C6AD94 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FFBDCAEB125287E100C6AD94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FFCC37691216D06D00AAF3BF /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCC376B1216D06D00AAF3BF /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		FFCC37C61216D25100AAF3BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -225,7 +223,6 @@
 		FFF569301216E4A3007F800F /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnit.h; sourceTree = "<group>"; };
 		FFF569311216E4A3007F800F /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnitIPhoneAppDelegate.h; sourceTree = "<group>"; };
 		FFF569321216E4A3007F800F /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIPhoneTestMain.m; sourceTree = "<group>"; };
-		FFF569331216E4A3007F800F /* libGHUnitIPhone4_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIPhone4_0.a; sourceTree = "<group>"; };
 		FFF569341216E4A3007F800F /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+GHTestFailureExceptions.h"; sourceTree = "<group>"; };
 		FFF569351216E4A3007F800F /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+GHValueFormatter.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,9 +244,10 @@
 				FFCC37C81216D25100AAF3BF /* Foundation.framework in Frameworks */,
 				FFCC37CA1216D25100AAF3BF /* UIKit.framework in Frameworks */,
 				FFCC37DF1216D4E000AAF3BF /* libiBoost.a in Frameworks */,
-				FFF569371216E4A3007F800F /* libGHUnitIPhone4_0.a in Frameworks */,
-				FF393446122086190048310B /* QuartzCore.framework in Frameworks */,
-				FF44866E1225B8BB0066E827 /* CoreData.framework in Frameworks */,
+				FFBDC97A125251A400C6AD94 /* libGHUnitIOS.a in Frameworks */,
+				FFBDCAE8125287E100C6AD94 /* CoreData.framework in Frameworks */,
+				FFBDCAEA125287E100C6AD94 /* CoreText.framework in Frameworks */,
+				FFBDCAEC125287E100C6AD94 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +274,9 @@
 				034768DFFF38A50411DB9C8B /* Products */,
 				FF393445122086190048310B /* QuartzCore.framework */,
 				FF4486681225B8B20066E827 /* CoreData.framework */,
+				FFBDCAE7125287E100C6AD94 /* CoreData.framework */,
+				FFBDCAE9125287E100C6AD94 /* CoreText.framework */,
+				FFBDCAEB125287E100C6AD94 /* QuartzCore.framework */,
 			);
 			name = ROIDS;
 			sourceTree = "<group>";
@@ -304,6 +305,8 @@
 			children = (
 				FF2549731220DB90007E052F /* IBHTMLLabel.h */,
 				FF2549741220DB90007E052F /* IBHTMLLabel.m */,
+				FFBDCAC61252873600C6AD94 /* IBCoreTextLabel.h */,
+				FFBDCAC71252873600C6AD94 /* IBCoreTextLabel.m */,
 				FF3935EE1220B16B0048310B /* IBImageView.h */,
 				FF3935EF1220B16B0048310B /* IBImageView.m */,
 				F10061F91225B60E00F6BE54 /* IBHTableView.h */,
@@ -526,7 +529,7 @@
 				FFF569321216E4A3007F800F /* GHUnitIPhoneTestMain.m */,
 				FFF569341216E4A3007F800F /* NSException+GHTestFailureExceptions.h */,
 				FFF569351216E4A3007F800F /* NSValue+GHValueFormatter.h */,
-				FFF569331216E4A3007F800F /* libGHUnitIPhone4_0.a */,
+				FFBDC979125251A400C6AD94 /* libGHUnitIOS.a */,
 			);
 			path = "libGHUnitIPhone4_0-0.4.22";
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				FF0C4D3E123148A800C3960E /* SequencedMessage.h in Headers */,
 				FF0C4D40123148AC00C3960E /* UIImage+Boost.h in Headers */,
 				FF0C4D41123148AC00C3960E /* UIView+Boost.h in Headers */,
+				FFBDCAC81252873600C6AD94 /* IBCoreTextLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +626,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "iBoost" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* ROIDS */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -680,6 +691,7 @@
 				FF0C4D3F123148A900C3960E /* SequencedMessage.m in Sources */,
 				FF0C4D42123148AD00C3960E /* UIImage+Boost.m in Sources */,
 				FF0C4D43123148AE00C3960E /* UIView+Boost.m in Sources */,
+				FFBDCAC91252873600C6AD94 /* IBCoreTextLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,18 +707,7 @@
 				FF254A0312215343007E052F /* ColorTest.m in Sources */,
 				FF254A0412215343007E052F /* ArrayTest.m in Sources */,
 				FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */,
-				FF4484FC1225ABA10066E827 /* NSArray+Boost.m in Sources */,
-				FF4484FD1225ABA10066E827 /* NSMutableArray+Boost.m in Sources */,
-				FF4484FE1225ABA10066E827 /* NSObject+Boost.m in Sources */,
-				FF4484FF1225ABA10066E827 /* NSString+Boost.m in Sources */,
-				FF4485011225ABA10066E827 /* UIImage+Boost.m in Sources */,
-				FF4485021225ABA10066E827 /* UIView+Boost.m in Sources */,
 				FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */,
-				FF0AB7901227594600EBFE75 /* MessageCenter.m in Sources */,
-				FF0AB7911227594600EBFE75 /* HTTPGetRequestMessage.m in Sources */,
-				FF0AB7921227594600EBFE75 /* DispatchMessage.m in Sources */,
-				FF0AB7931227594600EBFE75 /* MessageProcessor.m in Sources */,
-				FF0AB7941227594600EBFE75 /* SequencedMessage.m in Sources */,
 				FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */,
 				FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */,
 				FF0AB7FC12275BEB00EBFE75 /* MessageTests.m in Sources */,
@@ -742,6 +743,7 @@
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = iBoost;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -816,7 +818,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Tests;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};

@@ -20,6 +20,8 @@
 		FF393473122087C20048310B /* IBImageViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF393472122087C20048310B /* IBImageViewDemoVC.m */; };
 		FF39348712208A400048310B /* libiBoost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39346B1220879B0048310B /* libiBoost.a */; };
 		FF3934B312208ECE0048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3934B212208ECE0048310B /* QuartzCore.framework */; };
+		FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */; };
+		FF7AB15A12320B4D0000669C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB15912320B4D0000669C /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		FF393471122087C20048310B /* IBImageViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageViewDemoVC.h; sourceTree = "<group>"; };
 		FF393472122087C20048310B /* IBImageViewDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageViewDemoVC.m; sourceTree = "<group>"; };
 		FF3934B212208ECE0048310B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FF7AB14F123205600000669C /* IBCoreTextLabelDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabelDemoVC.h; sourceTree = "<group>"; };
+		FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCoreTextLabelDemoVC.m; sourceTree = "<group>"; };
+		FF7AB15912320B4D0000669C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 				FF39348712208A400048310B /* libiBoost.a in Frameworks */,
 				FF3934B312208ECE0048310B /* QuartzCore.framework in Frameworks */,
 				FF0C4C9B12313EA700C3960E /* CoreData.framework in Frameworks */,
+				FF7AB15A12320B4D0000669C /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +99,10 @@
 				1D3623240D0F684500981E51 /* iBoostCatalogAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iBoostCatalogAppDelegate.m */,
 				FF0C4CBC12313F3E00C3960E /* Feature Selector */,
-				FF0C4CCD1231414E00C3960E /* Image View */,
 				FF0C4CC412313F9000C3960E /* Buttons */,
 				FF0C4CC312313F8600C3960E /* Styled Text */,
+				FF0C4CCD1231414E00C3960E /* Image View */,
+				FF7AB14E1232054A0000669C /* Core Text */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				FF3934B212208ECE0048310B /* QuartzCore.framework */,
 				FF0C4C9A12313EA700C3960E /* CoreData.framework */,
+				FF7AB15912320B4D0000669C /* CoreText.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -196,6 +204,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FF7AB14E1232054A0000669C /* Core Text */ = {
+			isa = PBXGroup;
+			children = (
+				FF7AB14F123205600000669C /* IBCoreTextLabelDemoVC.h */,
+				FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */,
+			);
+			name = "Core Text";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,7 +241,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iBoostCatalog" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
@@ -279,6 +303,7 @@
 				FF0C4CC212313F7500C3960E /* FeatureSelectorVC.m in Sources */,
 				FF0C4CE7123145C000C3960E /* IBHTMLLabelDemoVC.m in Sources */,
 				FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */,
+				FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +333,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = iBoostCatalog;
+				SDKROOT = iphoneos4.1;
 				USER_HEADER_SEARCH_PATHS = ../../iBoost;
 			};
 			name = Debug;
@@ -325,6 +351,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = iBoostCatalog;
+				SDKROOT = iphoneos4.1;
 				USER_HEADER_SEARCH_PATHS = ../../iBoost;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -162,6 +162,11 @@ NSString *getSourceIdentifier(NSObject *obj) {
 	[MessageCenter sendMessageNamed:name withUserInfo:userInfo forSource:nil];
 }
 
++ (void)sendGlobalMessageNamed:(NSString *)name withUserInfoKey:(NSObject *)key andValue:(NSObject *)value {
+	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:value forKey:key];
+	[MessageCenter sendGlobalMessageNamed:name withUserInfo:userInfo];
+}
+
 + (void)sendGlobalMessage:(DispatchMessage *)message {
 	[MessageCenter sendMessage:message forSource:nil];
 }
@@ -178,6 +183,11 @@ NSString *getSourceIdentifier(NSObject *obj) {
 	
 	// dispatch
 	[MessageCenter sendMessage:message forSource:source];
+}
+
++ (void)sendMessageNamed:(NSString *)name withUserInfoKey:(NSObject *)key andValue:(NSObject *)value forSource:(NSObject *)source {
+	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:value forKey:key];
+	[MessageCenter sendMessageNamed:name withUserInfo:userInfo forSource:source];
 }
 
 + (void)sendMessage:(DispatchMessage *)message forSource:(NSObject *)source {

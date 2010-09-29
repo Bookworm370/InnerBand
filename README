@@ -172,7 +172,7 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 
 2. Create a new XCode iPhone project if you haven't already.
 
-3. From the iBoost directory in Terminal, change directory to minifier/ and run ./minify.py.
+3. From the iBoost parent directory in Terminal, change directory to iBoost/ and run ../minifier/minify.py.
 
 	(NOTE: Python 3 is required. If it doesn't work on your system, try changing the she-bang.)
 	

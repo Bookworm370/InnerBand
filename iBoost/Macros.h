@@ -19,6 +19,7 @@
 
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <CoreMotion/CoreMotion.h>
+#import "Constants.h"
 
 // TYPES
 
@@ -84,9 +85,21 @@
 #define POINT_TO_STR(p) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f", (p).x, (p).y])
 #define SIZE_TO_STR(s) ([NSString stringWithFormat:@"W=%0.1f H=%0.1f", (s).width, (s).height])
 
-// HARDWARE/OS SUPPORT
+// HARDWARE/DEVICE INFO
 
 #define DEVICE_UDID ([UIDevice currentDevice].uniqueIdentifier)
+
+#define IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+
+// HARDWARE/OS SUPPORT
+
+#define IS_RUNNING_OS_4_0 (ABS(kCFCoreFoundationVersionNumber_iPhoneOS_4_0 - kCFCoreFoundationVersionNumber) < 0.01)
+#define IS_RUNNING_OS_4_1 (ABS(kCFCoreFoundationVersionNumber_iPhoneOS_4_1 - kCFCoreFoundationVersionNumber) < 0.01)
+
+#define IS_RUNNING_AT_LEAST_OS_4_0 ((kCFCoreFoundationVersionNumber + 0.01) > kCFCoreFoundationVersionNumber_iPhoneOS_4_0)
+#define IS_RUNNING_AT_LEAST_OS_4_1 ((kCFCoreFoundationVersionNumber + 0.01) > kCFCoreFoundationVersionNumber_iPhoneOS_4_1)
+
+// HARDWARE/DEVICE CAPABILITY
 
 #define IS_CLASSIC_DISPLAY (([UIScreen mainScreen].scale < 1.5F))
 #define IS_RETINAL_DISPLAY (([UIScreen mainScreen].scale > 1.5F))
@@ -100,21 +113,3 @@
 
 #define RGB256_TO_COL(col) ((col) / 255.0f)
 #define COL_TO_RGB256(col) ((int)((col) * 255.0))
-
-/*
-#define IS_OS_2_0_CAPABLE
-#define IS_OS_3_0_CAPABLE
-#define IS_OS_3_1_CAPABLE
-#define IS_OS_3_1_3_CAPABLE
-#define IS_OS_3_2_CAPABLE
-#define IS_OS_4_0_CAPABLE
-
-#define IS_IPHONE ([UIDevice currentDevice].name)
-#define IS_IPOD_TOUCH ([UIDevice currentDevice].name)
-#define IS_IPAD ([UIDevice currentDevice].name)
-
-#define IS_BLUETOOTH_IN_SDK
-
-#define IS_BLUETOOTH_SUPPORTED
-#define IS_GYROSCOPE_SUPPORTED
-*/

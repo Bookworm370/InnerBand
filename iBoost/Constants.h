@@ -17,6 +17,16 @@
 //  limitations under the License.
 //
 
+// VERSIONS
+
+#ifndef kCFCoreFoundationVersionNumber_iPhoneOS_4_0
+	#define kCFCoreFoundationVersionNumber_iPhoneOS_4_0 550.32
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iPhoneOS_4_1
+	#define kCFCoreFoundationVersionNumber_iPhoneOS_4_1 550.38
+#endif
+
 // HEIGHTS
 
 #define HEIGHT_OF_STATUS_BAR 20

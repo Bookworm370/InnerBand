@@ -13,6 +13,7 @@
 #import "IBHTMLLabelDemoVC.h"
 #import "IBCoreTextLabelDemoVC.h"
 #import "OrientationDetectionDemoVC.h"
+#import "DeviceInfoDemoVC.h"
 
 // feature labels
 static NSArray *gFeatureLabels = nil;
@@ -35,7 +36,7 @@ static NSArray *gFeatureLabels = nil;
 
 	// initialize labels
 	if (!gFeatureLabels) {
-		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"HTML Styled Text Label", nil), NSLocalizedString(@"URL-Loadable Image View", nil), NSLocalizedString(@"Core Text Styled Label", nil), NSLocalizedString(@"Orientation Detection", nil), nil];
+		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"HTML Styled Text Label", nil), NSLocalizedString(@"URL-Loadable Image View", nil), NSLocalizedString(@"Core Text Styled Label", nil), NSLocalizedString(@"Orientation Detection", nil), NSLocalizedString(@"Device Info", nil), nil];
 	}
 }
 
@@ -125,6 +126,11 @@ static NSArray *gFeatureLabels = nil;
 
 		case 4: {
 			demo = [[[OrientationDetectionDemoVC alloc] init] autorelease];
+			break;
+		}
+			
+		case 5: {
+			demo = [[[DeviceInfoDemoVC alloc] init] autorelease];
 			break;
 		}
 	}

@@ -17,6 +17,9 @@
 //  limitations under the License.
 //
 
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <CoreMotion/CoreMotion.h>
+
 // TYPES
 
 #define BOX_BOOL(x) [NSNumber numberWithBool:(x)]
@@ -65,16 +68,16 @@
 
 // SCREEN/DISPLAY
 
-#define IS_DEVICE_ORIENTATION_PORTRAIT() ([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait)
-#define IS_DEVICE_ORIENTATION_LANDSCAPE() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
-#define IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft)
-#define IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT() ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
-#define IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN() ([UIDevice currentDevice].orientation == UIDeviceOrientationPortraitUpsideDown)
-#define IS_DEVICE_ORIENTATION_FACE_UP() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceUp)
-#define IS_DEVICE_ORIENTATION_FACE_DOWN() ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceDown)
+#define IS_DEVICE_ORIENTATION_PORTRAIT ([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft)
+#define IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+#define IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN ([UIDevice currentDevice].orientation == UIDeviceOrientationPortraitUpsideDown)
+#define IS_DEVICE_ORIENTATION_FACE_UP ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceUp)
+#define IS_DEVICE_ORIENTATION_FACE_DOWN ([UIDevice currentDevice].orientation == UIDeviceOrientationFaceDown)
 
-#define HARDWARE_SCREEN_WIDTH() ([UIScreen mainScreen].bounds.size.width)
-#define HARDWARE_SCREEN_HEIGHT() ([UIScreen mainScreen].bounds.size.height)
+#define HARDWARE_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define HARDWARE_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 // DUMPS
 #define RECT_TO_STR(r) ([NSString stringWithFormat:@"X=%0.1f Y=%0.1f W=%0.1f H=%0.1f", (r).origin.x, (r).origin.y, (r).size.width, (r).size.height])
@@ -88,7 +91,13 @@
 #define IS_CLASSIC_DISPLAY (([UIScreen mainScreen].scale < 1.5F))
 #define IS_RETINAL_DISPLAY (([UIScreen mainScreen].scale > 1.5F))
 
+#define IS_MULTITASKING_IN_SDK ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES) 
+#define IS_CAMERA_IN_SDK ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+#define IS_VIDEO_IN_SDK ([[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] containsObject:(NSString *)kUTTypeMovie])
+#define IS_GYROSCOPE_IN_SDK ([[[[CMMotionManager alloc] init] autorelease] isAccelerometerAvailable] == YES)
+
 // COLORS
+
 #define RGB256_TO_COL(col) ((col) / 255.0f)
 #define COL_TO_RGB256(col) ((int)((col) * 255.0))
 
@@ -104,18 +113,8 @@
 #define IS_IPOD_TOUCH ([UIDevice currentDevice].name)
 #define IS_IPAD ([UIDevice currentDevice].name)
 
-#define IS_CAMERA_IN_SDK
-#define IS_GPS_HEADING_IN_SDK ([CLLocationManager respondsToSelector:@selector(headingAvailable)])
-#define IS_MULTITASKING_IN_SDK ([[UIDevice currentDevice] respondsToSelector:@selector(multitaskingSupported)]) 
-#define IS_VIDEO_IN_SDK
 #define IS_BLUETOOTH_IN_SDK
-#define IS_GYROSCOPE_IN_SDK
 
-#define IS_CAMERA_SUPPORTED
-#define IS_GPS_SUPPORTED ([CLLocationManager locationServicesEnabled])
-#define IS_GPS_HEADING_SUPPORTED ([CLLocationManager respondsToSelector:@selector(headingAvailable)] && [CLLocationManager headingAvailable])
-#define IS_MULTITASKING_SUPPORTED ([[UIDevice currentDevice] respondsToSelector:@selector(multitaskingSupported)] && [[UIDevice currentDevice].multitaskingSupported == YES) 
-#define IS_VIDEO_SUPPORTED
 #define IS_BLUETOOTH_SUPPORTED
 #define IS_GYROSCOPE_SUPPORTED
 */

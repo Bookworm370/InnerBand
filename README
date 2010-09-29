@@ -158,7 +158,7 @@ Copying the iBoost source into your project is the most flexible and lets you up
 
 3. Open the iBoost directory and copy the iBoost/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-4. Add the CoreData, CoreText and QuartzCore frameworks to each target that will use iBoost.
+4. Add the CoreData, CoreText, MobileCoreServices, CoreMotion, and QuartzCore frameworks to each target that will use iBoost.
 
 5. Done!
 
@@ -178,7 +178,7 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 	
 4. There should be two new files, iBoost.h and iBoost.m, on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-5. Add the CoreData, CoreText and QuartzCore frameworks to each target that will use iBoost.
+5. Add the CoreData, CoreText, MobileCoreServices, CoreMotion, and QuartzCore frameworks to each target that will use iBoost.
 
 6. Done!
 

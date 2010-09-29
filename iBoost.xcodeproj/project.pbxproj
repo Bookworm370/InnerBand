@@ -147,7 +147,7 @@
 		FF254A01122152E7007E052F /* ColorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTest.m; sourceTree = "<group>"; };
 		FF393445122086190048310B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF3934F4122091510048310B /* ArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTest.m; sourceTree = "<group>"; };
-		FF3935CC1220AA260048310B /* iBoost_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBoost_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		FF3935CC1220AA260048310B /* iBoost_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBoost_Prefix.pch; sourceTree = "<group>"; };
 		FF3935EA1220B16B0048310B /* IBGlobalNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBGlobalNetwork.h; path = iBoost/IBGlobalNetwork.h; sourceTree = SOURCE_ROOT; };
 		FF3935EB1220B16B0048310B /* IBGlobalNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBGlobalNetwork.m; path = iBoost/IBGlobalNetwork.m; sourceTree = SOURCE_ROOT; };
 		FF3935EC1220B16B0048310B /* IBImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBImageLayer.h; path = iBoost/IBImageLayer.h; sourceTree = SOURCE_ROOT; };
@@ -296,6 +296,7 @@
 			children = (
 				FFF569241216E4A3007F800F /* libGHUnitIPhone4_0-0.4.22 */,
 				FFCC376B1216D06D00AAF3BF /* Tests-Info.plist */,
+				FF3935CC1220AA260048310B /* iBoost_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -512,7 +513,6 @@
 		FFF569241216E4A3007F800F /* libGHUnitIPhone4_0-0.4.22 */ = {
 			isa = PBXGroup;
 			children = (
-				FF3935CC1220AA260048310B /* iBoost_Prefix.pch */,
 				FFF569251216E4A3007F800F /* GHAsyncTestCase.h */,
 				FFF569261216E4A3007F800F /* GHTest+JUnitXML.h */,
 				FFF569271216E4A3007F800F /* GHTest.h */,
@@ -755,7 +755,7 @@
 				DSTROOT = /tmp/ROIDS.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ROIDS_Prefix.pch;
+				GCC_PREFIX_HEADER = iBoost_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ROIDS;
 			};

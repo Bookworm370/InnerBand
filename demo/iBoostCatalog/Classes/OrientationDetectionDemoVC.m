@@ -57,15 +57,15 @@
 
 - (void)updateOrientationString {
 	NSString *orientationStr = nil;
-	NSString *screenSizeStr = [NSString stringWithFormat:@"W=%0.2f, H=%0.2f", HARDWARE_SCREEN_WIDTH(), HARDWARE_SCREEN_HEIGHT()];
+	NSString *screenSizeStr = [NSString stringWithFormat:@"W=%0.2f, H=%0.2f", HARDWARE_SCREEN_WIDTH, HARDWARE_SCREEN_HEIGHT];
 	
-	if (IS_DEVICE_ORIENTATION_PORTRAIT()) {
+	if (IS_DEVICE_ORIENTATION_PORTRAIT) {
 		orientationStr = @"Device orientation is Portrait.";
-	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT()) {
+	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_LEFT) {
 		orientationStr = @"Device orientation is Landscape (Left).";
-	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT()) {
+	} else if (IS_DEVICE_ORIENTATION_LANDSCAPE_RIGHT) {
 		orientationStr = @"Device orientation is Landscape (Right).";
-	} else if (IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN()) {
+	} else if (IS_DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN) {
 		orientationStr = @"Device orientation is Portrait (UD).";		
 	} else {
 		orientationStr = @"Device orientation is known.";

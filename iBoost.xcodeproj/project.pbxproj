@@ -75,6 +75,7 @@
 		FF3936131220B16B0048310B /* IBURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935FD1220B16B0048310B /* IBURLResponse.h */; };
 		FF3936141220B16B0048310B /* IBUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3935FE1220B16B0048310B /* IBUserInfo.h */; };
 		FF3936151220B16B0048310B /* IBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3935FF1220B16B0048310B /* IBUserInfo.m */; };
+		FF40A0A412563B00006B0D09 /* iBoostIncludes.h in Headers */ = {isa = PBXBuildFile; fileRef = FF40A09012563A15006B0D09 /* iBoostIncludes.h */; };
 		FF4484E41225A5630066E827 /* CoreDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4484E31225A5630066E827 /* CoreDataTest.m */; };
 		FF4485C41225B1B70066E827 /* TestableDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FF4485C31225B1B70066E827 /* TestableDataModel.xcdatamodel */; };
 		FF44864B1225B63A0066E827 /* CoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4486491225B63A0066E827 /* CoreDataStore.h */; };
@@ -170,6 +171,7 @@
 		FF3935FD1220B16B0048310B /* IBURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBURLResponse.h; path = iBoost/IBURLResponse.h; sourceTree = SOURCE_ROOT; };
 		FF3935FE1220B16B0048310B /* IBUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBUserInfo.h; path = iBoost/IBUserInfo.h; sourceTree = SOURCE_ROOT; };
 		FF3935FF1220B16B0048310B /* IBUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBUserInfo.m; path = iBoost/IBUserInfo.m; sourceTree = SOURCE_ROOT; };
+		FF40A09012563A15006B0D09 /* iBoostIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBoostIncludes.h; sourceTree = "<group>"; };
 		FF4484E31225A5630066E827 /* CoreDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTest.m; sourceTree = "<group>"; };
 		FF4484EE1225ABA10066E827 /* NSArray+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Boost.h"; sourceTree = "<group>"; };
 		FF4484EF1225ABA10066E827 /* NSArray+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Boost.m"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		FFF568AB1216E437007F800F /* iBoost */ = {
 			isa = PBXGroup;
 			children = (
+				FF40A09012563A15006B0D09 /* iBoostIncludes.h */,
 				F10061F81225B5E200F6BE54 /* Components */,
 				FF0AB777122758DB00EBFE75 /* Message Center */,
 				FF4485FA1225B4480066E827 /* Core Data Store */,
@@ -578,6 +581,7 @@
 				FF0C4D40123148AC00C3960E /* UIImage+Boost.h in Headers */,
 				FF0C4D41123148AC00C3960E /* UIView+Boost.h in Headers */,
 				FFBDCAC81252873600C6AD94 /* IBCoreTextLabel.h in Headers */,
+				FF40A0A412563B00006B0D09 /* iBoostIncludes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

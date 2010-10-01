@@ -38,4 +38,6 @@
 - (CGFloat)height;
 - (void)setHeight:(CGFloat)height;
 
+@property (nonatomic, assign) BOOL visible;
+
 @end

@@ -97,4 +97,12 @@
 	self.frame = frame;
 }
 
+- (void)setVisible:(BOOL)value {
+	self.hidden = !value;
+}
+
+- (BOOL)visible {
+	return !self.hidden;
+}
+
 @end

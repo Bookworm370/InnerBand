@@ -22,6 +22,9 @@
 #import "NSDate+Boost.h"
 
 @interface DateTest : GHTestCase
+
+- (void)checkMidnightOfDate:(NSDate *)date;
+
 @end
 
 @implementation DateTest
@@ -81,6 +84,25 @@
 	GHAssertEqualStrings(@"12:00:00 AM", [epoch formattedUTCTimeStyle:NSDateFormatterMediumStyle], nil);
 	GHAssertEqualStrings(@"12:00 AM", [epoch formattedUTCTimeStyle:NSDateFormatterShortStyle], nil);
 	GHAssertEqualStrings(@"", [epoch formattedUTCTimeStyle:NSDateFormatterNoStyle], nil);
+}
+
+- (void)testDateAsMidnight {
+	[self checkMidnightOfDate:[NSDate distantPast]];
+	[self checkMidnightOfDate:[NSDate dateWithTimeIntervalSince1970:0]];
+	[self checkMidnightOfDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]];
+	[self checkMidnightOfDate:[NSDate date]];
+	[self checkMidnightOfDate:[NSDate distantFuture]];
+}
+
+- (void)checkMidnightOfDate:(NSDate *)date {
+	NSDate *dateAsMidnight = [date dateAsMidnight];
+	
+	GHAssertEquals(dateAsMidnight.utcYear, date.utcYear, nil);
+	GHAssertEquals(dateAsMidnight.utcMonth, date.utcMonth, nil);
+	GHAssertEquals(dateAsMidnight.utcDay, date.utcDay, nil);
+	GHAssertEquals(0, dateAsMidnight.utcHour, nil);
+	GHAssertEquals(0, dateAsMidnight.utcMinute, nil);
+	GHAssertEquals(0, dateAsMidnight.utcSecond, nil);	
 }
 
 @end

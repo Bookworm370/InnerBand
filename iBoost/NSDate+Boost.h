@@ -46,4 +46,6 @@
 - (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
 - (NSString *)formattedUTCDatePattern:(NSString *)datePattern;
 
+- (NSDate *)dateAsMidnight;
+
 @end

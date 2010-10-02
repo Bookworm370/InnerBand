@@ -19,6 +19,7 @@
 
 #import "NSDate+Boost.h"
 #import <time.h>
+#import "Constants.h"
 
 @implementation NSDate (Boost)
 
@@ -166,5 +167,8 @@
 	return [format stringFromDate:self];
 }
 
+- (NSDate *)dateAsMidnight {
+	return [NSDate dateWithTimeIntervalSince1970:((long)[self timeIntervalSince1970] / (long)SECONDS_IN_DAY * (long)SECONDS_IN_DAY)];
+}
 @end
 

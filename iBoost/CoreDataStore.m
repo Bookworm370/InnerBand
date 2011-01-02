@@ -60,7 +60,7 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	}
 	
 	// init some fields
-	self.managedObjectContext;
+	(void)(self.managedObjectContext);
 }
 
 /**

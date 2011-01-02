@@ -24,7 +24,7 @@
 static const void* IBRetainNoOp(CFAllocatorRef allocator, const void *value) { return value; }
 static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 
-@implementation NSMutableArray (Additions)
+@implementation NSMutableArray (Boost)
 
 + (NSMutableArray *)arrayUnretaining {
 	CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;

@@ -20,7 +20,7 @@
 #import "UIImage+Boost.h"
 
 
-@implementation UIImage (Additions)
+@implementation UIImage (Boost)
 
 - (void)drawInRect:(CGRect)rect contentMode:(UIViewContentMode)contentMode {
 	BOOL clip = NO;

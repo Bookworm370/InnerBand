@@ -20,7 +20,7 @@
 #import "NSArray+Boost.h"
 #import "NSString+Boost.h"
 
-@implementation NSArray (Additions)
+@implementation NSArray (Boost)
 
 - (NSArray *)sortedArrayAsDiacriticInsensitiveCaseInsensitive {
 	return [self sortedArrayUsingSelector:@selector(diacriticInsensitiveCaseInsensitiveSort:)];

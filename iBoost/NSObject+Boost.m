@@ -20,7 +20,7 @@
 #import "NSObject+Boost.h"
 
 
-@implementation NSObject (Additions)
+@implementation NSObject (Boost)
 
 - (id)performSelector:(SEL)selector withObject:(id)p1 withObject:(id)p2 withObject:(id)p3 {
 	NSMethodSignature *sig = [self methodSignatureForSelector:selector];

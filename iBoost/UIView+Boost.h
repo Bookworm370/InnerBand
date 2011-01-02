@@ -19,7 +19,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Additions)
+@interface UIView (Boost)
 
 - (CGFloat)left;
 - (void)setLeft:(CGFloat)x;

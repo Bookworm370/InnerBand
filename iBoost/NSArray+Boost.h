@@ -19,7 +19,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (Additions)
+@interface NSArray (Boost)
 
 - (NSArray *)sortedArrayAsDiacriticInsensitiveCaseInsensitive;
 - (NSArray *)sortedArrayAsDiacriticInsensitive;

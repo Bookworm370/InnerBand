@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSMutableArray (Additions)
+@interface NSMutableArray (Boost)
 
 + (NSMutableArray *)arrayUnretaining;
 

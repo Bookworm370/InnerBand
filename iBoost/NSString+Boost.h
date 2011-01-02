@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSString (Additions)
+@interface NSString (Boost)
 
 - (NSComparisonResult)diacriticInsensitiveCaseInsensitiveSort:(NSString *)rhs;
 - (NSComparisonResult)diacriticInsensitiveSort:(NSString *)rhs;

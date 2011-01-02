@@ -20,7 +20,7 @@
 #import "NSString+Boost.h"
 
 
-@implementation NSString (Additions)
+@implementation NSString (Boost)
 
 - (NSComparisonResult)diacriticInsensitiveCaseInsensitiveSort:(NSString *)rhs {
 	return [self compare:rhs options:NSDiacriticInsensitiveSearch | NSCaseInsensitiveSearch];	

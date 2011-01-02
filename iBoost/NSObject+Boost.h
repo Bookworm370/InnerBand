@@ -20,7 +20,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface NSObject (Additions)
+@interface NSObject (Boost)
 
 - (id)performSelector:(SEL)selector withObject:(id)p1 withObject:(id)p2 withObject:(id)p3;
 - (id)performSelector:(SEL)selector withObject:(id)p1 withObject:(id)p2 withObject:(id)p3 withObject:(id)p4;

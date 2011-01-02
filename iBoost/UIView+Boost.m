@@ -19,7 +19,7 @@
 
 #import "UIView+Boost.h"
 
-@implementation UIView (Additions)
+@implementation UIView (Boost)
 
 - (CGFloat)left {
 	return self.frame.origin.x;

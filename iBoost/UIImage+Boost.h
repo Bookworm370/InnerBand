@@ -20,7 +20,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIImage (Additions)
+@interface UIImage (Boost)
 
 - (void)drawInRect:(CGRect)rect contentMode:(UIViewContentMode)contentMode;
 - (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode;

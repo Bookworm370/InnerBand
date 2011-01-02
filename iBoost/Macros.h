@@ -113,3 +113,8 @@
 
 #define RGB256_TO_COL(col) ((col) / 255.0f)
 #define COL_TO_RGB256(col) ((int)((col) * 255.0))
+
+// DIRECTORIES
+
+#define DOCUMENTS_DIR ([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])
+

@@ -74,7 +74,7 @@
       _image = [image retain];
 
     } else {
-      return [NSError errorWithDomain:nil code:0
+      return [NSError errorWithDomain:@"" code:0
                       userInfo:nil];
     }
   }

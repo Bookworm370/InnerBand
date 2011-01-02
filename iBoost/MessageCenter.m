@@ -26,6 +26,7 @@
 
 + (NSMutableArray *)getTargetActionsForMessageName:(NSString *)name source:(NSObject *)source;
 + (NSMutableArray *)getTargetActionsForMessageName:(NSString *)name sourceDescription:(NSString *)sourceDescription;
+- (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions;
 
 @end
 
@@ -194,12 +195,11 @@ NSString *getSourceIdentifier(NSObject *obj) {
 	// global or local delivery only
 	NSArray *targetActions = [MessageCenter getTargetActionsForMessageName:message.name source:source];
 	
-	// process message (this object will autorelease itself when done)
 	if (message.isAsynchronous) {
-		MessageProcessor *processor = [[[MessageProcessor alloc] init] autorelease];
-
-		[processor performSelectorInBackground:@selector(processInThread:targetActions:) withObject:message withObject:targetActions];
+		// run completely in thread
+		[self performSelectorInBackground:@selector(runProcessorInThread) withObject:message withObject:targetActions];
 	} else {
+		// process message in sync
 		MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
 
 		[processor process];
@@ -207,6 +207,22 @@ NSString *getSourceIdentifier(NSObject *obj) {
 	}
 }
 
+- (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions {
+	// pool
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	// process message
+	MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
+
+	// process
+	[processor process];
+
+	// release
+	[processor release];
+	
+	// pool
+	[pool release];
+}
 
 #pragma mark -
 

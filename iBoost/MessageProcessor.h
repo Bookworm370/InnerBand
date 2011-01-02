@@ -28,6 +28,5 @@
 
 - (id)initWithMessage:(DispatchMessage *)message targetActions:(NSArray *)targetActions;
 - (void)process;
-- (void)processInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions;
 
 @end

@@ -19,7 +19,6 @@
 
 #import "MessageProcessor.h"
 #import "DispatchMessage.h"
-#import "NSObject+Boost.h"
 
 @implementation MessageProcessor
 
@@ -41,31 +40,25 @@
 }
 
 - (void)process {
-	// pool
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
 	// process
 	[_message inputData:nil];
-
+	
 	// dispatch for all target/action pairs
 	for (NSInteger i = _targetActions.count - 1; i >= 0; --i) {
 		NSDictionary *iDictionary = (NSDictionary *)[_targetActions objectAtIndex:i];
 		NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
 		SEL iAction = NSSelectorFromString((NSString *)[iDictionary objectForKey:@"action"]);
-
-		// call target/actiom
-		[iTarget performSelector:iAction withObject:_message];			
+		
+		// perform on main thread
+		if (_message.isAsynchronous) {
+			[iTarget performSelectorOnMainThread:iAction withObject:_message waitUntilDone:NO];
+		} else {
+			[iTarget performSelector:iAction withObject:_message];			
+		}
 	}
-	
-	// pool
-	[pool release];
 }
 
-- (void)processInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions {
-	MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
-	
-	[processor process];
-	[processor release];
+- (void)processInThread {
 }
 
 @end

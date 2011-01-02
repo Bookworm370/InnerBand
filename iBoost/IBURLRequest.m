@@ -75,7 +75,7 @@ static NSString* kStringBoundary = @"3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithURL:(NSString*)URL delegate:(id /*<IBURLRequestDelegate>*/)delegate {
-  if (self = [self init]) {
+  if ((self = [self init])) {
     _URL = [URL retain];
     if (nil != delegate) {
       [_delegates addObject:delegate];
@@ -86,7 +86,7 @@ static NSString* kStringBoundary = @"3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     _delegates = [[NSMutableArray arrayUnretaining] retain];
     _cachePolicy = IBURLRequestCachePolicyDefault;
     _cacheExpirationAge = IB_DEFAULT_CACHE_EXPIRATION_AGE;
@@ -146,7 +146,7 @@ static NSString* kStringBoundary = @"3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f";
       || [_httpMethod isEqualToString:@"PUT"]) {
     NSMutableString* joined = [[[NSMutableString alloc] initWithString:self.URL] autorelease]; 
     NSEnumerator* e = [_parameters keyEnumerator];
-    for (id key; key = [e nextObject]; ) {
+    for (id key; (key = [e nextObject]); ) {
       [joined appendString:key];
       [joined appendString:@"="];
       NSObject* value = [_parameters valueForKey:key];

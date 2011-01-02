@@ -28,7 +28,7 @@
 @synthesize dataProvider = _dataProvider;
 
 - (id)initWithFrame:(CGRect)frame {
-	if (self = [super initWithFrame:frame]) {
+	if ((self = [super initWithFrame:frame])) {
 		// Initialization code
 		self.backgroundColor = [UIColor clearColor];
 		self.lineColor = [UIColor darkGrayColor];

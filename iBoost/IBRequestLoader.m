@@ -40,7 +40,7 @@ static const NSInteger kLoadMaxRetries = 2;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initForRequest:(IBURLRequest*)request queue:(IBURLRequestQueue*)queue {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     _URL = [request.URL copy];
     _queue = queue;
     _cacheKey = [request.cacheKey retain];

@@ -165,7 +165,7 @@ static NSMutableDictionary* gNamedCaches = nil;
     _disableDiskCache = NO;
     _disableImageCache = NO;
     _invalidationAge = IB_DEFAULT_CACHE_INVALIDATION_AGE;
-    _maxPixelCount = 0;
+    _maxPixelCount = 2048*2048; // JEBBY
     _totalPixelCount = 0;
     
     // XXXjoe Disabling the built-in cache may save memory but it also makes UIWebView slow
@@ -429,7 +429,7 @@ static NSMutableDictionary* gNamedCaches = nil;
   NSFileManager* fm = [NSFileManager defaultManager];
   NSDirectoryEnumerator* e = [fm enumeratorAtPath:_cachePath];
 	NSError *error = nil;
-  for (NSString* fileName; fileName = [e nextObject]; ) {
+  for (NSString* fileName; (fileName = [e nextObject]); ) {
     NSString* filePath = [_cachePath stringByAppendingPathComponent:fileName];
 	  [fm setAttributes:attrs ofItemAtPath:filePath error:&error];
   }

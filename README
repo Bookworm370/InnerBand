@@ -172,11 +172,11 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 
 2. Create a new XCode iPhone project if you haven't already.
 
-3. From the iBoost parent directory in Terminal, change directory to iBoost/ and run ../minifier/minify.py.
+3. From the iBoost parent directory in Terminal, change directory to iBoost/ and run ../minifier/minify.py all. If you don't wish to include the UI components and just want the macros and extensions, run ../minifier/minify.py core.
 
-	(NOTE: Python 3 is required. If it doesn't work on your system, try changing the she-bang.)
+	(NOTE: Python is required. If it doesn't work on your system, try changing the she-bang.)
 	
-4. There should be two new files, iBoost.h and iBoost.m, on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
+4. There should be two new files, iBoost.h and iBoost.m (or iBoostCore.h and iBoostCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
 5. Add the CoreData, CoreText, MobileCoreServices, CoreMotion, and QuartzCore frameworks to each target that will use iBoost.
 

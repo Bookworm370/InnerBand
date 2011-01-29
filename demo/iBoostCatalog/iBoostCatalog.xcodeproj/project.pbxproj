@@ -369,8 +369,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = iBoostCatalog;
-				SDKROOT = iphoneos4.1;
-				USER_HEADER_SEARCH_PATHS = ../../iBoost;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
 			};
 			name = Debug;
 		};
@@ -387,8 +387,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = iBoostCatalog;
-				SDKROOT = iphoneos4.1;
-				USER_HEADER_SEARCH_PATHS = ../../iBoost;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

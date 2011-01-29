@@ -1,15 +1,36 @@
-#!/usr/bin/env python3.1
+#!/usr/bin/env python
 
+#
+# The minifier should be run from the iBoost/iBoost directory.
+#
+
+import sys
 import glob
 import re
 import os
 
 def main():
-	header_files = glob.glob('*.h')
-	class_header_files = []
-	other_header_files = []
+	if len(sys.argv) < 2 or sys.argv[1] not in ('all', 'core'):
+		print "USAGE: {0} all|core".format(sys.argv[0]);
+		sys.exit(1)
 	
-	source_files = glob.glob('*.m')
+	inclusion = sys.argv[1]
+
+	if inclusion == 'all':
+		include_filename = "iBoost.h"
+		code_filename = "iBoost.m"
+		
+		header_files = glob.glob('*.h') + glob.glob('*/*.h') + glob.glob('*/*/*.h') + glob.glob('*/*/*/*.h')
+		source_files = glob.glob('*.m') + glob.glob('*/*.m') + glob.glob('*/*/*.m') + glob.glob('*/*/*/*.m')
+	elif inclusion == 'core':
+		include_filename = "iBoostCore.h"
+		code_filename = "iBoostCore.m"
+
+		header_files = glob.glob('Core/*.h') + glob.glob('Core/*/*.h') + glob.glob('Core Data/*.h') + glob.glob('Message Center/*.h') + glob.glob('Message Center/*/*.h')
+		source_files = glob.glob('Core/*.m') + glob.glob('Core/*/*.m') + glob.glob('Core Data/*.m') + glob.glob('Message Center/*.m') + glob.glob('Message Center/*/*.m')
+
+	class_header_files = []
+	other_header_files = []	
 
 	for header in header_files:
 		is_class = False
@@ -24,13 +45,13 @@ def main():
 		else:
 			other_header_files.append(header)
 
-	iboost_header_file = open(os.path.expanduser('~') + "/Desktop/iBoost.h", "w")
-	iboost_source_file = open(os.path.expanduser('~') + "/Desktop/iBoost.m", "w")
+	iboost_header_file = open(os.path.expanduser('~') + "/Desktop/" + include_filename, "w")
+	iboost_source_file = open(os.path.expanduser('~') + "/Desktop/" + code_filename, "w")
 	
 	iboost_header_file.write("//\n//  iBoost\n//\n//  iBoost - The iOS Booster!\n//\n//  Licensed under the Apache License, Version 2.0 (the \"License\");\n//  you may not use this file except in compliance with the License.\n//  You may obtain a copy of the License at\n//\n//     http://www.apache.org/licenses/LICENSE-2.0\n//\n//  Unless required by applicable law or agreed to in writing, software\n//  distributed under the License is distributed on an \"AS IS\" BASIS,\n//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//  See the License for the specific language governing permissions and\n//  limitations under the License.\n//\n\n")
 	iboost_source_file.write("//\n//  iBoost\n//\n//  iBoost - The iOS Booster!\n//\n//  Licensed under the Apache License, Version 2.0 (the \"License\");\n//  you may not use this file except in compliance with the License.\n//  You may obtain a copy of the License at\n//\n//     http://www.apache.org/licenses/LICENSE-2.0\n//\n//  Unless required by applicable law or agreed to in writing, software\n//  distributed under the License is distributed on an \"AS IS\" BASIS,\n//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//  See the License for the specific language governing permissions and\n//  limitations under the License.\n//\n\n")
 	
-	iboost_source_file.write("#import \"iBoost.h\"\n")
+	iboost_source_file.write("#import \"" + include_filename + "\"\n")
 	
 	for header in (other_header_files + class_header_files):
 		lines = open(header).readlines()

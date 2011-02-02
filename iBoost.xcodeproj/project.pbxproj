@@ -15,28 +15,6 @@
 		02FAD4D912F472CA00090B61 /* IBHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48F12F472CA00090B61 /* IBHTableView.m */; };
 		02FAD4DA12F472CA00090B61 /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49012F472CA00090B61 /* IBHTMLLabel.h */; };
 		02FAD4DB12F472CA00090B61 /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49112F472CA00090B61 /* IBHTMLLabel.m */; };
-		02FAD4DC12F472CA00090B61 /* IBImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49212F472CA00090B61 /* IBImageView.h */; };
-		02FAD4DD12F472CA00090B61 /* IBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49312F472CA00090B61 /* IBImageView.m */; };
-		02FAD4DE12F472CA00090B61 /* IBGlobalNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49512F472CA00090B61 /* IBGlobalNetwork.h */; };
-		02FAD4DF12F472CA00090B61 /* IBGlobalNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49612F472CA00090B61 /* IBGlobalNetwork.m */; };
-		02FAD4E012F472CA00090B61 /* IBImageLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49712F472CA00090B61 /* IBImageLayer.h */; };
-		02FAD4E112F472CA00090B61 /* IBImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49812F472CA00090B61 /* IBImageLayer.m */; };
-		02FAD4E212F472CA00090B61 /* IBImageViewInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49912F472CA00090B61 /* IBImageViewInternal.h */; };
-		02FAD4E312F472CA00090B61 /* IBImageViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49A12F472CA00090B61 /* IBImageViewInternal.m */; };
-		02FAD4E412F472CA00090B61 /* IBRequestLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49B12F472CA00090B61 /* IBRequestLoader.h */; };
-		02FAD4E512F472CA00090B61 /* IBRequestLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49C12F472CA00090B61 /* IBRequestLoader.m */; };
-		02FAD4E612F472CA00090B61 /* IBURLCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49D12F472CA00090B61 /* IBURLCache.h */; };
-		02FAD4E712F472CA00090B61 /* IBURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD49E12F472CA00090B61 /* IBURLCache.m */; };
-		02FAD4E812F472CA00090B61 /* IBURLImageResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD49F12F472CA00090B61 /* IBURLImageResponse.h */; };
-		02FAD4E912F472CA00090B61 /* IBURLImageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4A012F472CA00090B61 /* IBURLImageResponse.m */; };
-		02FAD4EA12F472CA00090B61 /* IBURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4A112F472CA00090B61 /* IBURLRequest.h */; };
-		02FAD4EB12F472CA00090B61 /* IBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4A212F472CA00090B61 /* IBURLRequest.m */; };
-		02FAD4EC12F472CA00090B61 /* IBURLRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4A312F472CA00090B61 /* IBURLRequestDelegate.h */; };
-		02FAD4ED12F472CA00090B61 /* IBURLRequestQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4A412F472CA00090B61 /* IBURLRequestQueue.h */; };
-		02FAD4EE12F472CA00090B61 /* IBURLRequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4A512F472CA00090B61 /* IBURLRequestQueue.m */; };
-		02FAD4EF12F472CA00090B61 /* IBURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4A612F472CA00090B61 /* IBURLResponse.h */; };
-		02FAD4F012F472CA00090B61 /* IBUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4A712F472CA00090B61 /* IBUserInfo.h */; };
-		02FAD4F112F472CA00090B61 /* IBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4A812F472CA00090B61 /* IBUserInfo.m */; };
 		02FAD4F212F472CA00090B61 /* CGContext+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4AB12F472CA00090B61 /* CGContext+Boost.h */; };
 		02FAD4F312F472CA00090B61 /* CGContext+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4AC12F472CA00090B61 /* CGContext+Boost.m */; };
 		02FAD4F412F472CA00090B61 /* NSArray+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4AD12F472CA00090B61 /* NSArray+Boost.h */; };
@@ -118,28 +96,6 @@
 		02FAD48F12F472CA00090B61 /* IBHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTableView.m; sourceTree = "<group>"; };
 		02FAD49012F472CA00090B61 /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		02FAD49112F472CA00090B61 /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
-		02FAD49212F472CA00090B61 /* IBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageView.h; sourceTree = "<group>"; };
-		02FAD49312F472CA00090B61 /* IBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageView.m; sourceTree = "<group>"; };
-		02FAD49512F472CA00090B61 /* IBGlobalNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBGlobalNetwork.h; sourceTree = "<group>"; };
-		02FAD49612F472CA00090B61 /* IBGlobalNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBGlobalNetwork.m; sourceTree = "<group>"; };
-		02FAD49712F472CA00090B61 /* IBImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageLayer.h; sourceTree = "<group>"; };
-		02FAD49812F472CA00090B61 /* IBImageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageLayer.m; sourceTree = "<group>"; };
-		02FAD49912F472CA00090B61 /* IBImageViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageViewInternal.h; sourceTree = "<group>"; };
-		02FAD49A12F472CA00090B61 /* IBImageViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageViewInternal.m; sourceTree = "<group>"; };
-		02FAD49B12F472CA00090B61 /* IBRequestLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBRequestLoader.h; sourceTree = "<group>"; };
-		02FAD49C12F472CA00090B61 /* IBRequestLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBRequestLoader.m; sourceTree = "<group>"; };
-		02FAD49D12F472CA00090B61 /* IBURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLCache.h; sourceTree = "<group>"; };
-		02FAD49E12F472CA00090B61 /* IBURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBURLCache.m; sourceTree = "<group>"; };
-		02FAD49F12F472CA00090B61 /* IBURLImageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLImageResponse.h; sourceTree = "<group>"; };
-		02FAD4A012F472CA00090B61 /* IBURLImageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBURLImageResponse.m; sourceTree = "<group>"; };
-		02FAD4A112F472CA00090B61 /* IBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLRequest.h; sourceTree = "<group>"; };
-		02FAD4A212F472CA00090B61 /* IBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBURLRequest.m; sourceTree = "<group>"; };
-		02FAD4A312F472CA00090B61 /* IBURLRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLRequestDelegate.h; sourceTree = "<group>"; };
-		02FAD4A412F472CA00090B61 /* IBURLRequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLRequestQueue.h; sourceTree = "<group>"; };
-		02FAD4A512F472CA00090B61 /* IBURLRequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBURLRequestQueue.m; sourceTree = "<group>"; };
-		02FAD4A612F472CA00090B61 /* IBURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBURLResponse.h; sourceTree = "<group>"; };
-		02FAD4A712F472CA00090B61 /* IBUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBUserInfo.h; sourceTree = "<group>"; };
-		02FAD4A812F472CA00090B61 /* IBUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBUserInfo.m; sourceTree = "<group>"; };
 		02FAD4AB12F472CA00090B61 /* CGContext+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGContext+Boost.h"; sourceTree = "<group>"; };
 		02FAD4AC12F472CA00090B61 /* CGContext+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGContext+Boost.m"; sourceTree = "<group>"; };
 		02FAD4AD12F472CA00090B61 /* NSArray+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Boost.h"; sourceTree = "<group>"; };
@@ -261,38 +217,8 @@
 				02FAD48F12F472CA00090B61 /* IBHTableView.m */,
 				02FAD49012F472CA00090B61 /* IBHTMLLabel.h */,
 				02FAD49112F472CA00090B61 /* IBHTMLLabel.m */,
-				02FAD49212F472CA00090B61 /* IBImageView.h */,
-				02FAD49312F472CA00090B61 /* IBImageView.m */,
-				02FAD49412F472CA00090B61 /* Support Classes */,
 			);
 			path = Controls;
-			sourceTree = "<group>";
-		};
-		02FAD49412F472CA00090B61 /* Support Classes */ = {
-			isa = PBXGroup;
-			children = (
-				02FAD49512F472CA00090B61 /* IBGlobalNetwork.h */,
-				02FAD49612F472CA00090B61 /* IBGlobalNetwork.m */,
-				02FAD49712F472CA00090B61 /* IBImageLayer.h */,
-				02FAD49812F472CA00090B61 /* IBImageLayer.m */,
-				02FAD49912F472CA00090B61 /* IBImageViewInternal.h */,
-				02FAD49A12F472CA00090B61 /* IBImageViewInternal.m */,
-				02FAD49B12F472CA00090B61 /* IBRequestLoader.h */,
-				02FAD49C12F472CA00090B61 /* IBRequestLoader.m */,
-				02FAD49D12F472CA00090B61 /* IBURLCache.h */,
-				02FAD49E12F472CA00090B61 /* IBURLCache.m */,
-				02FAD49F12F472CA00090B61 /* IBURLImageResponse.h */,
-				02FAD4A012F472CA00090B61 /* IBURLImageResponse.m */,
-				02FAD4A112F472CA00090B61 /* IBURLRequest.h */,
-				02FAD4A212F472CA00090B61 /* IBURLRequest.m */,
-				02FAD4A312F472CA00090B61 /* IBURLRequestDelegate.h */,
-				02FAD4A412F472CA00090B61 /* IBURLRequestQueue.h */,
-				02FAD4A512F472CA00090B61 /* IBURLRequestQueue.m */,
-				02FAD4A612F472CA00090B61 /* IBURLResponse.h */,
-				02FAD4A712F472CA00090B61 /* IBUserInfo.h */,
-				02FAD4A812F472CA00090B61 /* IBUserInfo.m */,
-			);
-			path = "Support Classes";
 			sourceTree = "<group>";
 		};
 		02FAD4A912F472CA00090B61 /* Core */ = {
@@ -548,18 +474,6 @@
 				02FAD4D612F472CA00090B61 /* IBCoreTextLabel.h in Headers */,
 				02FAD4D812F472CA00090B61 /* IBHTableView.h in Headers */,
 				02FAD4DA12F472CA00090B61 /* IBHTMLLabel.h in Headers */,
-				02FAD4DC12F472CA00090B61 /* IBImageView.h in Headers */,
-				02FAD4DE12F472CA00090B61 /* IBGlobalNetwork.h in Headers */,
-				02FAD4E012F472CA00090B61 /* IBImageLayer.h in Headers */,
-				02FAD4E212F472CA00090B61 /* IBImageViewInternal.h in Headers */,
-				02FAD4E412F472CA00090B61 /* IBRequestLoader.h in Headers */,
-				02FAD4E612F472CA00090B61 /* IBURLCache.h in Headers */,
-				02FAD4E812F472CA00090B61 /* IBURLImageResponse.h in Headers */,
-				02FAD4EA12F472CA00090B61 /* IBURLRequest.h in Headers */,
-				02FAD4EC12F472CA00090B61 /* IBURLRequestDelegate.h in Headers */,
-				02FAD4ED12F472CA00090B61 /* IBURLRequestQueue.h in Headers */,
-				02FAD4EF12F472CA00090B61 /* IBURLResponse.h in Headers */,
-				02FAD4F012F472CA00090B61 /* IBUserInfo.h in Headers */,
 				02FAD4F212F472CA00090B61 /* CGContext+Boost.h in Headers */,
 				02FAD4F412F472CA00090B61 /* NSArray+Boost.h in Headers */,
 				02FAD4F612F472CA00090B61 /* NSDate+Boost.h in Headers */,
@@ -665,16 +579,6 @@
 				02FAD4D712F472CA00090B61 /* IBCoreTextLabel.m in Sources */,
 				02FAD4D912F472CA00090B61 /* IBHTableView.m in Sources */,
 				02FAD4DB12F472CA00090B61 /* IBHTMLLabel.m in Sources */,
-				02FAD4DD12F472CA00090B61 /* IBImageView.m in Sources */,
-				02FAD4DF12F472CA00090B61 /* IBGlobalNetwork.m in Sources */,
-				02FAD4E112F472CA00090B61 /* IBImageLayer.m in Sources */,
-				02FAD4E312F472CA00090B61 /* IBImageViewInternal.m in Sources */,
-				02FAD4E512F472CA00090B61 /* IBRequestLoader.m in Sources */,
-				02FAD4E712F472CA00090B61 /* IBURLCache.m in Sources */,
-				02FAD4E912F472CA00090B61 /* IBURLImageResponse.m in Sources */,
-				02FAD4EB12F472CA00090B61 /* IBURLRequest.m in Sources */,
-				02FAD4EE12F472CA00090B61 /* IBURLRequestQueue.m in Sources */,
-				02FAD4F112F472CA00090B61 /* IBUserInfo.m in Sources */,
 				02FAD4F312F472CA00090B61 /* CGContext+Boost.m in Sources */,
 				02FAD4F512F472CA00090B61 /* NSArray+Boost.m in Sources */,
 				02FAD4F712F472CA00090B61 /* NSDate+Boost.m in Sources */,

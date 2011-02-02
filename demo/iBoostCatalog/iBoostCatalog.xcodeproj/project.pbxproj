@@ -17,7 +17,6 @@
 		FF0C4CC212313F7500C3960E /* FeatureSelectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0C4CC112313F7500C3960E /* FeatureSelectorVC.m */; };
 		FF0C4CE7123145C000C3960E /* IBHTMLLabelDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0C4CE6123145C000C3960E /* IBHTMLLabelDemoVC.m */; };
 		FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0C4CE91231468000C3960E /* IBButtonDemoVC.m */; };
-		FF393473122087C20048310B /* IBImageViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF393472122087C20048310B /* IBImageViewDemoVC.m */; };
 		FF39348712208A400048310B /* libiBoost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39346B1220879B0048310B /* libiBoost.a */; };
 		FF3934B312208ECE0048310B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3934B212208ECE0048310B /* QuartzCore.framework */; };
 		FF4A7D6F1252F39100038908 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4A7D6E1252F39100038908 /* MobileCoreServices.framework */; };
@@ -71,8 +70,6 @@
 		FF0C4CE81231468000C3960E /* IBButtonDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButtonDemoVC.h; sourceTree = "<group>"; };
 		FF0C4CE91231468000C3960E /* IBButtonDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButtonDemoVC.m; sourceTree = "<group>"; };
 		FF3934651220879B0048310B /* iBoost.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBoost.xcodeproj; path = ../../iBoost.xcodeproj; sourceTree = SOURCE_ROOT; };
-		FF393471122087C20048310B /* IBImageViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBImageViewDemoVC.h; sourceTree = "<group>"; };
-		FF393472122087C20048310B /* IBImageViewDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBImageViewDemoVC.m; sourceTree = "<group>"; };
 		FF3934B212208ECE0048310B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF4A7D6E1252F39100038908 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FF4A7D9E1252F88000038908 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -113,7 +110,6 @@
 				FF0C4CBC12313F3E00C3960E /* Feature Selector */,
 				FF0C4CC412313F9000C3960E /* Buttons */,
 				FF0C4CC312313F8600C3960E /* Styled Text */,
-				FF0C4CCD1231414E00C3960E /* Image View */,
 				FF7AB14E1232054A0000669C /* Core Text */,
 				FFBDCB1A12528F6100C6AD94 /* Orientation Detection */,
 				FFBDCB72125297B600C6AD94 /* Device Info */,
@@ -200,15 +196,6 @@
 				FF0C4CE91231468000C3960E /* IBButtonDemoVC.m */,
 			);
 			name = Buttons;
-			sourceTree = "<group>";
-		};
-		FF0C4CCD1231414E00C3960E /* Image View */ = {
-			isa = PBXGroup;
-			children = (
-				FF393471122087C20048310B /* IBImageViewDemoVC.h */,
-				FF393472122087C20048310B /* IBImageViewDemoVC.m */,
-			);
-			name = "Image View";
 			sourceTree = "<group>";
 		};
 		FF3934661220879B0048310B /* Products */ = {
@@ -333,7 +320,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iBoostCatalogAppDelegate.m in Sources */,
-				FF393473122087C20048310B /* IBImageViewDemoVC.m in Sources */,
 				FF0C4CC212313F7500C3960E /* FeatureSelectorVC.m in Sources */,
 				FF0C4CE7123145C000C3960E /* IBHTMLLabelDemoVC.m in Sources */,
 				FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */,

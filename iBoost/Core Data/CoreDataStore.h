@@ -50,6 +50,9 @@
 /* Returns a single entity with the specified key/value. */
 + (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSObject *)value error:(NSError **)error;
 
+/* Returns object based on URI representation. */
++ (NSManagedObject *)entityByURI:(NSURL *)uri;
+
 /* Create a new entity by name. */
 + (NSManagedObject *)createNewEntityByName:(NSString *)entityName;
 

@@ -242,6 +242,16 @@ static NSPersistentStoreCoordinator *gPersistentStoreCoordinator = nil;
 	return nil;
 }
 
++ (NSManagedObject *)entityByURI:(NSURL *)uri {
+	NSManagedObjectID *objectID = [gPersistentStoreCoordinator managedObjectIDForURIRepresentation:uri]; 
+
+	if (objectID) {
+		return [gManagedObjectContext objectWithID:objectID];
+	}
+
+	return nil;
+}
+
 + (NSManagedObject *)createNewEntityByName:(NSString *)entityName {
 	return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:gManagedObjectContext]; 
 }

@@ -94,6 +94,11 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	removeEntity, removeAllEntitiesByName and (my personal favorite) clearAllData make
 	using Core Data the pleasure that it was supposed to be!
 	
+	And now, it's thread-safe!  Create a private CoreDataStore on your thread with
+	[CoreDataStore createStore].  If you're on the main thread, you can access the
+	singleton with [CoreDataStore mainStore].  Remember, your NSManagedObject classes
+	cannot be passed between threads!
+	
 ((( Categories )))
 	
 	iBoost augments many of your favorite Cocoa classes with categories to make using them,

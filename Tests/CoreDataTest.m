@@ -42,8 +42,10 @@
 }
 
 - (void)setUp {
+	CoreDataStore *store = [CoreDataStore mainStore];
+	
     // Run before each test method
-	[CoreDataStore clearAllData];
+	[store clearAllData];
 }
 
 - (void)tearDown {
@@ -53,25 +55,27 @@
 - (void)testInitialization {
 	NSArray *widgets;
 	NSError *error = nil;
+	CoreDataStore *store = [CoreDataStore mainStore];
 
-	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	widgets = [store allForEntity:@"Widget" error:&error];
 	GHAssertEquals(0U, widgets.count, nil);
 }
 
 - (void)testCreation {
 	NSArray *widgets;
 	NSError *error = nil;
+	CoreDataStore *store = [CoreDataStore mainStore];
 
 	// add 1
 	[self makeWidgetWithInteger:0];
 
-	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	widgets = [store allForEntity:@"Widget" error:&error];
 	GHAssertEquals(1U, widgets.count, nil);
 
 	// add 2
 	[self makeWidgetWithInteger:0];
 	
-	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	widgets = [store allForEntity:@"Widget" error:&error];
 	GHAssertEquals(2U, widgets.count, nil);
 }
 
@@ -79,19 +83,21 @@
 	NSArray *widgets;
 	NSError *error = nil;
 	
+	CoreDataStore *store = [CoreDataStore mainStore];
+	
 	// add 3
 	widgets = [NSArray arrayWithObjects:[self makeWidgetWithInteger:0], [self makeWidgetWithInteger:0], [self makeWidgetWithInteger:0], nil];
 	
 	// remove each
 	do {
 		// how many left?
-		NSUInteger count = [CoreDataStore allForEntity:@"Widget" error:&error].count;
+		NSUInteger count = [store allForEntity:@"Widget" error:&error].count;
 		
 		// remove one
-		[CoreDataStore removeEntity:[widgets lastObject]];
+		[store removeEntity:[widgets lastObject]];
 		
 		// verify what's left
-		widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+		widgets = [store allForEntity:@"Widget" error:&error];
 		GHAssertEquals(count - 1, widgets.count, nil);
 	} while (widgets.count > 0);
 }
@@ -99,24 +105,26 @@
 - (void)testRemoveAll {
 	NSArray *widgets;
 	NSError *error = nil;
+	CoreDataStore *store = [CoreDataStore mainStore];
 	
 	// add some
 	[self makeWidgetWithInteger:0];
 	[self makeWidgetWithInteger:0];
 	[self makeWidgetWithInteger:0];
 	
-	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	widgets = [store allForEntity:@"Widget" error:&error];
 	GHAssertEquals(3U, widgets.count, nil);
 	
 	// remove them all
-	[CoreDataStore removeAllEntitiesByName:@"Widget"];
+	[store removeAllEntitiesByName:@"Widget"];
 
-	widgets = [CoreDataStore allForEntity:@"Widget" error:&error];
+	widgets = [store allForEntity:@"Widget" error:&error];
 	GHAssertEquals(0U, widgets.count, nil);
 }
 
 - (void)testSearchByKey {
 	NSError *error = nil;
+	CoreDataStore *store = [CoreDataStore mainStore];
 	
 	// add some
 	[self makeWidgetWithInteger:0];
@@ -124,7 +132,7 @@
 	[self makeWidgetWithInteger:2];
 	
 	// search
-	NSManagedObject *obj = [CoreDataStore entityByName:@"Widget" key:@"i" value:BOX_INT(1) error:&error];
+	NSManagedObject *obj = [store entityByName:@"Widget" key:@"i" value:BOX_INT(1) error:&error];
 	
 	GHAssertNotEquals(BOX_INT(0), [obj valueForKey:@"i"], nil);
 	GHAssertEquals(BOX_INT(1), [obj valueForKey:@"i"], nil);
@@ -132,21 +140,24 @@
 }
 
 - (NSManagedObject *)makeWidgetWithInteger:(NSInteger)value {
-	NSManagedObject *widget = [CoreDataStore createNewEntityByName:@"Widget"];
+	CoreDataStore *store = [CoreDataStore mainStore];
+	NSManagedObject *widget = [store createNewEntityByName:@"Widget"];
 	[widget setValue:BOX_INT(value) forKey:@"i"];
 	
 	return widget;
 }
 
 - (NSManagedObject *)makeWidgetWithBool:(BOOL)value {
-	NSManagedObject *widget = [CoreDataStore createNewEntityByName:@"Widget"];
+	CoreDataStore *store = [CoreDataStore mainStore];
+	NSManagedObject *widget = [store createNewEntityByName:@"Widget"];
 	[widget setValue:BOX_BOOL(value) forKey:@"b"];
 	
 	return widget;
 }
 
 - (NSManagedObject *)makeWidgetWithFloat:(float)value {
-	NSManagedObject *widget = [CoreDataStore createNewEntityByName:@"Widget"];
+	CoreDataStore *store = [CoreDataStore mainStore];
+	NSManagedObject *widget = [store createNewEntityByName:@"Widget"];
 	[widget setValue:BOX_FLOAT(value) forKey:@"f"];
 	
 	return widget;

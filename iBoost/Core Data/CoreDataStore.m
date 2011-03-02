@@ -83,9 +83,8 @@ static CoreDataStore *gMainStoreInstance;
 
 #pragma mark -
 
-- (void)createManagedObjectContext {
-	_managedObjectContext = [[NSManagedObjectContext alloc] init];
-	[_managedObjectContext setPersistentStoreCoordinator:gPersistentStoreCoordinator];
+- (NSManagedObjectContext *)context {
+	return _managedObjectContext;
 }
 
 - (void)clearAllData {
@@ -260,6 +259,13 @@ static CoreDataStore *gMainStoreInstance;
 
 + (NSString *)applicationDocumentsDirectory {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+#pragma mark -
+
+- (void)createManagedObjectContext {
+	_managedObjectContext = [[NSManagedObjectContext alloc] init];
+	[_managedObjectContext setPersistentStoreCoordinator:gPersistentStoreCoordinator];
 }
 
 @end

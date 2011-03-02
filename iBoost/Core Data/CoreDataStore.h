@@ -24,6 +24,8 @@
 	NSManagedObjectContext *_managedObjectContext;	
 }
 
+@property (nonatomic, readonly) NSManagedObjectContext *context;
+
 + (CoreDataStore *)mainStore;
 + (CoreDataStore *)createStore;
 

@@ -56,7 +56,7 @@
 #define RECT_INSET_BY(rect, inset) CGRectMake(rect.origin.x + (inset), rect.origin.y + (inset), rect.size.width - (inset) * 2, rect.size.height - (inset) * 2)
 #define RECT_DUPLICATED_AND_OFFSET_FROM_BY_X(rect, offset) CGRectMake(rect.origin.x + rect.size.width + (offset), rect.origin.y, rect.size.width, rect.size.height)
 #define RECT_DUPLICATED_AND_OFFSET_FROM_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
-#define RECT_OFFSET_BY_X_Y(rect, x, y) CGRectMake(rect.origin.x + (x), rect.origin.y + (y), rect.size.width, rect.size.height)
+#define RECT_OFFSET_BY_X_Y(rect, xx, yy) CGRectMake(rect.origin.x + (xx), rect.origin.y + (yy), rect.size.width, rect.size.height)
 
 // SELECTORS
 

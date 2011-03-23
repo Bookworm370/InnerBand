@@ -44,10 +44,6 @@
 
 // BOUNDS
 
-#define RECT_WITH_X(rect, xx) CGRectMake((rect).origin.x + (xx), (rect).origin.y, (rect).size.width, (rect).size.height)
-#define RECT_WITH_Y(rect, yy) CGRectMake((rect).origin.x, (rect).origin.y + (yy), (rect).size.width, (rect).size.height)
-#define RECT_WITH_X_Y(rect, xx, yy) CGRectMake((rect).origin.x + (xx), (rect).origin.y + (yy), (rect).size.width, (rect).size.height)
-
 #define RECT_WITH_WIDTH_HEIGHT(rect, width, height) CGRectMake((rect).origin.x, (rect).origin.y, (width), (height))
 #define RECT_WITH_WIDTH(rect, width) CGRectMake((rect).origin.x, (rect).origin.y, (width), (rect).size.height)
 #define RECT_WITH_HEIGHT(rect, height) CGRectMake((rect).origin.x, (rect).origin.y, (rect).size.width, (height))

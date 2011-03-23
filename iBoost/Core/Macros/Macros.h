@@ -44,19 +44,20 @@
 
 // BOUNDS
 
+#define RECT_WITH_X(rect, xx) CGRectMake((rect).origin.x + (xx), (rect).origin.y, (rect).size.width, (rect).size.height)
+#define RECT_WITH_Y(rect, yy) CGRectMake((rect).origin.x, (rect).origin.y + (yy), (rect).size.width, (rect).size.height)
+#define RECT_WITH_X_Y(rect, xx, yy) CGRectMake((rect).origin.x + (xx), (rect).origin.y + (yy), (rect).size.width, (rect).size.height)
+
+#define RECT_WITH_WIDTH_HEIGHT(rect, width, height) CGRectMake((rect).origin.x, (rect).origin.y, (width), (height))
+#define RECT_WITH_WIDTH(rect, width) CGRectMake((rect).origin.x, (rect).origin.y, (width), (rect).size.height)
+#define RECT_WITH_HEIGHT(rect, height) CGRectMake((rect).origin.x, (rect).origin.y, (rect).size.width, (height))
+
 #define RECT_INSET_BY_LEFT_TOP_RIGHT_BOTTOM(rect, left, top, right, bottom) CGRectMake(rect.origin.x + (left), rect.origin.y + (top), rect.size.width - (left) - (right), rect.size.height - (top) - (bottom))
 #define RECT_INSET_BY_TOP_BOTTOM(rect, top, bottom) CGRectMake(rect.origin.x, rect.origin.y + (top), rect.size.width, rect.size.height - (top) - (bottom))
-#define RECT_INSET_BY_TOP(rect, top) CGRectMake(rect.origin.x, rect.origin.y + (top), rect.size.width, rect.size.height - (top))
-#define RECT_INSET_BY_BOTTOM(rect, bottom) CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height - (bottom))
 #define RECT_INSET_BY_LEFT_RIGHT(rect, left, right) CGRectMake(rect.origin.x + (left), rect.origin.y, rect.size.width - (left) - (right), rect.size.height)
-#define RECT_INSET_BY_LEFT(rect, left) CGRectMake(rect.origin.x + (left), rect.origin.y, rect.size.width - (left), rect.size.height)
-#define RECT_INSET_BY_RIGHT(rect, right) CGRectMake(rect.origin.x, rect.origin.y, rect.size.width - (right), rect.size.height)
-#define RECT_INSET_BY_TOP_LEFT(rect, top, left) CGRectMake(rect.origin.x + (left), rect.origin.y + (top), rect.size.width - (left), rect.size.height - (top))
-#define RECT_INSET_BY_BOTTOM_RIGHT(rect, bottom, right) CGRectMake(rect.origin.x, rect.origin.y, rect.size.width - (right), rect.size.height - (bottom))
-#define RECT_INSET_BY(rect, inset) CGRectMake(rect.origin.x + (inset), rect.origin.y + (inset), rect.size.width - (inset) * 2, rect.size.height - (inset) * 2)
-#define RECT_DUPLICATED_AND_OFFSET_FROM_BY_X(rect, offset) CGRectMake(rect.origin.x + rect.size.width + (offset), rect.origin.y, rect.size.width, rect.size.height)
-#define RECT_DUPLICATED_AND_OFFSET_FROM_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
-#define RECT_OFFSET_BY_X_Y(rect, xx, yy) CGRectMake(rect.origin.x + (xx), rect.origin.y + (yy), rect.size.width, rect.size.height)
+
+#define RECT_STACKED_OFFSET_BY_X(rect, offset) CGRectMake(rect.origin.x + rect.size.width + (offset), rect.origin.y, rect.size.width, rect.size.height)
+#define RECT_STACKED_OFFSET_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
 
 // GEOMETRY
 

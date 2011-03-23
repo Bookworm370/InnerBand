@@ -63,9 +63,6 @@
 	rect = RECT_WITH_HEIGHT(RECT_50_X_100_SIZED_200_BY_400, 150);
 	GHAssertEquals(CGRectMake(50, 100, 200, 150), rect, nil);
 
-	rect = RECT_WITH_X_Y(RECT_50_X_100_SIZED_200_BY_400, 10, 10);
-	GHAssertEquals(CGRectMake(60, 110, 200, 400), rect, nil);
-
 	rect = RECT_STACKED_OFFSET_BY_X(RECT_50_X_100_SIZED_200_BY_400, 10);
 	GHAssertEquals(CGRectMake(260, 100, 200, 400), rect, nil);
 

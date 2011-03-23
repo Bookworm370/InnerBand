@@ -96,14 +96,6 @@
 
 #define IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 
-// HARDWARE/OS SUPPORT
-
-#define IS_RUNNING_OS_4_0 (ABS(kCFCoreFoundationVersionNumber_iPhoneOS_4_0 - kCFCoreFoundationVersionNumber) < 0.01)
-#define IS_RUNNING_OS_4_1 (ABS(kCFCoreFoundationVersionNumber_iPhoneOS_4_1 - kCFCoreFoundationVersionNumber) < 0.01)
-
-#define IS_RUNNING_AT_LEAST_OS_4_0 ((kCFCoreFoundationVersionNumber + 0.01) > kCFCoreFoundationVersionNumber_iPhoneOS_4_0)
-#define IS_RUNNING_AT_LEAST_OS_4_1 ((kCFCoreFoundationVersionNumber + 0.01) > kCFCoreFoundationVersionNumber_iPhoneOS_4_1)
-
 // HARDWARE/DEVICE CAPABILITY
 
 #define IS_CLASSIC_DISPLAY (([UIScreen mainScreen].scale < 1.5F))
@@ -111,8 +103,6 @@
 
 #define IS_MULTITASKING_IN_SDK ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES) 
 #define IS_CAMERA_IN_SDK ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-#define IS_VIDEO_IN_SDK ([[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] containsObject:(NSString *)kUTTypeMovie])
-#define IS_GYROSCOPE_IN_SDK ([[[[CMMotionManager alloc] init] autorelease] isAccelerometerAvailable] == YES)
 
 // COLORS
 

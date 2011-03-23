@@ -51,29 +51,26 @@
 	rect = RECT_INSET_BY_TOP_BOTTOM(RECT_50_X_100_SIZED_200_BY_400, 30, 60);
 	GHAssertEquals(CGRectMake(50, 130, 200, 310), rect, nil);
 
-	rect = RECT_INSET_BY_TOP(RECT_50_X_100_SIZED_200_BY_400, 25);
-	GHAssertEquals(CGRectMake(50, 125, 200, 375), rect, nil);
-
-	rect = RECT_INSET_BY_BOTTOM(RECT_50_X_100_SIZED_200_BY_400, 25);
-	GHAssertEquals(CGRectMake(50, 100, 200, 375), rect, nil);
-
 	rect = RECT_INSET_BY_LEFT_RIGHT(RECT_50_X_100_SIZED_200_BY_400, 30, 60);
 	GHAssertEquals(CGRectMake(80, 100, 110, 400), rect, nil);
-	
-	rect = RECT_INSET_BY_LEFT(RECT_50_X_100_SIZED_200_BY_400, 25);
-	GHAssertEquals(CGRectMake(75, 100, 175, 400), rect, nil);
-	
-	rect = RECT_INSET_BY_RIGHT(RECT_50_X_100_SIZED_200_BY_400, 25);
-	GHAssertEquals(CGRectMake(50, 100, 175, 400), rect, nil);
 
-	rect = RECT_INSET_BY_TOP_LEFT(RECT_50_X_100_SIZED_200_BY_400, 15, 35);
-	GHAssertEquals(CGRectMake(85, 115, 165, 385), rect, nil);
+	rect = RECT_WITH_WIDTH_HEIGHT(RECT_50_X_100_SIZED_200_BY_400, 60, 80);
+	GHAssertEquals(CGRectMake(50, 100, 60, 80), rect, nil);
 
-	rect = RECT_INSET_BY_BOTTOM_RIGHT(RECT_50_X_100_SIZED_200_BY_400, 15, 35);
-	GHAssertEquals(CGRectMake(50, 100, 165, 385), rect, nil);
+	rect = RECT_WITH_WIDTH(RECT_50_X_100_SIZED_200_BY_400, 120);
+	GHAssertEquals(CGRectMake(50, 100, 120, 400), rect, nil);
 
-	rect = RECT_INSET_BY(RECT_50_X_100_SIZED_200_BY_400, 25);
-	GHAssertEquals(CGRectMake(75, 125, 150, 350), rect, nil);
+	rect = RECT_WITH_HEIGHT(RECT_50_X_100_SIZED_200_BY_400, 150);
+	GHAssertEquals(CGRectMake(50, 100, 200, 150), rect, nil);
+
+	rect = RECT_WITH_X_Y(RECT_50_X_100_SIZED_200_BY_400, 10, 10);
+	GHAssertEquals(CGRectMake(60, 110, 200, 400), rect, nil);
+
+	rect = RECT_STACKED_OFFSET_BY_X(RECT_50_X_100_SIZED_200_BY_400, 10);
+	GHAssertEquals(CGRectMake(260, 100, 200, 400), rect, nil);
+
+	rect = RECT_STACKED_OFFSET_BY_Y(RECT_50_X_100_SIZED_200_BY_400, 10);
+	GHAssertEquals(CGRectMake(50, 510, 200, 400), rect, nil);
 }
 
 - (void)testBoxing {

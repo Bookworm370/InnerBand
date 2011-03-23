@@ -58,6 +58,11 @@
 #define RECT_DUPLICATED_AND_OFFSET_FROM_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
 #define RECT_OFFSET_BY_X_Y(rect, xx, yy) CGRectMake(rect.origin.x + (xx), rect.origin.y + (yy), rect.size.width, rect.size.height)
 
+// GEOMETRY
+
+#define DEG_TO_RAD(degrees) ((degrees) * M_PI / 180.0)
+#define RAD_TO_DEG(radians) ((radians) * 180.0 / M_PI)
+
 // SELECTORS
 
 #define SEL(x) @selector(x)

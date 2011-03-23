@@ -19,11 +19,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define WEBCOLOR(web) [UIColor colorWithWeb:(web)]
-#define HEXCOLOR(hex) [UIColor colorWithHex:(hex)]
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
-
-
 @interface UIColor (Hex)
 
 + (UIColor *)colorWith256Red:(NSInteger)r green:(NSInteger)g blue:(NSInteger)b;

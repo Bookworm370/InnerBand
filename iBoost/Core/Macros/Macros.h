@@ -99,6 +99,7 @@
 #define DEVICE_UDID ([UIDevice currentDevice].uniqueIdentifier)
 
 #define IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+#define IS_IPHONE ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
 
 // HARDWARE/DEVICE CAPABILITY
 

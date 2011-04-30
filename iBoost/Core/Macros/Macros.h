@@ -103,7 +103,7 @@
 // HARDWARE/DEVICE CAPABILITY
 
 #define IS_CLASSIC_DISPLAY (([UIScreen mainScreen].scale < 1.5F))
-#define IS_RETINAL_DISPLAY (([UIScreen mainScreen].scale > 1.5F))
+#define IS_RETINA_DISPLAY (([UIScreen mainScreen].scale > 1.5F))
 
 #define IS_MULTITASKING_IN_SDK ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES) 
 #define IS_CAMERA_IN_SDK ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])

@@ -68,7 +68,4 @@
 /* Returns an entity description by name. */
 - (NSEntityDescription *)entityDescriptionForEntity:(NSString *)entityName;
 
-/* Returns documents directory path. */
-+ (NSString *)applicationDocumentsDirectory;
-
 @end

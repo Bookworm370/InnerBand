@@ -25,6 +25,7 @@
 
 #define BOX_BOOL(x) [NSNumber numberWithBool:(x)]
 #define BOX_INT(x) [NSNumber numberWithInt:(x)]
+#define BOX_SHORT(x) [NSNumber numberWithShort:(x)]
 #define BOX_LONG(x) [NSNumber numberWithLong:(x)]
 #define BOX_UINT(x) [NSNumber numberWithUnsignedInt:(x)]
 #define BOX_FLOAT(x) [NSNumber numberWithFloat:(x)]
@@ -32,6 +33,7 @@
 
 #define UNBOX_BOOL(x) [(x) boolValue]
 #define UNBOX_INT(x) [(x) intValue]
+#define UNBOX_SHORT(x) [(x) shortValue]
 #define UNBOX_LONG(x) [(x) longValue]
 #define UNBOX_UINT(x) [(x) unsignedIntValue]
 #define UNBOX_FLOAT(x) [(x) floatValue]

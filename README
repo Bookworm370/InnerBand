@@ -24,7 +24,7 @@ As I was finishing my third project with it, I decided I'd had enough.  Here are
 	
 	7. The navigation system works great for simple transitions, but is hard to use (and breaks encapsulation) when you need to pass parameters, display and dismiss popups simultaneously, and avoid navigation controllers.
 
-That's not to say there's not a lot of neat stuff in Three20.  In fact, iBoost includes the IBImageView which is web-friendly image component in Three20 formerly known as a TTImageView.  It's also not incorrect to say that some of these problems can be avoid with proper knowledge, but the lack of quality, updated documentation doesn't work well with developers who are trying to write apps quicker using the framework.
+That's not to say there's not a lot of neat stuff in Three20.  Some of these problems can likely be avoided with deeper knowledge, but the lack of quality, updated documentation doesn't work well with developers who are trying to write apps with it.
 
 That's why there's iBoost!
 
@@ -47,31 +47,27 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	IBCoreTextLabel and use HTML syntax to display text without the heavy
 	UIWebView at all!
 
-	Have to write a UIImageView that can load graphics from the web?  It's a pain!
-	iBoost provides the IBImageView (as extracted from Three20) that gives you the
-	loading capability as well as caching to make it efficient as well!
-
 ((( The Message Center )))
 	
 	The Message Center improves upon NSNotificationCenter in every way.  A compact, essentially
-	simple system if you want it to be, the Message Center also goes way beyond if you want it to.
+	simple system if you want it to be, the Message Center also goes way beyond if you allow it.
 	
-	Passing simple notifications (DispatchMessages) lets you alert components to 
-	significant events in your application:
+	Passing notifications (DispatchMessage) lets you alert components to 
+	significant events in your application with a clean API:
 	
 	[MessageCenter sendGlobalMessageNamed:COOKIES_ARE_READY];
 	
-	Packaging data with the notification be just as easy:
+	Packaging data with the notification is just as easy:
 	
 	[MessageCenter sendGlobalMessageNamed:COOKIE_READY withUserInfoKey:@"cookie" andValue:cookie];
 	
 	But, DispatchMessage is even more powerful than that.  Each message can support internal
 	execution that allows you to run code before the dispatch is made.  For example, you
-	can create a HTTPGetRequestMessage with a URL (and optional paramters) and dispatch it as
+	can create a HTTPGetRequestMessage with a URL (and optional parameters) and dispatch it as
 	normal, but the asynchronous URL request will be made and only when it's complete will
-	the message be dispatched.  The listeners will all have access to the output!
+	the message be dispatched.  The listeners will all have access to the output when they receive it!
 	
-	And we can go further than even that.  A DispatchMessage object can be sequenced
+	And we can go further than that.  A DispatchMessage object can be sequenced
 	within a SequencedMessage, chaining all of their inputs and outputs with each other so
 	that when all execution is complete the final output is dispatched.  Chain the
 	HTTPGetRequestMessage with your JSONMessage so that all listeners get the JSON
@@ -79,22 +75,27 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	
 ((( Core Data )))
 	
-	Core Data is a wonderful API, but the code required to perform anything is large,
-	cryptic, and doesn't belong in your controllers.  In addition, the boilerplate code
-	that Apple places in your AppDelegate is misplaced.
+	Core Data is a wonderful API, but the code required to perform anything requires
+	a lot of boilerplate code.  Even Apple places a lot of this in your AppDelegate!
 	
 	There's a better solution.
 	
-	Create your project as you normally would and you don't even need to select the CoreData checkbox.
-	Access the CoreDataStore and everything is set up for you!  All you need to do is add
-	a Core Data Model to your project and you're ready to go.
+	Start a project as normal -- and don't select the Core Data checkbox so none of that
+	nasty code is added to your project. Import iBoost
+	and now Core Data is ready to go!  Just go and create a new Core Data Model.
 	
 	CoreDataStore provides methods for you to use to access data easily without leaving
 	that sloppy code lying around.  Methods such as allForEntity, entityByName,
 	removeEntity, removeAllEntitiesByName and (my personal favorite) clearAllData make
-	using Core Data the pleasure that it was supposed to be!
+	using Core Data the pleasure that it was supposed to be! But it gets even easier...
 	
-	And now, it's thread-safe!  Create a private CoreDataStore on your thread with
+	The new recommended way to use these methods is through a category on NSManagedObject.
+	For example, if you generated a CoreData class called Widget, you can now call
+	[Widget create] or [Widget all] to create or access them.  This is the better
+	way to go because it's compiler-checkable, but it does require that you generate
+	the classes with the same name as the entities.
+	
+	And now, it's also thread-safe!  Create a private CoreDataStore on your thread with
 	[CoreDataStore createStore].  If you're on the main thread, you can access the
 	singleton with [CoreDataStore mainStore].  Remember, your NSManagedObject classes
 	cannot be passed between threads!
@@ -105,7 +106,7 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	well, more useful!  None interrupt your normal development practices.  Use them or don't.
 	With them, you'll be able to do lots of cool stuff!
 	
-	Create a color like a normal human with [UIColor colorWithHexString:@"#ff3344"].
+	Create a color like a web developer with [UIColor colorWithHexString:@"#ff3344"].
 	
 	Sort an array of strings with case- and diacritic- insensitivity simply with
 	[myArray sortedArrayAsDiacriticInsensitiveCaseInsensitive].
@@ -118,17 +119,17 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	Prefer to work with UTC rather than locale time?  Create an NSDate and you can use
 	properties like myDate.utcHour and myDate.utcDay.
 
-	There's so much more, too!  Check em out and find your favorites...
+	There's so much more, too!  Check out the unit tests and find your favorites...
 	
 ((( Macros )))
 
-	Macros are a huge part of saving you time!  iBoost contains so many to choose from!
+	Macros are a huge time saver!  iBoost contains so many to choose from!
 	
 	Box up a primitive integer into an NSNumber to store in an array with BOX_INT(5).
 	Unbox it back with UNBOX_INT(myNumber).
 	
-	Free up memory cleanly with RELEASE_AND_NIL(myObject).
-	Re-assign memory with myObject = RETAIN_RELEASE_AND_ASSIGN_TO(myObject, anotherObject).
+	Free up memory cleanly with SAFE_RELEASE(myObject).
+	Re-assign memory with myObject = SAFE_ASSIGN(myObject, anotherObject).
 	
 	Alter rectangles with RECT_INSET_BY_LEFT_TOP_RIGHT_BOTTOM(myRect, 50, 10, 5, 10).
 	Replace @selector(mySelector:) with the simpler SEL(mySelector:)
@@ -163,7 +164,7 @@ Copying the iBoost source into your project is the most flexible and lets you up
 
 3. Open the iBoost directory and copy the iBoost/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-4. Add the CoreData, CoreText, MobileCoreServices, CoreMotion, and QuartzCore frameworks to each target that will use iBoost.
+4. Add the CoreData framework to each target that will use iBoost.
 
 5. Done!
 
@@ -209,6 +210,4 @@ So who created iBoost?
 ----------------------
 
 
-iBoost was conceived, designed, created, and is maintained by John Blanco <john.blanco@raptureinvenice.com> and Sean Christmann <sean@craftymind.com>.
-
-iBoost also includes contributions originally made to the excellent Three20 framework that can be found at http://three20.info.
+iBoost was conceived, designed, created, and is maintained by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.

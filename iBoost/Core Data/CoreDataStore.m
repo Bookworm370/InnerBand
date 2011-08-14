@@ -133,7 +133,7 @@ static CoreDataStore *gMainStoreInstance;
 	} 
 }
 
-#pragma mark -
+#pragma mark - Deprecated Accessors (Use NSManagedObject+iBoost)
 
 - (NSArray *)allForEntity:(NSString *)entityName error:(NSError **)error {
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
@@ -221,13 +221,17 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 - (NSManagedObject *)entityByURI:(NSURL *)uri {
-	NSManagedObjectID *objectID = [gPersistentStoreCoordinator managedObjectIDForURIRepresentation:uri]; 
+	NSManagedObjectID *oid = [gPersistentStoreCoordinator managedObjectIDForURIRepresentation:uri]; 
 
-	if (objectID) {
-		return [_managedObjectContext objectWithID:objectID];
+    return [self entityByObjectID:oid];
+}
+
+- (NSManagedObject *)entityByObjectID:(NSManagedObjectID *)oid {
+	if (oid) {
+		return [_managedObjectContext objectWithID:oid];
 	}
-
-	return nil;
+    
+	return nil;    
 }
 
 - (NSManagedObject *)createNewEntityByName:(NSString *)entityName {

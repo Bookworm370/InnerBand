@@ -35,6 +35,19 @@
 /* Saves context. */
 - (void)save;
 
+
+
+/* Create a new entity by name. */
+- (NSManagedObject *)createNewEntityByName:(NSString *)entityName;
+
+/* Remove entity. */
+- (void)removeEntity:(NSManagedObject *)entity;
+
+/* Remove all objects of an entity. */
+- (void)removeAllEntitiesByName:(NSString *)entityName;
+
+// TODO: Add removeAllEntitiesOfClass
+
 /* Returns ALL objects for an entity. */
 - (NSArray *)allForEntity:(NSString *)entityName error:(NSError **)error;
 
@@ -47,25 +60,29 @@
 /* Returns ALL objects for an entity ordered by a field. */
 - (NSArray *)allForEntity:(NSString *)entityName orderBy:(NSString *)key ascending:(BOOL)ascending error:(NSError **)error;
 
+// TODO: Changes these to -EntityName and make new ones for -EntityClass
+
+
 /* Returns a single entity by name. */
 - (NSManagedObject *)entityByName:(NSString *)entityName error:(NSError **)error;
 
 /* Returns a single entity with the specified key/value. */
 - (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSObject *)value error:(NSError **)error;
 
+// TODO: Change key to attribute and make Class versions
+
+
 /* Returns object based on URI representation. */
 - (NSManagedObject *)entityByURI:(NSURL *)uri;
 
-/* Create a new entity by name. */
-- (NSManagedObject *)createNewEntityByName:(NSString *)entityName;
+/* Returns object based on Object ID. */
+- (NSManagedObject *)entityByObjectID:(NSManagedObjectID *)oid;
 
-/* Remove entity. */
-- (void)removeEntity:(NSManagedObject *)entity;
 
-/* Remove all objects of an entity. */
-- (void)removeAllEntitiesByName:(NSString *)entityName;
 
 /* Returns an entity description by name. */
 - (NSEntityDescription *)entityDescriptionForEntity:(NSString *)entityName;
+
+// TODO: Add Class versions
 
 @end

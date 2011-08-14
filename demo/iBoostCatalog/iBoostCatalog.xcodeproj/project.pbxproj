@@ -24,7 +24,6 @@
 		FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */; };
 		FF7AB15A12320B4D0000669C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB15912320B4D0000669C /* CoreText.framework */; };
 		FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */; };
-		FFBDCB75125297C400C6AD94 /* DeviceInfoDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDCB74125297C400C6AD94 /* DeviceInfoDemoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +77,6 @@
 		FF7AB15912320B4D0000669C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		FFBDCB1B12528F7800C6AD94 /* OrientationDetectionDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationDetectionDemoVC.h; sourceTree = "<group>"; };
 		FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationDetectionDemoVC.m; sourceTree = "<group>"; };
-		FFBDCB73125297C400C6AD94 /* DeviceInfoDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoDemoVC.h; sourceTree = "<group>"; };
-		FFBDCB74125297C400C6AD94 /* DeviceInfoDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoDemoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +109,6 @@
 				FF0C4CC312313F8600C3960E /* Styled Text */,
 				FF7AB14E1232054A0000669C /* Core Text */,
 				FFBDCB1A12528F6100C6AD94 /* Orientation Detection */,
-				FFBDCB72125297B600C6AD94 /* Device Info */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -225,15 +221,6 @@
 			name = "Orientation Detection";
 			sourceTree = "<group>";
 		};
-		FFBDCB72125297B600C6AD94 /* Device Info */ = {
-			isa = PBXGroup;
-			children = (
-				FFBDCB73125297C400C6AD94 /* DeviceInfoDemoVC.h */,
-				FFBDCB74125297C400C6AD94 /* DeviceInfoDemoVC.m */,
-			);
-			name = "Device Info";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,7 +312,6 @@
 				FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */,
 				FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */,
 				FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */,
-				FFBDCB75125297C400C6AD94 /* DeviceInfoDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

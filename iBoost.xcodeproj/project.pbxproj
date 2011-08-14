@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8698C13F7825D00F2A07B /* CoreDataWidget.h */; };
+		02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8698D13F7825D00F2A07B /* CoreDataWidget.m */; };
+		02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */; };
+		02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */; };
 		02FAD4D412F472CA00090B61 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48A12F472CA00090B61 /* IBButton.h */; };
 		02FAD4D512F472CA00090B61 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48B12F472CA00090B61 /* IBButton.m */; };
 		02FAD4D612F472CA00090B61 /* IBCoreTextLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48C12F472CA00090B61 /* IBCoreTextLabel.h */; };
@@ -88,6 +92,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A8698C13F7825D00F2A07B /* CoreDataWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataWidget.h; sourceTree = "<group>"; };
+		02A8698D13F7825D00F2A07B /* CoreDataWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataWidget.m; sourceTree = "<group>"; };
+		02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Boost.h"; sourceTree = "<group>"; };
+		02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Boost.m"; sourceTree = "<group>"; };
 		02FAD48A12F472CA00090B61 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
 		02FAD48B12F472CA00090B61 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
 		02FAD48C12F472CA00090B61 /* IBCoreTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabel.h; sourceTree = "<group>"; };
@@ -206,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02A8698B13F7822500F2A07B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				02A8698C13F7825D00F2A07B /* CoreDataWidget.h */,
+				02A8698D13F7825D00F2A07B /* CoreDataWidget.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		02FAD48912F472CA00090B61 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +271,8 @@
 				02FAD4BC12F472CA00090B61 /* UIImage+Boost.m */,
 				02FAD4BD12F472CA00090B61 /* UIView+Boost.h */,
 				02FAD4BE12F472CA00090B61 /* UIView+Boost.m */,
+				02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */,
+				02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */,
 			);
 			path = Boosts;
 			sourceTree = "<group>";
@@ -403,6 +422,7 @@
 		FF44864F1225B8070066E827 /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				02A8698B13F7822500F2A07B /* Classes */,
 				FF4484E31225A5630066E827 /* CoreDataTest.m */,
 			);
 			name = Systems;
@@ -493,6 +513,8 @@
 				02FAD51012F472CA00090B61 /* SequencedMessage.h in Headers */,
 				02FAD51212F472CA00090B61 /* MessageCenter.h in Headers */,
 				02FAD51412F472CA00090B61 /* MessageProcessor.h in Headers */,
+				02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */,
+				02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +618,8 @@
 				02FAD51112F472CA00090B61 /* SequencedMessage.m in Sources */,
 				02FAD51312F472CA00090B61 /* MessageCenter.m in Sources */,
 				02FAD51512F472CA00090B61 /* MessageProcessor.m in Sources */,
+				02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */,
+				02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

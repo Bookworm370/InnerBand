@@ -91,9 +91,9 @@ static CoreDataStore *gMainStoreInstance;
 	NSError *error = nil;
 	
 	// clear existing stack
-	RELEASE_AND_NIL(gManagedObjectModel);
-	RELEASE_AND_NIL(gPersistentStoreCoordinator);
-	RELEASE_AND_NIL(_managedObjectContext);
+	SAFE_RELEASE(gManagedObjectModel);
+	SAFE_RELEASE(gPersistentStoreCoordinator);
+	SAFE_RELEASE(_managedObjectContext);
 	
 	// remove persistence file
 	NSString *storeLocation = [DOCUMENTS_DIR stringByAppendingPathComponent:@"CoreDataStore.sqlite"];

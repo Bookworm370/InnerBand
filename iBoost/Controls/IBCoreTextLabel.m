@@ -81,7 +81,7 @@
 
 	if (_text) {
 		NSMutableAttributedString *attrStr = [self createMutableAttributedStringFromText];
-		_attrStr = RETAIN_RELEASE_AND_ASSIGN_TO(_attrStr, attrStr);
+		_attrStr = SAFE_ASSIGN(_attrStr, attrStr);
 	}
 	
 	[self setNeedsDisplay];
@@ -98,7 +98,7 @@
 	
 	if (_text) {
 		NSMutableAttributedString *attrStr = [self createMutableAttributedStringFromText];
-		_attrStr = RETAIN_RELEASE_AND_ASSIGN_TO(_attrStr, attrStr);
+		_attrStr = SAFE_ASSIGN(_attrStr, attrStr);
 	}
 	
 	[self setNeedsDisplay];

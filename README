@@ -184,7 +184,7 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 	
 4. There should be two new files, iBoost.h and iBoost.m (or iBoostCore.h and iBoostCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-5. Add the CoreData, CoreText, MobileCoreServices, CoreMotion, and QuartzCore frameworks to each target that will use iBoost.
+5. Add the CoreData framework to each target that will use iBoost.
 
 6. Done!
 

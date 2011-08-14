@@ -36,7 +36,7 @@ static NSMutableDictionary *_messageListeners = nil;
 // debugging
 static BOOL _debuggingEnabled = NO;
 
-NSString *getSourceIdentifier(NSObject *obj) {
+static NSString *getSourceIdentifier(NSObject *obj) {
 	return [NSString stringWithFormat:@"%p", obj];
 }
 

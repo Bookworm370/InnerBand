@@ -8,63 +8,83 @@
 
 #import "NSManagedObject+Boost.h"
 #import <objc/runtime.h>
+#import "CoreDataStore.h"
+
+@class CoreDataStore;
 
 @implementation NSManagedObject (Boost)
 
 + (id)create {
-    CoreDataStore *store = [CoreDataStore mainStore];
+    return [self createInStore:[CoreDataStore mainStore]];
+}
+
++ (id)createInStore:(CoreDataStore *)store {
     return [store createNewEntityByName:NSStringFromClass(self.class)];
 }
 
 + (NSArray *)all {
-    NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
-    return [store allForEntity:NSStringFromClass(self.class) error:&error];
+    return [self allInStore:[CoreDataStore mainStore]];
 }
 
 + (NSArray *)allForPredicate:(NSPredicate *)predicate {
-    NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
-    return [store allForEntity:NSStringFromClass(self.class) predicate:predicate error:&error];
+    return [self allForPredicate:predicate inStore:[CoreDataStore mainStore]];
 }
 
 + (NSArray *)allForPredicate:(NSPredicate *)predicate orderBy:(NSString *)key ascending:(BOOL)ascending {
-    NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
-    return [store allForEntity:NSStringFromClass(self.class) predicate:predicate orderBy:key ascending:ascending error:&error];
+    return [self allForPredicate:predicate orderBy:key ascending:ascending inStore:[CoreDataStore mainStore]];
 }
 
 + (NSArray *)allOrderedBy:(NSString *)key ascending:(BOOL)ascending {
+    return [self allOrderedBy:key ascending:ascending inStore:[CoreDataStore mainStore]];
+}
+
++ (NSArray *)allInStore:(CoreDataStore *)store {
     NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
+    return [store allForEntity:NSStringFromClass(self.class) error:&error];    
+}
+
++ (NSArray *)allForPredicate:(NSPredicate *)predicate inStore:(CoreDataStore *)store {
+    NSError *error = nil;
+    return [store allForEntity:NSStringFromClass(self.class) predicate:predicate error:&error];
+}
+
++ (NSArray *)allForPredicate:(NSPredicate *)predicate orderBy:(NSString *)key ascending:(BOOL)ascending inStore:(CoreDataStore *)store {
+    NSError *error = nil;
+    return [store allForEntity:NSStringFromClass(self.class) predicate:predicate orderBy:key ascending:ascending error:&error];    
+}
+
++ (NSArray *)allOrderedBy:(NSString *)key ascending:(BOOL)ascending inStore:(CoreDataStore *)store {
+    NSError *error = nil;
     return [store allForEntity:NSStringFromClass(self.class) orderBy:key ascending:ascending error:&error];
 }
 
 + (id)first {
-    NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
-    return [store entityByName:NSStringFromClass(self.class) error:&error];
+    return [self firstInStore:[CoreDataStore mainStore]];
 }
 
 + (id)firstWithKey:(NSString *)key value:(NSObject *)value {
+    return [self firstWithKey:key value:value inStore:[CoreDataStore mainStore]];
+}
+
++ (id)firstInStore:(CoreDataStore *)store {
     NSError *error = nil;
-    
-    CoreDataStore *store = [CoreDataStore mainStore];
-    return [store entityByName:NSStringFromClass(self.class) key:key value:value error:&error];
+    return [store entityByName:NSStringFromClass(self.class) error:&error];    
+}
+
++ (id)firstWithKey:(NSString *)key value:(NSObject *)value inStore:(CoreDataStore *)store {
+    NSError *error = nil;
+    return [store entityByName:NSStringFromClass(self.class) key:key value:value error:&error];    
 }
 
 - (void)destroy {
-    CoreDataStore *store = [CoreDataStore mainStore];
-    [store removeEntity:self];
+    [[CoreDataStore mainStore] removeEntity:self];
 }
 
 + (void)destroyAll {
-    CoreDataStore *store = [CoreDataStore mainStore];
+    return [self destroyAllInStore:[CoreDataStore mainStore]];
+}
+
++ (void)destroyAllInStore:(CoreDataStore *)store {
     return [store removeAllEntitiesByName:NSStringFromClass(self.class)];
 }
 

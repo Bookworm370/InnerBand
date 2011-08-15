@@ -53,6 +53,9 @@ def main():
 	
 	iboost_source_file.write("#import \"" + include_filename + "\"\n")
 	
+	# necessary includes
+	iboost_header_file.write("@class CoreDataStore;\n\n")
+
 	for header in (other_header_files + class_header_files):
 		lines = open(header).readlines()
 

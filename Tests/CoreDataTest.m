@@ -29,6 +29,7 @@
 
 - (NSManagedObject *)makeWidgetWithInteger:(NSInteger)value;
 - (NSManagedObject *)makeWidgetInstanceWithInteger:(NSInteger)value;
+- (NSManagedObject *)makeWidgetInstanceWithInteger:(NSInteger)value inStore:(CoreDataStore *)store;
 - (NSManagedObject *)makeWidgetWithBool:(BOOL)value;
 - (NSManagedObject *)makeWidgetWithFloat:(float)value;
 
@@ -95,6 +96,23 @@
 	[self makeWidgetInstanceWithInteger:0];
 	
 	widgets = [CoreDataWidget all];
+	GHAssertEquals(2U, widgets.count, nil);
+}
+
+- (void)testInstanceStoreCreation {
+	NSArray *widgets;
+    CoreDataStore *store = [CoreDataStore createStore];
+    
+	// add 1
+	[self makeWidgetInstanceWithInteger:0 inStore:store];
+    
+	widgets = [CoreDataWidget allInStore:store];
+	GHAssertEquals(1U, widgets.count, nil);
+    
+	// add 2
+	[self makeWidgetInstanceWithInteger:0 inStore:store];
+	
+	widgets = [CoreDataWidget allInStore:store];
 	GHAssertEquals(2U, widgets.count, nil);
 }
 
@@ -168,6 +186,13 @@
 
 - (NSManagedObject *)makeWidgetInstanceWithInteger:(NSInteger)value {
 	CoreDataWidget *widget = [CoreDataWidget create];
+	[widget setValue:BOX_INT(value) forKey:@"i"];
+	
+	return widget;
+}
+
+- (NSManagedObject *)makeWidgetInstanceWithInteger:(NSInteger)value inStore:(CoreDataStore *)store {
+	CoreDataWidget *widget = [CoreDataWidget createInStore:store];
 	[widget setValue:BOX_INT(value) forKey:@"i"];
 	
 	return widget;

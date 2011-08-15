@@ -35,8 +35,6 @@
 /* Saves context. */
 - (void)save;
 
-
-
 /* Create a new entity by name. */
 - (NSManagedObject *)createNewEntityByName:(NSString *)entityName;
 

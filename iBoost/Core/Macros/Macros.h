@@ -44,7 +44,6 @@
 // new versions
 #define SAFE_RELEASE(obj) ([obj release], obj = nil)
 #define SAFE_TIMER_RELEASE(obj) ([obj invalidate]; [obj release]; obj = nil)
-#define SAFE_ASSIGN(obj, expr) ([(expr) retain], [obj release], obj = (expr))
 
 // BOUNDS
 

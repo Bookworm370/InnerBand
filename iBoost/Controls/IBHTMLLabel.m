@@ -45,6 +45,18 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        self.backgroundColor = [UIColor clearColor];
+		self.opaque = NO;
+		self.textColor = [UIColor blackColor];
+		self.linkColor = [UIColor blueColor];
+		self.textAlignment = UITextAlignmentLeft;
+    }
+    
+    return self;
+}
+
 - (void)dealloc {
 	[_text release];
 	[_textColor release];

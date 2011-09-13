@@ -20,9 +20,11 @@
 	NSMutableArray *_boldRanges;
 	NSMutableArray *_italicRanges;
 	NSMutableArray *_fontRanges;
+	NSMutableArray *_underlineRanges;
 }
 
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) UIFont *font;
 
 @end

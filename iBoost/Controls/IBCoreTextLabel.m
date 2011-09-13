@@ -22,11 +22,26 @@
 
 @synthesize text;
 @synthesize textColor;
+@synthesize font;
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
 		_boldRanges = [[NSMutableArray alloc] init];
 		_italicRanges = [[NSMutableArray alloc] init];
+		_underlineRanges = [[NSMutableArray alloc] init];
+		_fontRanges = [[NSMutableArray alloc] init];
+		
+		self.textColor = [UIColor blackColor];
+	}
+	
+	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	if ((self = [super initWithCoder:aDecoder])) {
+		_boldRanges = [[NSMutableArray alloc] init];
+		_italicRanges = [[NSMutableArray alloc] init];
+		_underlineRanges = [[NSMutableArray alloc] init];
 		_fontRanges = [[NSMutableArray alloc] init];
 		
 		self.textColor = [UIColor blackColor];
@@ -41,6 +56,7 @@
 	[_boldRanges release];
 	[_italicRanges release];
 	[_fontRanges release];
+	[_underlineRanges release];
 	[super dealloc];
 }
 
@@ -52,9 +68,9 @@
 	
 	// clear
 	[textColor setStroke];
-	[[UIColor whiteColor] setFill];
+	[self.backgroundColor setFill];
 	CGContextFillRect(ctx, self.bounds);	
-
+    
 	if (_attrStr) {
 		// create the frame
 		CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_attrStr);
@@ -72,6 +88,11 @@
 			CFRelease(frame);
 		}
 	}
+}
+
+- (void)setBackgroundColor:(UIColor *)value {
+    [super setBackgroundColor:value];
+    [self setNeedsDisplay];
 }
 
 - (void)setTextColor:(UIColor *)value {
@@ -95,6 +116,7 @@
 
 	[_boldRanges removeAllObjects];
 	[_italicRanges removeAllObjects];
+	[_underlineRanges removeAllObjects];
 	[_fontRanges removeAllObjects];
 	
 	if (_text) {
@@ -139,6 +161,14 @@
 
 			[scanner scanString:@"</i>" intoString:nil];
 			medicalLoss += 7;
+		} else if ([scanner scanString:@"<u>" intoString:nil]) {
+			// underline
+			[scanner scanUpToString:@"</u>" intoString:&scanStr];
+			[scannedStr appendString:scanStr];
+			[_underlineRanges addObject:[NSValue valueWithRange:NSMakeRange(scanIndex - medicalLoss, scanStr.length)]];
+            
+			[scanner scanString:@"</u>" intoString:nil];
+			medicalLoss += 7;
 		} else if ([scanner scanString:@"<font " intoString:nil]) {
 			[scanner scanUpToString:@">" intoString:&scanStr];
 			NSString *fontName = [[scanStr copy] autorelease];
@@ -162,22 +192,32 @@
 	NSMutableAttributedString *attrString = [[[NSMutableAttributedString alloc] initWithString:str] autorelease];
 	
 	[attrString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)_textColor.CGColor range:NSMakeRange(0, str.length)];
+
 	
+    if (font) {
+        CTFontRef globalFont = CTFontCreateWithName((CFStringRef)font.fontName, font.pointSize, nil);
+        [attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)globalFont range:NSMakeRange(0, str.length)];
+    }
+
 	for (NSValue *iValue in _boldRanges) {
 		[attrString addAttribute:(NSString *)(kCTStrokeWidthAttributeName) value:BOX_FLOAT(-3.0) range:iValue.rangeValue];
 	}
 
 	for (NSValue *iValue in _italicRanges) {
-		CTFontRef font = CTFontCreateWithName((CFStringRef)([UIFont italicSystemFontOfSize:12.0].fontName), 12.0, nil);
-		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)font range:iValue.rangeValue];
+		CTFontRef iFont = CTFontCreateWithName((CFStringRef)([UIFont italicSystemFontOfSize:font.pointSize].fontName), font.pointSize, nil);
+		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)iFont range:iValue.rangeValue];
+	}
+
+    for (NSValue *iValue in _underlineRanges) {
+		[attrString addAttribute:(NSString *)(kCTUnderlineStyleAttributeName) value:BOX_FLOAT(1.0) range:iValue.rangeValue];
 	}
 
 	for (NSInteger i=0; i < _fontRanges.count; i += 2) {
 		NSValue *iValue = (NSValue *)[_fontRanges objectAtIndex:i];
 		NSString *iFontName = (NSString *)[_fontRanges objectAtIndex:i+1];
 
-		CTFontRef font = CTFontCreateWithName((CFStringRef)iFontName, 12.0, nil);
-		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)font range:iValue.rangeValue];
+		CTFontRef iFont = CTFontCreateWithName((CFStringRef)iFontName, font.pointSize, nil);
+		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)iFont range:iValue.rangeValue];
 	}
 	
 	return attrString;

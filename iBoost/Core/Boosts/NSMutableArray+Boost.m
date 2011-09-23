@@ -45,4 +45,41 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 	[self sortUsingSelector:@selector(caseInsensitiveSort:)];
 }
 
+#pragma mark -
+
+- (void)pushObject:(id)obj {
+    [self addObject:obj];
+}
+
+- (id)popObject {
+    id pop = [[self lastObject] retain];
+    [self removeLastObject];
+
+    return [pop autorelease];
+}
+
+- (id)shiftObject {
+    if (self.count > 0) {
+        id shft = [[self objectAtIndex:0] retain];
+        [self removeObjectAtIndex:0];
+        return [shft autorelease];
+    }
+
+    return nil;
+}
+
+- (void)unshiftObject:(id)obj {
+    [self insertObject:obj atIndex:0];
+}
+
+#pragma mark -
+
+- (void)deleteIf:(ib_enum_bool_t)blk {
+    for (NSInteger i = (self.count - 1); i >= 0; --i) {
+        if (blk([self objectAtIndex:i])) {
+            [self removeObjectAtIndex:i];
+        }
+    }
+}
+
 @end

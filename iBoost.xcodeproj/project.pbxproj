@@ -11,6 +11,7 @@
 		02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8698D13F7825D00F2A07B /* CoreDataWidget.m */; };
 		02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */; };
 		02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */; };
+		02F0AC68142CEF8000FD21CB /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F0AC67142CEF8000FD21CB /* Types.h */; };
 		02FAD4D412F472CA00090B61 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48A12F472CA00090B61 /* IBButton.h */; };
 		02FAD4D512F472CA00090B61 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48B12F472CA00090B61 /* IBButton.m */; };
 		02FAD4D612F472CA00090B61 /* IBCoreTextLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48C12F472CA00090B61 /* IBCoreTextLabel.h */; };
@@ -96,6 +97,7 @@
 		02A8698D13F7825D00F2A07B /* CoreDataWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataWidget.m; sourceTree = "<group>"; };
 		02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Boost.h"; sourceTree = "<group>"; };
 		02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Boost.m"; sourceTree = "<group>"; };
+		02F0AC67142CEF8000FD21CB /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		02FAD48A12F472CA00090B61 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
 		02FAD48B12F472CA00090B61 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
 		02FAD48C12F472CA00090B61 /* IBCoreTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabel.h; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		02FAD4BF12F472CA00090B61 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				02F0AC67142CEF8000FD21CB /* Types.h */,
 				02FAD4C012F472CA00090B61 /* Constants.h */,
 				02FAD4C112F472CA00090B61 /* Macros.h */,
 			);
@@ -515,6 +518,7 @@
 				02FAD51412F472CA00090B61 /* MessageProcessor.h in Headers */,
 				02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */,
 				02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */,
+				02F0AC68142CEF8000FD21CB /* Types.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +566,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "iBoost" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -670,7 +674,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBoost_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = iBoost;
@@ -687,7 +691,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBoost_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ROIDS;
 				SDKROOT = iphoneos;
@@ -733,7 +737,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -766,7 +770,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (

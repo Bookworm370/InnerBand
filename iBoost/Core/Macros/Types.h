@@ -1,5 +1,5 @@
 //
-//  NSArray+Boost.h
+//  Types.h
 //  iBoost
 //
 //  iBoost - The iOS Booster!
@@ -17,18 +17,6 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import "Types.h"
+typedef NSInteger (^ib_enum_bool_t)(id);
+typedef id (^ib_enum_id_t)(id);
 
-@interface NSArray (Boost)
-
-- (NSArray *)sortedArrayAsDiacriticInsensitiveCaseInsensitive;
-- (NSArray *)sortedArrayAsDiacriticInsensitive;
-- (NSArray *)sortedArrayAsCaseInsensitive;
-- (NSArray *)sortedArray;
-
-- (id)firstObject;
-
-- (NSArray *)map:(ib_enum_id_t)blk;
-
-@end

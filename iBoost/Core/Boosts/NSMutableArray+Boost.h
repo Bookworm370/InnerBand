@@ -18,7 +18,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Types.h"
 
 @interface NSMutableArray (Boost)
 
@@ -27,5 +27,12 @@
 - (void)sortDiacriticInsensitiveCaseInsensitive;
 - (void)sortDiacriticInsensitive;
 - (void)sortCaseInsensitive;
+
+- (void)pushObject:(id)obj;
+- (id)popObject;
+- (id)shiftObject;
+- (void)unshiftObject:(id)obj;
+
+- (void)deleteIf:(ib_enum_bool_t)blk;
 
 @end

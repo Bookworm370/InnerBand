@@ -19,6 +19,7 @@
 
 #import "NSArray+Boost.h"
 #import "NSString+Boost.h"
+#import "NSMutableArray+Boost.h"
 
 @implementation NSArray (Boost)
 
@@ -36,6 +37,23 @@
 
 - (NSArray *)sortedArray {
 	return [self sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (id)firstObject {
+    return (self.count > 0) ? [self objectAtIndex:0] : nil;
+}
+
+#pragma mark -
+
+
+- (NSArray *)map:(ib_enum_id_t)blk {
+    NSMutableArray *mappedArray = [NSMutableArray array];
+    
+    for (NSInteger i = (self.count - 1); i >= 0; --i) {
+        [mappedArray unshiftObject:blk([self objectAtIndex:i])];
+    }
+    
+    return mappedArray;
 }
 
 @end

@@ -113,6 +113,9 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	
 	(Diacritics are the squiggles you see on word like Peña or naïve.)
 
+	In addition, there are a whole host of new methods for NSArray and NSMutableArray for managing stacks and queues.
+	Or, you can try out the block-based methods like deleteIf and map to ease array re-generation.
+
 	Use handy properties on your UIViews.  Want the height your button?  myButton.height.
 	Want to move it down? myButton.top += 20.
 

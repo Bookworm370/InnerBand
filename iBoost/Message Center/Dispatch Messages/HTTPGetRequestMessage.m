@@ -62,7 +62,7 @@
 	NSData *content = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 
 	if (!error) {
-		_responseData = [content retain];
+		_responseData = [content mutableCopy];
 
 		if (response) {
 			[_userInfo setObject:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];

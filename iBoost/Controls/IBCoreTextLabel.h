@@ -26,5 +26,6 @@
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIFont *font;
+@property (nonatomic, readonly) float measuredHeight;
 
 @end

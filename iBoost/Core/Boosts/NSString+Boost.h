@@ -29,4 +29,7 @@
 - (NSString *)asBundlePath;
 - (NSString *)asDocumentsPath;
 	
+- (BOOL)contains:(NSString *)substring;
+- (BOOL)contains:(NSString *)substring options:(NSStringCompareOptions)options;
+
 @end

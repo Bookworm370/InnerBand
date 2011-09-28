@@ -50,4 +50,12 @@
 	return [documentsPath stringByAppendingPathComponent:self];
 }
 
+- (BOOL)contains:(NSString *)substring {
+    return ([self rangeOfString:substring].location != NSNotFound);
+}
+
+- (BOOL)contains:(NSString *)substring options:(NSStringCompareOptions)options {
+    return ([self rangeOfString:substring options:options].location != NSNotFound);
+}
+
 @end

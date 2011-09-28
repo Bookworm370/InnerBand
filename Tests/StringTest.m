@@ -19,6 +19,7 @@
 
 #import "GHUnit.h"
 #import "Macros.h"
+#import "NSString+Boost.h"
 
 @interface StringTest : GHTestCase
 @end
@@ -71,6 +72,16 @@
 	
 	isPopulated = IS_POPULATED_STRING([NSDictionary dictionary]);
 	GHAssertFalse(isPopulated, nil);
+}
+
+- (void)testContains {
+    GHAssertFalse([@"" contains:@"a"], nil);
+    GHAssertTrue([@"a" contains:@"a"], nil);
+    GHAssertTrue([@"abc" contains:@"a"], nil);
+    GHAssertTrue([@"abc" contains:@"b"], nil);
+    GHAssertTrue([@"abc" contains:@"c"], nil);
+    GHAssertTrue([@"abc" contains:@"ab"], nil);
+    GHAssertTrue([@"abc" contains:@"bc"], nil);
 }
 
 @end

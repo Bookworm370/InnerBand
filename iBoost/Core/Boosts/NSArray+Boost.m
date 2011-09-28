@@ -39,6 +39,17 @@
 	return [self sortedArrayUsingSelector:@selector(compare:)];
 }
 
+- (NSArray *)reversedArray {
+    NSMutableArray *reversedArray = [NSMutableArray arrayWithCapacity:self.count];
+    NSEnumerator *enumerator = [self reverseObjectEnumerator];
+    
+    for (id iObject in enumerator) {
+        [reversedArray addObject:iObject];
+    }
+    
+    return [[reversedArray copy] autorelease];
+}
+
 - (id)firstObject {
     return (self.count > 0) ? [self objectAtIndex:0] : nil;
 }

@@ -143,4 +143,36 @@
     
 }
 
+- (void)testEmptyReverse {
+    NSMutableArray *array = [NSMutableArray array];
+    NSMutableArray *reversedArray = [NSMutableArray array];
+    
+    [array reverse];
+    
+    GHAssertEqualObjects(reversedArray, array, nil);
+}
+
+- (void)testReverse {
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"A", @"B", @"C", nil];
+    NSMutableArray *reversedArray = [NSMutableArray arrayWithObjects:@"C", @"B", @"A", nil];
+    
+    [array reverse];
+    
+    GHAssertEqualObjects(reversedArray, array, nil);
+}
+
+- (void)testEmptyReversedArray {
+    NSArray *array = [NSArray array];
+    NSArray *reversedArray = [NSArray array];
+    
+    GHAssertEqualObjects(reversedArray, [array reversedArray], nil);
+}
+
+- (void)testReversedArray {
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"A", @"B", @"C", nil];
+    NSMutableArray *reversedArray = [NSMutableArray arrayWithObjects:@"C", @"B", @"A", nil];
+    
+    GHAssertEqualObjects(reversedArray, [array reversedArray], nil);
+}
+
 @end

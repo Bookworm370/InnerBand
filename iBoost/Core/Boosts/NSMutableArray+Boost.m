@@ -95,4 +95,11 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
         }
     }
 }
+
+- (void)reverse {
+    for (NSInteger i=0, j=self.count - 1; i < j; ++i, --j) {
+        [self exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+}
+
 @end

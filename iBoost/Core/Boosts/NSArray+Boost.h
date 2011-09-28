@@ -27,6 +27,8 @@
 - (NSArray *)sortedArrayAsCaseInsensitive;
 - (NSArray *)sortedArray;
 
+- (NSArray *)reversedArray;
+
 - (id)firstObject;
 
 - (NSArray *)map:(ib_enum_id_t)blk;

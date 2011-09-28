@@ -35,4 +35,6 @@
 
 - (void)deleteIf:(ib_enum_bool_t)blk;
 
+- (void)shuffle;
+
 @end

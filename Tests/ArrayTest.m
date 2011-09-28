@@ -131,4 +131,16 @@
     GHAssertEqualObjects(doubledArray, mappedArray, nil);
 }
 
+- (void)testShuffle {
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"A", @"B", @"C", nil];
+    
+    // shuffle and verify to the best of our ability :-)
+    [array shuffle];
+
+    GHAssertTrue([array containsObject:@"A"], nil);
+    GHAssertTrue([array containsObject:@"B"], nil);
+    GHAssertTrue([array containsObject:@"C"], nil);
+    
+}
+
 @end

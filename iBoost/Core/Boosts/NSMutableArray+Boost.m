@@ -82,4 +82,17 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
     }
 }
 
+#pragma mark -
+
+- (void)shuffle {
+    // shuffle it 3 times because 3 is magical
+    for (NSInteger times=0; times < 3; ++times) {
+        for (NSInteger i=self.count - 1; i >= 0; --i) {
+            NSInteger fromIndex = arc4random() % self.count;
+            NSInteger toIndex = arc4random() % self.count;
+            
+            [self exchangeObjectAtIndex:fromIndex withObjectAtIndex:toIndex];
+        }
+    }
+}
 @end

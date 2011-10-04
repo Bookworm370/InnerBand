@@ -26,7 +26,7 @@
 
 + (NSMutableArray *)getTargetActionsForMessageName:(NSString *)name source:(NSObject *)source;
 + (NSMutableArray *)getTargetActionsForMessageName:(NSString *)name sourceDescription:(NSString *)sourceDescription;
-- (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions;
++ (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions;
 
 @end
 
@@ -197,7 +197,7 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	if (message.isAsynchronous) {
 		// run completely in thread
-		[self performSelectorInBackground:@selector(runProcessorInThread) withObject:message withObject:targetActions];
+		[MessageCenter performSelectorInBackground:@selector(runProcessorInThread::) withObject:message withObject:targetActions];
 	} else {
 		// process message in sync
 		MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
@@ -207,7 +207,7 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	}
 }
 
-- (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions {
++ (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions {
 	// pool
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 

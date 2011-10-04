@@ -28,6 +28,7 @@
 - (NSArray *)sortedArray;
 
 - (NSArray *)reversedArray;
+- (NSArray *)shuffledArray;
 
 - (id)firstObject;
 

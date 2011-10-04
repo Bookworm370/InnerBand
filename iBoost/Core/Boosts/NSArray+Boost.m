@@ -50,6 +50,14 @@
     return [[reversedArray copy] autorelease];
 }
 
+- (NSArray *)shuffledArray {
+    NSMutableArray *shuffledArray = [NSMutableArray arrayWithArray:self];
+    
+    [shuffledArray shuffle];
+    
+    return [[shuffledArray copy] autorelease];
+}
+
 - (id)firstObject {
     return (self.count > 0) ? [self objectAtIndex:0] : nil;
 }

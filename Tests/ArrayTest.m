@@ -143,6 +143,17 @@
     
 }
 
+- (void)testShuffledArray {
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"A", @"B", @"C", nil];
+    NSArray *shuffledArray = [array shuffledArray];
+    
+    // shuffle and verify to the best of our ability :-)
+    GHAssertTrue([shuffledArray containsObject:@"A"], nil);
+    GHAssertTrue([shuffledArray containsObject:@"B"], nil);
+    GHAssertTrue([shuffledArray containsObject:@"C"], nil);
+    
+}
+
 - (void)testEmptyReverse {
     NSMutableArray *array = [NSMutableArray array];
     NSMutableArray *reversedArray = [NSMutableArray array];

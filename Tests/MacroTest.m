@@ -86,6 +86,11 @@
 	GHAssertEqualsWithAccuracy(1.0, UNBOX_DOUBLE(BOX_DOUBLE(1.0)), 0.000001, nil);
 }
 
+- (void)testStringify {
+	GHAssertEqualObjects(@"0", STRINGIFY_INT(0), nil);
+	GHAssertEqualObjects(@"1", STRINGIFY_INT(1), nil);
+}
+
 - (void)testDumps {
 	CGRect rect = CGRectMake(10.0, 15.0, 200.0, 250.0);
 

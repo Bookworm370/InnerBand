@@ -39,6 +39,16 @@
 #define UNBOX_FLOAT(x) [(x) floatValue]
 #define UNBOX_DOUBLE(x) [(x) doubleValue]
 
+// STRINGIFY
+
+#define STRINGIFY_BOOL(x) ((x) ? @"true" : @"false")
+#define STRINGIFY_INT(x) ([NSString stringWithFormat:@"%i", (x)])
+#define STRINGIFY_SHORT(x) ([NSString stringWithFormat:@"%i", (x)])
+#define STRINGIFY_LONG(x) ([NSString stringWithFormat:@"%li", (x)])
+#define STRINGIFY_UINT(x) ([NSString stringWithFormat:@"%u", (x)])
+#define STRINGIFY_FLOAT(x) ([NSString stringWithFormat:@"%f", (x)])
+#define STRINGIFY_DOUBLE(x) ([NSString stringWithFormat:@"%f", (x)])
+
 // MEMORY
 
 // new versions

@@ -76,6 +76,7 @@
 		[invo setSelector:selector];
 		[invo setArgument:&p1 atIndex:2];
 		[invo setArgument:&p2 atIndex:3];
+        [invo retainArguments];        
 		[invo performSelectorInBackground:@selector(invoke) withObject:nil];
 	}
 }
@@ -90,6 +91,7 @@
 		[invo setArgument:&p1 atIndex:2];
 		[invo setArgument:&p2 atIndex:3];
 		[invo setArgument:&p3 atIndex:4];
+        [invo retainArguments];        
 		[invo performSelectorInBackground:@selector(invoke) withObject:nil];
 	}
 }
@@ -105,6 +107,7 @@
 		[invo setArgument:&p2 atIndex:3];
 		[invo setArgument:&p3 atIndex:4];
 		[invo setArgument:&p4 atIndex:5];
+        [invo retainArguments];        
 		[invo performSelectorInBackground:@selector(invoke) withObject:nil];
 	}
 }

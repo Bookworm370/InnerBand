@@ -22,15 +22,17 @@
 
 @implementation DispatchMessage
 
-@synthesize asynchronous = _asynchronous;
+@synthesize asynchronous = asynchronous_;
+@synthesize name = name_;
+@synthesize userInfo = userInfo_;
 
 - (id)init {
 	self = [super init];
 	
 	if (self) {
-		_name = nil;
-		_userInfo = nil;
-		_asynchronous = NO;
+		name_ = nil;
+		userInfo_ = nil;
+		asynchronous_ = NO;
 	}
 	
 	return self;
@@ -40,8 +42,8 @@
 	self = [super init];
 
 	if (self) {
-		_name = [name copy];
-		_userInfo = [userInfo mutableCopy];
+		name_ = [name copy];
+		userInfo_ = [userInfo mutableCopy];
 	}
 	
 	return self;
@@ -55,19 +57,17 @@
 }
 
 - (void)dealloc {
-	[_name release];
-	[_userInfo release];
+	[name_ release];
+	[userInfo_ release];
 	[super dealloc];
 }
 
 #pragma mark -
 
-- (NSString *)name {
-	return _name;
-}
-
-- (NSObject *)userInfo {
-	return [[_userInfo copy] autorelease];
+- (void)setUserInfo:(NSObject *)userInfo {
+    NSDictionary *value = [userInfo copy];
+    [userInfo_ release];
+    userInfo_ = value;
 }
 
 #pragma mark -
@@ -79,21 +79,6 @@
 - (NSData *)outputData {
 	// output nothing
 	return nil;
-}
-
-#pragma mark -
-
-- (void)debug:(NSString *)message, ... {
-	if ([MessageCenter isDebuggingEnabled]) {
-		va_list argList;
-		va_start(argList, message);
-		
-		NSString *interpolatedMessage = [[NSString alloc] initWithFormat:message arguments:argList];
-		NSLog(@"[%@] %@", self.class, interpolatedMessage);
-		[interpolatedMessage release];
-
-		va_end(argList);
-	}
 }
 
 @end

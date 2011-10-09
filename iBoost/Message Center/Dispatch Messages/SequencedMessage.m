@@ -49,6 +49,7 @@
 
 - (void)dealloc {
 	[_messageSequence release];
+    [_outputOfLastMessage release];
 	[super dealloc];
 }
 
@@ -72,7 +73,7 @@
 
 - (NSData *)outputData {
 	// this is the output of the last message we processed in inputData
-	return [_outputOfLastMessage autorelease];
+	return _outputOfLastMessage;
 }
 
 @end

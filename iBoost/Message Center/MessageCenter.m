@@ -197,7 +197,7 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	if (message.isAsynchronous) {
 		// run completely in thread
-		[MessageCenter performSelectorInBackground:@selector(runProcessorInThread::) withObject:message withObject:targetActions];
+		[MessageCenter performSelectorInBackground:@selector(runProcessorInThread:targetActions:) withObject:message withObject:targetActions];
 	} else {
 		// process message in sync
 		MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];

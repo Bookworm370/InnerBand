@@ -20,6 +20,7 @@
 #import "HTTPGetRequestMessage.h"
 #import <UIKit/UIKit.h>
 #import "Macros.h"
+#import "MessageCenter.h"
 
 @implementation HTTPGetRequestMessage
 
@@ -49,13 +50,18 @@
 	NSHTTPURLResponse *response = nil;
 	
 	// perform substitutions on URL
-	for (NSString *key in _userInfo) {
+	for (NSString *key in self.userInfo) {
 		NSString *subToken = [NSString stringWithFormat:@"[%@]", key];
-		subbedURL = [subbedURL stringByReplacingOccurrencesOfString:subToken withString:[(NSString *)[_userInfo objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+		if ([[self.userInfo objectForKey:key] isKindOfClass:NSString.class]) {
+            subbedURL = [subbedURL stringByReplacingOccurrencesOfString:subToken withString:[(NSString *)[self.userInfo objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        }
 	}
 
 	// debug
-	[self debug:@"OPEN URL: %@", subbedURL];
+    if ([MessageCenter isDebuggingEnabled]) {
+        NSLog(@"OPEN URL: %@", subbedURL);
+    }
 	
 	// generate request
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:subbedURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
@@ -65,7 +71,9 @@
 		_responseData = [content mutableCopy];
 
 		if (response) {
-			[_userInfo setObject:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
+            NSMutableDictionary *updatedUserInfo = [[self.userInfo mutableCopy] autorelease];
+            [updatedUserInfo setObject:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
+            self.userInfo = updatedUserInfo;
 		}
 	} else {
 		_responseData = nil;

@@ -68,6 +68,10 @@
 #define RECT_STACKED_OFFSET_BY_X(rect, offset) CGRectMake(rect.origin.x + rect.size.width + (offset), rect.origin.y, rect.size.width, rect.size.height)
 #define RECT_STACKED_OFFSET_BY_Y(rect, offset) CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + (offset), rect.size.width, rect.size.height)
 
+// IMAGES
+
+#define IMAGE(x) ([UIImage imageNamed:(x)])
+
 // GEOMETRY
 
 #define DEG_TO_RAD(degrees) ((degrees) * M_PI / 180.0)

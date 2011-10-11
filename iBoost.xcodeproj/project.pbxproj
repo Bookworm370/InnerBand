@@ -11,6 +11,8 @@
 		02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8698D13F7825D00F2A07B /* CoreDataWidget.m */; };
 		02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */; };
 		02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */; };
+		02BAC9AC1443E2500091A125 /* HTTPPostRequestMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BAC9AA1443E2500091A125 /* HTTPPostRequestMessage.h */; };
+		02BAC9AD1443E2500091A125 /* HTTPPostRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BAC9AB1443E2500091A125 /* HTTPPostRequestMessage.m */; };
 		02F0AC68142CEF8000FD21CB /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F0AC67142CEF8000FD21CB /* Types.h */; };
 		02FAD4D412F472CA00090B61 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48A12F472CA00090B61 /* IBButton.h */; };
 		02FAD4D512F472CA00090B61 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48B12F472CA00090B61 /* IBButton.m */; };
@@ -97,6 +99,8 @@
 		02A8698D13F7825D00F2A07B /* CoreDataWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataWidget.m; sourceTree = "<group>"; };
 		02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Boost.h"; sourceTree = "<group>"; };
 		02A8699113F7838E00F2A07B /* NSManagedObject+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Boost.m"; sourceTree = "<group>"; };
+		02BAC9AA1443E2500091A125 /* HTTPPostRequestMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPPostRequestMessage.h; sourceTree = "<group>"; };
+		02BAC9AB1443E2500091A125 /* HTTPPostRequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPPostRequestMessage.m; sourceTree = "<group>"; };
 		02F0AC67142CEF8000FD21CB /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		02FAD48A12F472CA00090B61 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
 		02FAD48B12F472CA00090B61 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				02FAD4CB12F472CA00090B61 /* DispatchMessage.m */,
 				02FAD4CC12F472CA00090B61 /* HTTPGetRequestMessage.h */,
 				02FAD4CD12F472CA00090B61 /* HTTPGetRequestMessage.m */,
+				02BAC9AA1443E2500091A125 /* HTTPPostRequestMessage.h */,
+				02BAC9AB1443E2500091A125 /* HTTPPostRequestMessage.m */,
 				02FAD4CE12F472CA00090B61 /* SequencedMessage.h */,
 				02FAD4CF12F472CA00090B61 /* SequencedMessage.m */,
 			);
@@ -519,6 +525,7 @@
 				02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */,
 				02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */,
 				02F0AC68142CEF8000FD21CB /* Types.h in Headers */,
+				02BAC9AC1443E2500091A125 /* HTTPPostRequestMessage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +634,7 @@
 				02FAD51512F472CA00090B61 /* MessageProcessor.m in Sources */,
 				02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */,
 				02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */,
+				02BAC9AD1443E2500091A125 /* HTTPPostRequestMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

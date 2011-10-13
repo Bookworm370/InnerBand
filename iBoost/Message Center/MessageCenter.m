@@ -168,6 +168,27 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	[MessageCenter sendGlobalMessageNamed:name withUserInfo:userInfo];
 }
 
++ (void)sendGlobalMessageNamed:(NSString *)name withObjectsAndKeys:(id)firstObject, ... {
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    id currentObject = nil;
+    id currentKey = nil;
+    va_list argList;
+    
+    if (firstObject) {
+        va_start(argList, firstObject);
+        currentObject = firstObject;
+        
+        do {
+            currentKey = va_arg(argList, id);
+            [userInfo setObject:currentObject forKey:currentKey];
+        } while ((currentObject = va_arg(argList, id)));
+        
+        va_end(argList);        
+    }
+
+    [MessageCenter sendMessageNamed:name withUserInfo:userInfo forSource:nil ];
+}
+
 + (void)sendGlobalMessage:(DispatchMessage *)message {
 	[MessageCenter sendMessage:message forSource:nil];
 }
@@ -188,6 +209,29 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 
 + (void)sendMessageNamed:(NSString *)name withUserInfoKey:(NSObject *)key andValue:(NSObject *)value forSource:(NSObject *)source {
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:value forKey:key];
+	[MessageCenter sendMessageNamed:name withUserInfo:userInfo forSource:source];
+}
+
++ (void)sendMessageNamed:(NSString *)name forSource:(NSObject *)source withObjectsAndKeys:(id)firstObject, ... {
+    // construct user info
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    id currentObject = nil;
+    id currentKey = nil;
+    va_list argList;
+    
+    if (firstObject) {
+        va_start(argList, firstObject);
+        currentObject = firstObject;
+        
+        do {
+            currentKey = va_arg(argList, id);
+            [userInfo setObject:currentObject forKey:currentKey];
+        } while ((currentObject = va_arg(argList, id)));
+        
+        va_end(argList);        
+    }
+
+	// dispatch
 	[MessageCenter sendMessageNamed:name withUserInfo:userInfo forSource:source];
 }
 

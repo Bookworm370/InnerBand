@@ -45,11 +45,13 @@
 + (void)sendGlobalMessageNamed:(NSString *)name;
 + (void)sendGlobalMessageNamed:(NSString *)name withUserInfo:(NSDictionary *)userInfo;
 + (void)sendGlobalMessageNamed:(NSString *)name withUserInfoKey:(NSObject *)key andValue:(NSObject *)value;
++ (void)sendGlobalMessageNamed:(NSString *)name withObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 // source dispatches
 + (void)sendMessage:(DispatchMessage *)message forSource:(NSObject *)source;
 + (void)sendMessageNamed:(NSString *)name forSource:(NSObject *)source;
 + (void)sendMessageNamed:(NSString *)name withUserInfo:(NSDictionary *)userInfo forSource:(NSObject *)source;
 + (void)sendMessageNamed:(NSString *)name withUserInfoKey:(NSObject *)key andValue:(NSObject *)value forSource:(NSObject *)source;
++ (void)sendMessageNamed:(NSString *)name forSource:(NSObject *)source withObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

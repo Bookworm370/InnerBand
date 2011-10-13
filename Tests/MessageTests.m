@@ -23,6 +23,7 @@
 #import "DispatchMessage.h"
 #import "StringAppenderMessage.h"
 #import "SequencedMessage.h"
+#import "Macros.h"
 
 #define GOOGLE @"GOOGLE"
 
@@ -201,6 +202,13 @@
 	seqMessage = [SequencedMessage messageWithName:@"APPEND" userInfo:[NSDictionary dictionaryWithObject:@"ALPHABETA" forKey:@"actual"] sequence:[NSArray arrayWithObjects:alphaMessage, betaMessage, nil]];
 	
 	[MessageCenter sendMessage:seqMessage forSource:widget];	
+}
+
+- (void)testObjectsAndKeys {
+    DispatchMessage *msg = [DispatchMessage messageWithName:@"anon" andObjectsAndKeys:BOX_INT(1), @"one", BOX_INT(2), @"two", nil];
+    
+    GHAssertEqualObjects(BOX_INT(1), [msg.userInfo objectForKey:@"one"], nil);
+    GHAssertEqualObjects(BOX_INT(2), [msg.userInfo objectForKey:@"two"], nil);
 }
 
 - (void)methodToFire {

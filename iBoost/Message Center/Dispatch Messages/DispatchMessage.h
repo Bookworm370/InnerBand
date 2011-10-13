@@ -27,7 +27,9 @@
 @property (nonatomic, assign, getter=isAsynchronous) BOOL asynchronous;
 
 - (id)initWithName:(NSString *)name userInfo:(NSDictionary *)userInfo;
+- (id)initWithName:(NSString *)name andObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo;
++ (id)messageWithName:(NSString *)name andObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (NSString *)name;
 - (NSDictionary *)userInfo;

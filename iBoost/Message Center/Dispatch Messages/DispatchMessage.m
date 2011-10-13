@@ -49,6 +49,62 @@
 	return self;
 }
 
+- (id)initWithName:(NSString *)name andObjectsAndKeys:(id)firstObject, ... {
+	self = [super init];
+    
+	if (self) {
+        // construct user info
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+        id currentObject = nil;
+        id currentKey = nil;
+        va_list argList;
+        
+        if (firstObject) {
+            va_start(argList, firstObject);
+            currentObject = firstObject;
+            
+            do {
+                currentKey = va_arg(argList, id);
+                [userInfo setObject:currentObject forKey:currentKey];
+            } while ((currentObject = va_arg(argList, id)));
+            
+            va_end(argList);        
+        }
+        
+		name_ = [name copy];
+        userInfo_ = [userInfo mutableCopy];
+	}
+	
+	return self;    
+}
+
++ (id)messageWithName:(NSString *)name andObjectsAndKeys:(id)firstObject, ... {
+    // construct user info
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    id currentObject = nil;
+    id currentKey = nil;
+    va_list argList;
+    
+    if (firstObject) {
+        va_start(argList, firstObject);
+        currentObject = firstObject;
+        
+        do {
+            currentKey = va_arg(argList, id);
+            [userInfo setObject:currentObject forKey:currentKey];
+        } while ((currentObject = va_arg(argList, id)));
+        
+        va_end(argList);        
+    }
+    
+	DispatchMessage *message = [[DispatchMessage alloc] initWithName:name userInfo:userInfo];
+    
+    va_end(argList);
+    
+	// autorelease
+	return [message autorelease];
+}
+
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo {
 	DispatchMessage *message = [[DispatchMessage alloc] initWithName:name userInfo:userInfo];
 

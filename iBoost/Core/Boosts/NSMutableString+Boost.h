@@ -1,5 +1,5 @@
 //
-//  NSString+Boost.h
+//  NSMutableString+Boost.h
 //  iBoost
 //
 //  iBoost - The iOS Booster!
@@ -19,19 +19,8 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSMutableString (Boost)
 
-@interface NSString (Boost)
-
-- (NSComparisonResult)diacriticInsensitiveCaseInsensitiveSort:(NSString *)rhs;
-- (NSComparisonResult)diacriticInsensitiveSort:(NSString *)rhs;
-- (NSComparisonResult)caseInsensitiveSort:(NSString *)rhs;
-
-- (NSString *)asBundlePath;
-- (NSString *)asDocumentsPath;
-	
-- (BOOL)contains:(NSString *)substring;
-- (BOOL)contains:(NSString *)substring options:(NSStringCompareOptions)options;
-
-- (NSString *)trimmedString;
+- (void)trim;
 
 @end

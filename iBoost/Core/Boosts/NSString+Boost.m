@@ -58,4 +58,8 @@
     return ([self rangeOfString:substring options:options].location != NSNotFound);
 }
 
+- (NSString *)trimmedString {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end

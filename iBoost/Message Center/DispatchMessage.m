@@ -120,7 +120,7 @@
 
 #pragma mark -
 
-- (void)setUserInfo:(NSObject *)userInfo {
+- (void)setUserInfo:(NSDictionary *)userInfo {
     NSDictionary *value = [userInfo copy];
     [userInfo_ release];
     userInfo_ = value;

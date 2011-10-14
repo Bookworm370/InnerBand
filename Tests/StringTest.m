@@ -20,6 +20,7 @@
 #import "GHUnit.h"
 #import "Macros.h"
 #import "NSString+Boost.h"
+#import "NSMutableString+Boost.h"
 
 @interface StringTest : GHTestCase
 @end
@@ -82,6 +83,42 @@
     GHAssertTrue([@"abc" contains:@"c"], nil);
     GHAssertTrue([@"abc" contains:@"ab"], nil);
     GHAssertTrue([@"abc" contains:@"bc"], nil);
+}
+
+- (void)testTrimmedString {
+    GHAssertEqualObjects(@"", [@"" trimmedString], nil);
+    GHAssertEqualObjects(@"A", [@"A" trimmedString], nil);
+    GHAssertEqualObjects(@"A", [@" A" trimmedString], nil);
+    GHAssertEqualObjects(@"A", [@"A " trimmedString], nil);
+    GHAssertEqualObjects(@"A", [@" A " trimmedString], nil);
+    GHAssertEqualObjects(@"A", [@"  A  " trimmedString], nil);
+}
+
+- (void)testTrim {
+    NSMutableString *str = [NSMutableString stringWithString:@""];
+    [str trim];
+    
+    GHAssertEqualObjects(@"", str, nil);
+
+    str = [NSMutableString stringWithString:@"A"];
+    [str trim];
+    
+    GHAssertEqualObjects(@"A", str, nil);
+
+    str = [NSMutableString stringWithString:@" A"];
+    [str trim];
+    
+    GHAssertEqualObjects(@"A", str, nil);
+
+    str = [NSMutableString stringWithString:@"A "];
+    [str trim];
+    
+    GHAssertEqualObjects(@"A", str, nil);
+
+    str = [NSMutableString stringWithString:@" A "];
+    [str trim];
+    
+    GHAssertEqualObjects(@"A", str, nil);
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  NSString+Boost.h
+//  NSMutableString+Boost.m
 //  iBoost
 //
 //  iBoost - The iOS Booster!
@@ -17,21 +17,16 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
+#import "NSMutableString+Boost.h"
+#import "NSString+Boost.h"
 
+@implementation NSMutableString (Boost)
 
-@interface NSString (Boost)
-
-- (NSComparisonResult)diacriticInsensitiveCaseInsensitiveSort:(NSString *)rhs;
-- (NSComparisonResult)diacriticInsensitiveSort:(NSString *)rhs;
-- (NSComparisonResult)caseInsensitiveSort:(NSString *)rhs;
-
-- (NSString *)asBundlePath;
-- (NSString *)asDocumentsPath;
-	
-- (BOOL)contains:(NSString *)substring;
-- (BOOL)contains:(NSString *)substring options:(NSStringCompareOptions)options;
-
-- (NSString *)trimmedString;
+- (void)trim {
+    NSString *trimmedString = [self trimmedString];
+    
+    // replace self
+    [self replaceCharactersInRange:NSMakeRange(0, self.length) withString:trimmedString];
+}
 
 @end

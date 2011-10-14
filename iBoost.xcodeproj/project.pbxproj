@@ -15,6 +15,10 @@
 		02BAC9AD1443E2500091A125 /* HTTPPostRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BAC9AB1443E2500091A125 /* HTTPPostRequestMessage.m */; };
 		02C74D731446968400BE3362 /* BlockBasedDispatchMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C74D711446968400BE3362 /* BlockBasedDispatchMessage.h */; };
 		02C74D741446968400BE3362 /* BlockBasedDispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C74D721446968400BE3362 /* BlockBasedDispatchMessage.m */; };
+		02E80AD91448B491007F23E6 /* NSMutableString+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E80AD71448B491007F23E6 /* NSMutableString+Boost.h */; };
+		02E80ADA1448B491007F23E6 /* NSMutableString+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E80AD81448B491007F23E6 /* NSMutableString+Boost.m */; };
+		02E80AEA1448BA60007F23E6 /* DispatchMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E80AE81448BA60007F23E6 /* DispatchMessage.h */; };
+		02E80AEB1448BA60007F23E6 /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E80AE91448BA60007F23E6 /* DispatchMessage.m */; };
 		02F0AC68142CEF8000FD21CB /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F0AC67142CEF8000FD21CB /* Types.h */; };
 		02FAD4D412F472CA00090B61 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48A12F472CA00090B61 /* IBButton.h */; };
 		02FAD4D512F472CA00090B61 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48B12F472CA00090B61 /* IBButton.m */; };
@@ -50,8 +54,6 @@
 		02FAD50912F472CA00090B61 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4C412F472CA00090B61 /* ViewUtil.m */; };
 		02FAD50A12F472CA00090B61 /* CoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4C612F472CA00090B61 /* CoreDataStore.h */; };
 		02FAD50B12F472CA00090B61 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4C712F472CA00090B61 /* CoreDataStore.m */; };
-		02FAD50C12F472CA00090B61 /* DispatchMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4CA12F472CA00090B61 /* DispatchMessage.h */; };
-		02FAD50D12F472CA00090B61 /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4CB12F472CA00090B61 /* DispatchMessage.m */; };
 		02FAD50E12F472CA00090B61 /* HTTPGetRequestMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4CC12F472CA00090B61 /* HTTPGetRequestMessage.h */; };
 		02FAD50F12F472CA00090B61 /* HTTPGetRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD4CD12F472CA00090B61 /* HTTPGetRequestMessage.m */; };
 		02FAD51012F472CA00090B61 /* SequencedMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD4CE12F472CA00090B61 /* SequencedMessage.h */; };
@@ -105,6 +107,10 @@
 		02BAC9AB1443E2500091A125 /* HTTPPostRequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPPostRequestMessage.m; sourceTree = "<group>"; };
 		02C74D711446968400BE3362 /* BlockBasedDispatchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockBasedDispatchMessage.h; sourceTree = "<group>"; };
 		02C74D721446968400BE3362 /* BlockBasedDispatchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockBasedDispatchMessage.m; sourceTree = "<group>"; };
+		02E80AD71448B491007F23E6 /* NSMutableString+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+Boost.h"; sourceTree = "<group>"; };
+		02E80AD81448B491007F23E6 /* NSMutableString+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+Boost.m"; sourceTree = "<group>"; };
+		02E80AE81448BA60007F23E6 /* DispatchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchMessage.h; sourceTree = "<group>"; };
+		02E80AE91448BA60007F23E6 /* DispatchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchMessage.m; sourceTree = "<group>"; };
 		02F0AC67142CEF8000FD21CB /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		02FAD48A12F472CA00090B61 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
 		02FAD48B12F472CA00090B61 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
@@ -140,8 +146,6 @@
 		02FAD4C412F472CA00090B61 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		02FAD4C612F472CA00090B61 /* CoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStore.h; sourceTree = "<group>"; };
 		02FAD4C712F472CA00090B61 /* CoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStore.m; sourceTree = "<group>"; };
-		02FAD4CA12F472CA00090B61 /* DispatchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchMessage.h; sourceTree = "<group>"; };
-		02FAD4CB12F472CA00090B61 /* DispatchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchMessage.m; sourceTree = "<group>"; };
 		02FAD4CC12F472CA00090B61 /* HTTPGetRequestMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPGetRequestMessage.h; sourceTree = "<group>"; };
 		02FAD4CD12F472CA00090B61 /* HTTPGetRequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPGetRequestMessage.m; sourceTree = "<group>"; };
 		02FAD4CE12F472CA00090B61 /* SequencedMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencedMessage.h; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				02FAD4B412F472CA00090B61 /* NSNumber+Boost.m */,
 				02FAD4B512F472CA00090B61 /* NSObject+Boost.h */,
 				02FAD4B612F472CA00090B61 /* NSObject+Boost.m */,
+				02E80AD71448B491007F23E6 /* NSMutableString+Boost.h */,
+				02E80AD81448B491007F23E6 /* NSMutableString+Boost.m */,
 				02FAD4B712F472CA00090B61 /* NSString+Boost.h */,
 				02FAD4B812F472CA00090B61 /* NSString+Boost.m */,
 				02FAD4B912F472CA00090B61 /* UIColor+Boost.h */,
@@ -323,6 +329,8 @@
 				02FAD4D112F472CA00090B61 /* MessageCenter.m */,
 				02FAD4D212F472CA00090B61 /* MessageProcessor.h */,
 				02FAD4D312F472CA00090B61 /* MessageProcessor.m */,
+				02E80AE81448BA60007F23E6 /* DispatchMessage.h */,
+				02E80AE91448BA60007F23E6 /* DispatchMessage.m */,
 			);
 			path = "Message Center";
 			sourceTree = "<group>";
@@ -330,8 +338,6 @@
 		02FAD4C912F472CA00090B61 /* Dispatch Messages */ = {
 			isa = PBXGroup;
 			children = (
-				02FAD4CA12F472CA00090B61 /* DispatchMessage.h */,
-				02FAD4CB12F472CA00090B61 /* DispatchMessage.m */,
 				02FAD4CC12F472CA00090B61 /* HTTPGetRequestMessage.h */,
 				02FAD4CD12F472CA00090B61 /* HTTPGetRequestMessage.m */,
 				02BAC9AA1443E2500091A125 /* HTTPPostRequestMessage.h */,
@@ -523,7 +529,6 @@
 				02FAD50712F472CA00090B61 /* Macros.h in Headers */,
 				02FAD50812F472CA00090B61 /* ViewUtil.h in Headers */,
 				02FAD50A12F472CA00090B61 /* CoreDataStore.h in Headers */,
-				02FAD50C12F472CA00090B61 /* DispatchMessage.h in Headers */,
 				02FAD50E12F472CA00090B61 /* HTTPGetRequestMessage.h in Headers */,
 				02FAD51012F472CA00090B61 /* SequencedMessage.h in Headers */,
 				02FAD51212F472CA00090B61 /* MessageCenter.h in Headers */,
@@ -533,6 +538,8 @@
 				02F0AC68142CEF8000FD21CB /* Types.h in Headers */,
 				02BAC9AC1443E2500091A125 /* HTTPPostRequestMessage.h in Headers */,
 				02C74D731446968400BE3362 /* BlockBasedDispatchMessage.h in Headers */,
+				02E80AD91448B491007F23E6 /* NSMutableString+Boost.h in Headers */,
+				02E80AEA1448BA60007F23E6 /* DispatchMessage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +641,6 @@
 				02FAD50512F472CA00090B61 /* UIView+Boost.m in Sources */,
 				02FAD50912F472CA00090B61 /* ViewUtil.m in Sources */,
 				02FAD50B12F472CA00090B61 /* CoreDataStore.m in Sources */,
-				02FAD50D12F472CA00090B61 /* DispatchMessage.m in Sources */,
 				02FAD50F12F472CA00090B61 /* HTTPGetRequestMessage.m in Sources */,
 				02FAD51112F472CA00090B61 /* SequencedMessage.m in Sources */,
 				02FAD51312F472CA00090B61 /* MessageCenter.m in Sources */,
@@ -643,6 +649,8 @@
 				02A8699313F7838E00F2A07B /* NSManagedObject+Boost.m in Sources */,
 				02BAC9AD1443E2500091A125 /* HTTPPostRequestMessage.m in Sources */,
 				02C74D741446968400BE3362 /* BlockBasedDispatchMessage.m in Sources */,
+				02E80ADA1448B491007F23E6 /* NSMutableString+Boost.m in Sources */,
+				02E80AEB1448BA60007F23E6 /* DispatchMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

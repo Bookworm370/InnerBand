@@ -47,6 +47,18 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
 	IBCoreTextLabel and use HTML syntax to display text without the heavy
 	UIWebView at all!
 
+	How about improving UIAlertView?  Why busy yourself with tagging multiple alerts and putting your handling
+	code somewhere far away from where you called the alert?  The block-based alert methods do the trick.  Here's
+	its simplest form:
+	
+	[IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:^{
+        NSLog(@"CANCEL CLICKED!");
+    } okBlock:^{
+        NSLog(@"OK CLICKED!");
+    }];
+    
+	Simple enough? :-)
+	
 ((( The Message Center )))
 	
 	The Message Center improves upon NSNotificationCenter in every way.  A compact, essentially

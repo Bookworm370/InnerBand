@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0268ECA8145EE8DA0093C5D6 /* IBAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268ECA6145EE8DA0093C5D6 /* IBAlertView.h */; };
+		0268ECA9145EE8DA0093C5D6 /* IBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268ECA7145EE8DA0093C5D6 /* IBAlertView.m */; };
 		02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8698C13F7825D00F2A07B /* CoreDataWidget.h */; };
 		02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8698D13F7825D00F2A07B /* CoreDataWidget.m */; };
 		02A8699213F7838E00F2A07B /* NSManagedObject+Boost.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */; };
@@ -99,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0268ECA6145EE8DA0093C5D6 /* IBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAlertView.h; sourceTree = "<group>"; };
+		0268ECA7145EE8DA0093C5D6 /* IBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBAlertView.m; sourceTree = "<group>"; };
 		02A8698C13F7825D00F2A07B /* CoreDataWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataWidget.h; sourceTree = "<group>"; };
 		02A8698D13F7825D00F2A07B /* CoreDataWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataWidget.m; sourceTree = "<group>"; };
 		02A8699013F7838E00F2A07B /* NSManagedObject+Boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Boost.h"; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 				02FAD48F12F472CA00090B61 /* IBHTableView.m */,
 				02FAD49012F472CA00090B61 /* IBHTMLLabel.h */,
 				02FAD49112F472CA00090B61 /* IBHTMLLabel.m */,
+				0268ECA6145EE8DA0093C5D6 /* IBAlertView.h */,
+				0268ECA7145EE8DA0093C5D6 /* IBAlertView.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				02C74D731446968400BE3362 /* BlockBasedDispatchMessage.h in Headers */,
 				02E80AD91448B491007F23E6 /* NSMutableString+Boost.h in Headers */,
 				02E80AEA1448BA60007F23E6 /* DispatchMessage.h in Headers */,
+				0268ECA8145EE8DA0093C5D6 /* IBAlertView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +658,7 @@
 				02C74D741446968400BE3362 /* BlockBasedDispatchMessage.m in Sources */,
 				02E80ADA1448B491007F23E6 /* NSMutableString+Boost.m in Sources */,
 				02E80AEB1448BA60007F23E6 /* DispatchMessage.m in Sources */,
+				0268ECA9145EE8DA0093C5D6 /* IBAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +738,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
@@ -742,6 +751,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};

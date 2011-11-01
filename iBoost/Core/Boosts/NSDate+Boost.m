@@ -23,6 +23,14 @@
 
 @implementation NSDate (Boost)
 
++ (NSDate *)dateDaysAgo:(NSInteger)numDays {
+    return [NSDate dateWithTimeIntervalSinceNow:SECONDS_IN_DAY * -numDays];
+}
+
++ (NSDate *)dateWeeksAgo:(NSInteger)numWeeks {
+    return [NSDate dateWithTimeIntervalSinceNow:SECONDS_IN_DAY * DAYS_IN_WEEK * -numWeeks];
+}
+
 - (NSInteger)utcYear {
 	time_t rawTime = [self timeIntervalSince1970];
 	struct tm *time = gmtime(&rawTime);

@@ -162,24 +162,24 @@ And, again, so much more...
 
 There are two simple ways to include iBoost in your application:
 
-    * Copy the Source
-    * Copy the Minified Source (same as above, but with only a single .h/.m pair)      
+  1. Copy the Source
+  2. Copy the Minified Source (same as above, but with only a single .h/.m pair)      
 
 ## Copy Source ##
 
 Copying the iBoost source into your project is the most flexible and lets you update XCode without rebuilding the library, however you will have to compile it after a clean.  Still, this is the most common approach iPhone developers take for 3rd-party libraries.
 
-1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
+  1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
 	
 	git clone git@github.com:ZaBlanc/iBoost.git
 
-2. Create a new XCode iPhone project if you haven't already.
+  2. Create a new XCode iPhone project if you haven't already.
 
-3. Open the iBoost sub-directory and copy the iBoost/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
+  3. Open the iBoost sub-directory and copy the iBoost/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-4. Add the CoreData and CoreText framework to each target that will use iBoost.
+  4. Add the CoreData and CoreText framework to each target that will use iBoost.
 
-5. Done!
+  5. Done!
 
 ## Copy Minified Source ##
 

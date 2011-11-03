@@ -39,7 +39,7 @@ multiple alerts and putting your handling code somewhere far away from
 where you called the alert?  The block-based alert methods do the
 trick.  Here's its simplest form:
 
-<pre>[IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:^{
+<pre>    [IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:^{
         NSLog(@"CANCEL CLICKED!");
     } okBlock:^{
         NSLog(@"OK CLICKED!");
@@ -48,7 +48,7 @@ trick.  Here's its simplest form:
 
 Heck, since this case is so common, you can even write it as:
 
-<pre>[IBAlertView showOKCancelWithTitle:@"Title" message:@"My message." cancelBlock:^{
+<pre>    [IBAlertView showOKCancelWithTitle:@"Title" message:@"My message." cancelBlock:^{
         NSLog(@"CANCEL CLICKED!");
     } okBlock:^{
         NSLog(@"OK CLICKED!");

@@ -39,8 +39,16 @@ multiple alerts and putting your handling code somewhere far away from
 where you called the alert?  The block-based alert methods do the
 trick.  Here's its simplest form:
 
-<pre>	
-	[IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:^{
+<pre>[IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:^{
+        NSLog(@"CANCEL CLICKED!");
+    } okBlock:^{
+        NSLog(@"OK CLICKED!");
+    }];
+</pre>    
+
+Heck, since this case is so common, you can even write it as:
+
+<pre>[IBAlertView showOKCancelWithTitle:@"Title" message:@"My message." cancelBlock:^{
         NSLog(@"CANCEL CLICKED!");
     } okBlock:^{
         NSLog(@"OK CLICKED!");
@@ -57,14 +65,12 @@ simple system if you want it to be, the Message Center also goes way beyond if y
 Passing notifications (DispatchMessage) lets you alert components to 
 significant events in your application with a clean API:
 
-<pre>	
-	[MessageCenter sendGlobalMessageNamed:COOKIES_ARE_READY];
+<pre>[MessageCenter sendGlobalMessageNamed:COOKIES_ARE_READY];
 </pre>	
 
 Packaging data with the notification is just as easy:
 
-<pre>	
-	[MessageCenter sendGlobalMessageNamed:COOKIE_READY withUserInfoKey:@"cookie" andValue:cookie];
+<pre>[MessageCenter sendGlobalMessageNamed:COOKIE_READY withUserInfoKey:@"cookie" andValue:cookie];
 </pre>	
 
 But, DispatchMessage is even more powerful than that.  Each message
@@ -119,8 +125,7 @@ Create a color like a web developer with [UIColor colorWithHexString:@"#ff3344"]
 	
 Sort an array of strings with case- and diacritic- insensitivity simply with
 
-<pre>
-	[myArray sortedArrayAsDiacriticInsensitiveCaseInsensitive].
+<pre>[myArray sortedArrayAsDiacriticInsensitiveCaseInsensitive].
 </pre>
 	
 (Diacritics are the squiggles you see on word like Peña or naïve.)
@@ -183,7 +188,7 @@ Copying the iBoost source into your project is the most flexible and lets you up
 
 ## Copy Minified Source ##
 
-Minified source is a brand new approach, borrowed from the JavaScript world, and allows you to drop a single .h/.m pair into your project rather than a whole directory of files.  As far as I know, no other projects do it this way yet, but I've always been more comfortable with importing a pair of files over big hierarchies.  So, I wrote a little Python scripts that creates one magically! :-)
+Minified source is a brand new approach, borrowed from the JavaScript world, and allows you to drop a single .h/.m pair into your project rather than a whole directory of files.  As far as I know, no other projects do it this way yet, but I've always been more comfortable with importing a pair of files over big hierarchies.  So, I wrote a little script that creates one magically! :-)
 
 1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
 	
@@ -191,9 +196,7 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 
 2. Create a new XCode iPhone project if you haven't already.
 
-3. From the iBoost parent directory in Terminal, change directory to iBoost/ and run ../minifier/minify.py all. If you don't wish to include the UI components and just want the macros and extensions, run ../minifier/minify.py core.
-
-	(NOTE: Python is required. If it doesn't work on your system, try changing the she-bang.)
+3. From the Terminal, run iBoost/minifier/minify.sh all. If you don't wish to include the UI components and just want the macros and extensions, run iBoost/minifier/minify.sh core.
 	
 4. There should be two new files, iBoost.h and iBoost.m (or iBoostCore.h and iBoostCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 

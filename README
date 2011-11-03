@@ -56,7 +56,15 @@ With iBoost, you get enhancements to the regular SDK you've been using all along
     } okBlock:^{
         NSLog(@"OK CLICKED!");
     }];
-    
+
+    Heck, it's even easier in this common case:
+
+	[IBAlertView showAlertWithTitle:@"Title" message:@"My message." cancelBlock:^{
+        NSLog(@"CANCEL CLICKED!");
+    } okBlock:^{
+        NSLog(@"OK CLICKED!");
+    }];
+
 	Simple enough? :-)
 	
 ((( The Message Center )))
@@ -185,7 +193,7 @@ Copying the iBoost source into your project is the most flexible and lets you up
 
 ((( Copy Minified Source )))
 
-Minified source is a brand new approach, borrowed from the JavaScript world, and allows you to drop a single .h/.m pair into your project rather than a whole directory of files.  As far as I know, no other projects do it this way yet, but I've always been more comfortable with importing a pair of files over big hierarchies.  So, I wrote a little Python scripts that creates one magically! :-)
+Minified source is a brand new approach, borrowed from the JavaScript world, and allows you to drop a single .h/.m pair into your project rather than a whole directory of files.  As far as I know, no other projects do it this way yet, but I've always been more comfortable with importing a pair of files over big hierarchies.  So, I wrote a little script that creates one magically! :-)
 
 1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
 	
@@ -193,10 +201,8 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 
 2. Create a new XCode iPhone project if you haven't already.
 
-3. From the iBoost parent directory in Terminal, change directory to iBoost/ and run ../minifier/minify.py all. If you don't wish to include the UI components and just want the macros and extensions, run ../minifier/minify.py core.
+3. From any directory, run iBoost/iBoost/minifier/minify.sh all. If you don't wish to include the UI components and just want the macros and extensions, run iBoost/iBoost/minifier/minify.sh core.
 
-	(NOTE: Python is required. If it doesn't work on your system, try changing the she-bang.)
-	
 4. There should be two new files, iBoost.h and iBoost.m (or iBoostCore.h and iBoostCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
 5. Add the CoreData framework to each target that will use iBoost.
@@ -225,4 +231,4 @@ So who created iBoost?
 ----------------------
 
 
-iBoost was conceived, designed, created, and is maintained by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.
+iBoost was conceived, designed, created, and is primarily maintained by John Blanco <john.blanco@raptureinvenice.com>, a technical consultant DBA Rapture In Venice, along with you the open source community!

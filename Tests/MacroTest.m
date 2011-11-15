@@ -18,6 +18,7 @@
 //
 
 #import "GHUnit.h"
+#import "Functions.h"
 #import "Macros.h"
 
 @interface MacroTest : GHTestCase

@@ -21,6 +21,8 @@
 		02E80ADA1448B491007F23E6 /* NSMutableString+Boost.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E80AD81448B491007F23E6 /* NSMutableString+Boost.m */; };
 		02E80AEA1448BA60007F23E6 /* DispatchMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E80AE81448BA60007F23E6 /* DispatchMessage.h */; };
 		02E80AEB1448BA60007F23E6 /* DispatchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E80AE91448BA60007F23E6 /* DispatchMessage.m */; };
+		02ED4CCC1472B6C700EA24A5 /* Functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02ED4CCA1472B6C700EA24A5 /* Functions.h */; };
+		02ED4CCD1472B6C700EA24A5 /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED4CCB1472B6C700EA24A5 /* Functions.m */; };
 		02F0AC68142CEF8000FD21CB /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F0AC67142CEF8000FD21CB /* Types.h */; };
 		02FAD4D412F472CA00090B61 /* IBButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FAD48A12F472CA00090B61 /* IBButton.h */; };
 		02FAD4D512F472CA00090B61 /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FAD48B12F472CA00090B61 /* IBButton.m */; };
@@ -115,6 +117,8 @@
 		02E80AD81448B491007F23E6 /* NSMutableString+Boost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+Boost.m"; sourceTree = "<group>"; };
 		02E80AE81448BA60007F23E6 /* DispatchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchMessage.h; sourceTree = "<group>"; };
 		02E80AE91448BA60007F23E6 /* DispatchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchMessage.m; sourceTree = "<group>"; };
+		02ED4CCA1472B6C700EA24A5 /* Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
+		02ED4CCB1472B6C700EA24A5 /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
 		02F0AC67142CEF8000FD21CB /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		02FAD48A12F472CA00090B61 /* IBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBButton.h; sourceTree = "<group>"; };
 		02FAD48B12F472CA00090B61 /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
@@ -241,6 +245,15 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		02ED4CC91472B6B100EA24A5 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				02ED4CCA1472B6C700EA24A5 /* Functions.h */,
+				02ED4CCB1472B6C700EA24A5 /* Functions.m */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
 		02FAD48912F472CA00090B61 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +274,7 @@
 		02FAD4A912F472CA00090B61 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				02ED4CC91472B6B100EA24A5 /* Functions */,
 				02FAD4AA12F472CA00090B61 /* Boosts */,
 				02FAD4BF12F472CA00090B61 /* Macros */,
 				02FAD4C212F472CA00090B61 /* Utils */,
@@ -547,6 +561,7 @@
 				02E80AD91448B491007F23E6 /* NSMutableString+Boost.h in Headers */,
 				02E80AEA1448BA60007F23E6 /* DispatchMessage.h in Headers */,
 				0268ECA8145EE8DA0093C5D6 /* IBAlertView.h in Headers */,
+				02ED4CCC1472B6C700EA24A5 /* Functions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +674,7 @@
 				02E80ADA1448B491007F23E6 /* NSMutableString+Boost.m in Sources */,
 				02E80AEB1448BA60007F23E6 /* DispatchMessage.m in Sources */,
 				0268ECA9145EE8DA0093C5D6 /* IBAlertView.m in Sources */,
+				02ED4CCD1472B6C700EA24A5 /* Functions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,7 @@
 #import "GHUnit.h"
 #import "NSArray+Boost.h"
 #import "Macros.h"
+#import "Functions.h"
 
 @interface SortTest : GHTestCase
 @end

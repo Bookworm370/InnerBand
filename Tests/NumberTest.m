@@ -19,6 +19,7 @@
 
 #import "GHUnit.h"
 #import "Macros.h"
+#import "Functions.h"
 #import "NSNumber+Boost.h"
 
 @interface NumberTest : GHTestCase

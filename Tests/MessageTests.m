@@ -24,6 +24,7 @@
 #import "StringAppenderMessage.h"
 #import "SequencedMessage.h"
 #import "Macros.h"
+#import "Functions.h"
 
 #define GOOGLE @"GOOGLE"
 

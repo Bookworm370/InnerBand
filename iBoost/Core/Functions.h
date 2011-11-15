@@ -55,10 +55,14 @@ CGRect RECT_STACKED_OFFSET_BY_Y(CGRect rect, float offset);
 
 UIImage *IMAGE(NSString *x);
 
-// GEOMETRY
+// MATH
 
 double DEG_TO_RAD(double degrees);
 double RAD_TO_DEG(double radians);
+
+NSInteger CONSTRAINTED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max);
+float CONSTRAINTED_FLOAT_VALUE(float val, float min, float max);
+double CONSTRAINTED_DOUBLE_VALUE(double val, double min, double max);
 
 // STRINGS
 

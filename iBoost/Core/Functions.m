@@ -54,10 +54,14 @@ CGRect RECT_STACKED_OFFSET_BY_Y(CGRect rect, float offset) { return CGRectMake(r
 
 UIImage *IMAGE(NSString *x) { return [UIImage imageNamed:x]; }
 
-// GEOMETRY
+// MATH
 
 double DEG_TO_RAD(double degrees) { return degrees * M_PI / 180.0; }
 double RAD_TO_DEG(double radians) { return radians * 180.0 / M_PI; }
+
+NSInteger CONSTRAINTED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max) { return MIN(MAX(val, min), max); }
+float CONSTRAINTED_FLOAT_VALUE(float val, float min, float max) { return MIN(MAX(val, min), max); }
+double CONSTRAINTED_DOUBLE_VALUE(double val, double min, double max) { return MIN(MAX(val, min), max); }
 
 // STRINGS
 

@@ -29,6 +29,10 @@
     return [[[IBAlertView alloc] initWithTitle:title message:message cancelTitle:cancelTitle okTitle:okTitle cancelBlock:cancelBlock okBlock:okBlock] autorelease];
 }
 
++ (void)showOKWithTitle:(NSString *)title message:(NSString *)message okBlock:(void (^)(void))okBlock {
+    [[IBAlertView alertWithTitle:title message:message cancelTitle:nil okTitle:@"OK" cancelBlock:nil okBlock:okBlock] show];
+}
+
 + (void) showOKCancelWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(void (^)(void))cancelBlock okBlock:(void (^)(void))okBlock {
     [[IBAlertView alertWithTitle:title message:message cancelTitle:@"Cancel" okTitle:@"OK" cancelBlock:cancelBlock okBlock:okBlock] show];
 }

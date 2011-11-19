@@ -78,12 +78,18 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (self.numberOfButtons == 2) {
         if (buttonIndex == 0) {
-            cancelCallback_();
+            if (cancelCallback_) {
+                cancelCallback_();
+            }
         } else {
-            okCallback_();
+            if (okCallback_) {
+                okCallback_();
+            }
         }
     } else {
-        cancelCallback_();
+        if (cancelCallback_) {
+            cancelCallback_();
+        }
     }
 }
 

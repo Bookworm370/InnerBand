@@ -74,13 +74,6 @@ NSString *RECT_TO_STR(CGRect r) { return [NSString stringWithFormat:@"X=%0.1f Y=
 NSString *POINT_TO_STR(CGPoint p) { return [NSString stringWithFormat:@"X=%0.1f Y=%0.1f", p.x, p.y]; }
 NSString *SIZE_TO_STR(CGSize s) { return [NSString stringWithFormat:@"W=%0.1f H=%0.1f", s.width, s.height]; }
 
-// HARDWARE/DEVICE INFO
-
-NSString *DEVICE_UDID() { return [UIDevice currentDevice].uniqueIdentifier; }
-
-BOOL IS_IPAD() { return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad; }
-BOOL IS_IPHONE() { return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone; }
-
 // COLORS
 
 float RGB256_TO_COL(NSInteger rgb) { return rgb / 255.0f; }
@@ -92,8 +85,71 @@ NSString *DOCUMENTS_DIR() { return [NSSearchPathForDirectoriesInDomains(NSDocume
 
 // HARDWARE/DEVICE CAPABILITY
 
-BOOL IS_CLASSIC_DISPLAY() { return [UIScreen mainScreen].scale < 1.5F; }
-BOOL IS_RETINA_DISPLAY() { return [UIScreen mainScreen].scale > 1.5F; }
+NSString *DEVICE_UDID() {
+    return [UIDevice currentDevice].uniqueIdentifier;
+}
 
-BOOL IS_MULTITASKING_IN_SDK() { return [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES; } 
-BOOL IS_CAMERA_IN_SDK() { return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]; }
+BOOL IS_IPAD() {
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
+}
+
+BOOL IS_IPHONE() {
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
+}
+
+BOOL IS_MULTITASKING_AVAILABLE() {
+    return [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES;
+}
+
+BOOL IS_CAMERA_AVAILABLE() {
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
+
+BOOL IS_GAME_CENTER_AVAILABLE() {
+    return NSClassFromString(@"GKLocalPlayer") && [[[UIDevice currentDevice] systemVersion] compare:@"4.1" options:NSNumericSearch] != NSOrderedAscending;
+}
+
+BOOL IS_EMAIL_ACCOUNT_AVAILABLE() {
+    Class composerClass = NSClassFromString(@"MFMailComposeViewController");
+    return [composerClass respondsToSelector:@selector(canSendMail)];
+}
+
+BOOL IS_GPS_ENABLED() {
+    return IS_GPS_ENABLED_ON_DEVICE() && IS_GPS_ENABLED_FOR_APP();
+}
+
+BOOL IS_GPS_ENABLED_ON_DEVICE() {
+    BOOL isLocationServicesEnabled;
+    
+    Class locationClass = NSClassFromString(@"CLLocationManager");
+    NSMethodSignature *signature = [locationClass instanceMethodSignatureForSelector:@selector(locationServicesEnabled)];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    
+    [invocation invoke];
+    [invocation getReturnValue:&isLocationServicesEnabled];
+    
+    return locationClass && isLocationServicesEnabled;    
+}
+
+BOOL IS_GPS_ENABLED_FOR_APP() {
+    // for 4.2+ only, we can check down to the app level
+    #ifdef kCLAuthorizationStatusAuthorized
+        Class locationClass = NSClassFromString(@"CLLocationManager");
+    
+        if ([locationClass respondsToSelector:@selector(authorizationStatus)]) {
+            NSInteger authorizationStatus;
+            
+            NSMethodSignature *signature = [locationClass instanceMethodSignatureForSelector:@selector(authorizationStatus)];
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+            
+            [invocation invoke];
+            [invocation getReturnValue:&authorizationStatus];
+            
+            return locationClass && (authorizationStatus == kCLAuthorizationStatusAuthorized);    
+        }
+    #endif
+    
+    // we can't know this
+    return YES;
+}
+

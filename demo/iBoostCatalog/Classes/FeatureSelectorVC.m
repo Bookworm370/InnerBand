@@ -11,7 +11,6 @@
 #import "IBButtonDemoVC.h"
 #import "IBHTMLLabelDemoVC.h"
 #import "IBCoreTextLabelDemoVC.h"
-#import "OrientationDetectionDemoVC.h"
 
 // feature labels
 static NSArray *gFeatureLabels = nil;
@@ -34,37 +33,9 @@ static NSArray *gFeatureLabels = nil;
 
 	// initialize labels
 	if (!gFeatureLabels) {
-		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"HTML Styled Text Label", nil), NSLocalizedString(@"Core Text Styled Label", nil), NSLocalizedString(@"Orientation Detection", nil), nil];
+		gFeatureLabels = [[NSArray alloc ] initWithObjects:NSLocalizedString(@"Buttons", nil), NSLocalizedString(@"HTML Styled Text Label", nil), NSLocalizedString(@"Core Text Styled Label", nil), nil];
 	}
 }
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 #pragma mark -
 #pragma mark Table view data source
@@ -114,11 +85,6 @@ static NSArray *gFeatureLabels = nil;
 
 		case 2: {
 			demo = [[[IBCoreTextLabelDemoVC alloc] init] autorelease];
-			break;
-		}
-
-		case 3: {
-			demo = [[[OrientationDetectionDemoVC alloc] init] autorelease];
 			break;
 		}
 	}

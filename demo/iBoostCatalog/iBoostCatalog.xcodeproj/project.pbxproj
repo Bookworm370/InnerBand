@@ -23,7 +23,6 @@
 		FF4A7D9F1252F88000038908 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4A7D9E1252F88000038908 /* CoreMotion.framework */; };
 		FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */; };
 		FF7AB15A12320B4D0000669C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB15912320B4D0000669C /* CoreText.framework */; };
-		FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +74,6 @@
 		FF7AB14F123205600000669C /* IBCoreTextLabelDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabelDemoVC.h; sourceTree = "<group>"; };
 		FF7AB150123205600000669C /* IBCoreTextLabelDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCoreTextLabelDemoVC.m; sourceTree = "<group>"; };
 		FF7AB15912320B4D0000669C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		FFBDCB1B12528F7800C6AD94 /* OrientationDetectionDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationDetectionDemoVC.h; sourceTree = "<group>"; };
-		FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationDetectionDemoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +105,6 @@
 				FF0C4CC412313F9000C3960E /* Buttons */,
 				FF0C4CC312313F8600C3960E /* Styled Text */,
 				FF7AB14E1232054A0000669C /* Core Text */,
-				FFBDCB1A12528F6100C6AD94 /* Orientation Detection */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -212,15 +208,6 @@
 			name = "Core Text";
 			sourceTree = "<group>";
 		};
-		FFBDCB1A12528F6100C6AD94 /* Orientation Detection */ = {
-			isa = PBXGroup;
-			children = (
-				FFBDCB1B12528F7800C6AD94 /* OrientationDetectionDemoVC.h */,
-				FFBDCB1C12528F7800C6AD94 /* OrientationDetectionDemoVC.m */,
-			);
-			name = "Orientation Detection";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,7 +235,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iBoostCatalog" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -314,7 +301,6 @@
 				FF0C4CE7123145C000C3960E /* IBHTMLLabelDemoVC.m in Sources */,
 				FF0C4CEA1231468000C3960E /* IBButtonDemoVC.m in Sources */,
 				FF7AB151123205600000669C /* IBCoreTextLabelDemoVC.m in Sources */,
-				FFBDCB1D12528F7800C6AD94 /* OrientationDetectionDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +324,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBoostCatalog_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iBoostCatalog-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -346,7 +332,7 @@
 				);
 				PRODUCT_NAME = iBoostCatalog;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
+				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
 			};
 			name = Debug;
 		};
@@ -357,7 +343,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBoostCatalog_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iBoostCatalog-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -365,7 +351,7 @@
 				);
 				PRODUCT_NAME = iBoostCatalog;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
+				USER_HEADER_SEARCH_PATHS = "../../iBoost/Core/Boosts ../../iBoost/Core ../../iBoost/Core/Macros ../../iBoost/Controls ../../iBoost/Controls/Support\\ Classes ../../iBoost/Core\\ Data";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

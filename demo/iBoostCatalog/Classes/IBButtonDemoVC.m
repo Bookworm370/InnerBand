@@ -8,7 +8,7 @@
 
 #import "IBButtonDemoVC.h"
 #import "IBButton.h"
-#import "Macros.h"
+#import "Functions.h"
 #import "Constants.h"
 
 @implementation IBButtonDemoVC

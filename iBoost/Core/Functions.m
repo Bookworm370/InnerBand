@@ -81,44 +81,44 @@ NSInteger COL_TO_RGB256(float col) { return (NSInteger)(col * 255.0); }
 
 // DIRECTORIES
 
-NSString *DOCUMENTS_DIR() { return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]; }
+NSString *DOCUMENTS_DIR(void) { return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]; }
 
 // HARDWARE/DEVICE CAPABILITY
 
-NSString *DEVICE_UDID() {
+NSString *DEVICE_UDID(void) {
     return [UIDevice currentDevice].uniqueIdentifier;
 }
 
-BOOL IS_IPAD() {
+BOOL IS_IPAD(void) {
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
 }
 
-BOOL IS_IPHONE() {
+BOOL IS_IPHONE(void) {
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
 
-BOOL IS_MULTITASKING_AVAILABLE() {
+BOOL IS_MULTITASKING_AVAILABLE(void) {
     return [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported] == YES;
 }
 
-BOOL IS_CAMERA_AVAILABLE() {
+BOOL IS_CAMERA_AVAILABLE(void) {
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
 }
 
-BOOL IS_GAME_CENTER_AVAILABLE() {
+BOOL IS_GAME_CENTER_AVAILABLE(void) {
     return NSClassFromString(@"GKLocalPlayer") && [[[UIDevice currentDevice] systemVersion] compare:@"4.1" options:NSNumericSearch] != NSOrderedAscending;
 }
 
-BOOL IS_EMAIL_ACCOUNT_AVAILABLE() {
+BOOL IS_EMAIL_ACCOUNT_AVAILABLE(void) {
     Class composerClass = NSClassFromString(@"MFMailComposeViewController");
     return [composerClass respondsToSelector:@selector(canSendMail)];
 }
 
-BOOL IS_GPS_ENABLED() {
+BOOL IS_GPS_ENABLED(void) {
     return IS_GPS_ENABLED_ON_DEVICE() && IS_GPS_ENABLED_FOR_APP();
 }
 
-BOOL IS_GPS_ENABLED_ON_DEVICE() {
+BOOL IS_GPS_ENABLED_ON_DEVICE(void) {
     BOOL isLocationServicesEnabled;
     
     Class locationClass = NSClassFromString(@"CLLocationManager");
@@ -131,7 +131,7 @@ BOOL IS_GPS_ENABLED_ON_DEVICE() {
     return locationClass && isLocationServicesEnabled;    
 }
 
-BOOL IS_GPS_ENABLED_FOR_APP() {
+BOOL IS_GPS_ENABLED_FOR_APP(void) {
     // for 4.2+ only, we can check down to the app level
     #ifdef kCLAuthorizationStatusAuthorized
         Class locationClass = NSClassFromString(@"CLLocationManager");

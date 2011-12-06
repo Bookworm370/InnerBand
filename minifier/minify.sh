@@ -25,8 +25,8 @@ then
 else
 	INCLUDE_FILENAME='iBoostCore.h'
 	CODE_FILENAME='iBoostCore.m'
-	HEADER_FILES="$BOOSTDIR/Core/*.h $BOOSTDIR/Core/*/*.h $BOOSTDIR/Core*Data/*/*/*.h $BOOSTDIR/Message*Center/*/*.h"
-	SOURCE_FILES="$BOOSTDIR/Core/*.m $BOOSTDIR/Core/*/*.m $BOOSTDIR/Core*Data/*/*/*.m $BOOSTDIR/Message*Center/*/*.m"
+	HEADER_FILES="$BOOSTDIR/Core/*.h $BOOSTDIR/Core/*/*.h $BOOSTDIR/Core*Data/*.h $BOOSTDIR/Message*Center/*.h $BOOSTDIR/Message*Center/*/*.h"
+	SOURCE_FILES="$BOOSTDIR/Core/*.m $BOOSTDIR/Core/*/*.m $BOOSTDIR/Core*Data/*.m $BOOSTDIR/Message*Center/*.m $BOOSTDIR/Message*Center/*/*.m"
 fi
 
 IBOOST_HEADER_FILE=$HOME/Desktop/$INCLUDE_FILENAME

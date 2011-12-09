@@ -30,7 +30,7 @@
 }
 
 + (void)showOKWithTitle:(NSString *)title message:(NSString *)message okBlock:(void (^)(void))okBlock {
-    [[IBAlertView alertWithTitle:title message:message cancelTitle:nil okTitle:@"OK" cancelBlock:nil okBlock:okBlock] show];
+    [[IBAlertView alertWithTitle:title message:message cancelTitle:nil okTitle:@"OK" cancelBlock:okBlock okBlock:nil] show];
 }
 
 + (void) showOKCancelWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(void (^)(void))cancelBlock okBlock:(void (^)(void))okBlock {

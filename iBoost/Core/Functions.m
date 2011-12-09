@@ -85,10 +85,6 @@ NSString *DOCUMENTS_DIR(void) { return [NSSearchPathForDirectoriesInDomains(NSDo
 
 // HARDWARE/DEVICE CAPABILITY
 
-NSString *DEVICE_UDID(void) {
-    return [UIDevice currentDevice].uniqueIdentifier;
-}
-
 BOOL IS_IPAD(void) {
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
 }

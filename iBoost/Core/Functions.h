@@ -86,8 +86,6 @@ NSString *DOCUMENTS_DIR(void);
 
 // HARDWARE/DEVICE CAPABILITY
 
-NSString *DEVICE_UDID(void);
-
 BOOL IS_IPAD(void);
 BOOL IS_IPHONE(void);
 

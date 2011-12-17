@@ -248,6 +248,7 @@
     if (font) {
         CTFontRef globalFont = CTFontCreateWithName((CFStringRef)font.fontName, font.pointSize, nil);
         [attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)globalFont range:NSMakeRange(0, str.length)];
+        CFRelease(globalFont);
     }
     
 	for (NSValue *iValue in _boldRanges) {
@@ -257,6 +258,7 @@
 	for (NSValue *iValue in _italicRanges) {
 		CTFontRef iFont = CTFontCreateWithName((CFStringRef)([UIFont italicSystemFontOfSize:font.pointSize].fontName), font.pointSize, nil);
 		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)iFont range:iValue.rangeValue];
+        CFRelease(iFont);
 	}
     
     for (NSValue *iValue in _underlineRanges) {
@@ -269,6 +271,7 @@
         
 		CTFontRef iFont = CTFontCreateWithName((CFStringRef)iFontName, font.pointSize, nil);
 		[attrString addAttribute:(NSString *)(kCTFontAttributeName) value:(id)iFont range:iValue.rangeValue];
+        CFRelease(iFont);
 	}
 	
 	return attrString;

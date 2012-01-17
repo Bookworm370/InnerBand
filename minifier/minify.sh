@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #
-# The minifier condenses the iBoost code into a simply .h/.m pair. Handy!
+# The minifier condenses the InnerBand code into a simply .h/.m pair. Handy!
 #
 shopt -s nullglob
 
 DIRNAME=`dirname $0`
-BOOSTDIR=$DIRNAME/../iBoost
+BOOSTDIR=$DIRNAME/../InnerBand
 
 if [ $# != 1 -o "$1" = "all" -a "$1" = "core" ]
 then
@@ -18,25 +18,25 @@ INCLUSION=$1
 
 if [ $INCLUSION = 'all' ]
 then
-	INCLUDE_FILENAME='iBoost.h'
-	CODE_FILENAME='iBoost.m'
+	INCLUDE_FILENAME='InnerBand.h'
+	CODE_FILENAME='InnerBand.m'
 	HEADER_FILES="$BOOSTDIR/*.h $BOOSTDIR/*/*.h $BOOSTDIR/*/*/*.h $BOOSTDIR/*/*/*/*.h"
 	SOURCE_FILES="$BOOSTDIR/*.m $BOOSTDIR/*/*.m $BOOSTDIR/*/*/*.m $BOOSTDIR/*/*/*/*.m"
 else
-	INCLUDE_FILENAME='iBoostCore.h'
-	CODE_FILENAME='iBoostCore.m'
+	INCLUDE_FILENAME='InnerBandCore.h'
+	CODE_FILENAME='InnerBandCore.m'
 	HEADER_FILES="$BOOSTDIR/Core/*.h $BOOSTDIR/Core/*/*.h $BOOSTDIR/Core*Data/*.h $BOOSTDIR/Message*Center/*.h $BOOSTDIR/Message*Center/*/*.h"
 	SOURCE_FILES="$BOOSTDIR/Core/*.m $BOOSTDIR/Core/*/*.m $BOOSTDIR/Core*Data/*.m $BOOSTDIR/Message*Center/*.m $BOOSTDIR/Message*Center/*/*.m"
 fi
 
-IBOOST_HEADER_FILE=$HOME/Desktop/$INCLUDE_FILENAME
-IBOOST_SOURCE_FILE=$HOME/Desktop/$CODE_FILENAME
+INNERBAND_HEADER_FILE=$HOME/Desktop/$INCLUDE_FILENAME
+INNERBAND_SOURCE_FILE=$HOME/Desktop/$CODE_FILENAME
 
-cat > $IBOOST_HEADER_FILE <<EOF
+cat > $INNERBAND_HEADER_FILE <<EOF
 //
-//  iBoost
+//  InnerBand
 //
-//  iBoost - The iOS Booster!
+//  InnerBand - Making the iOS SDK greater from within!
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -55,11 +55,11 @@ cat > $IBOOST_HEADER_FILE <<EOF
 
 EOF
 
-cat > $IBOOST_SOURCE_FILE <<EOF
+cat > $INNERBAND_SOURCE_FILE <<EOF
 //
-//  iBoost
+//  InnerBand
 //
-//  iBoost - The iOS Booster!
+//  InnerBand - Making the iOS SDK greater from within!
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ do
 	
 	if (( $? != 0 ))
 	then
-		( echo ; grep -v "^//" "$HEADER_FILE" | grep -v "^#import"; echo ) >> "$IBOOST_HEADER_FILE"
+		( echo ; grep -v "^//" "$HEADER_FILE" | grep -v "^#import"; echo ) >> "$INNERBAND_HEADER_FILE"
 	fi
 done
 
@@ -93,11 +93,11 @@ do
 	
 	if (( $? == 0 ))
 	then
-		( echo ; grep -v "^//" "$HEADER_FILE" | grep -v "^#import \""; echo ) >> "$IBOOST_HEADER_FILE"
+		( echo ; grep -v "^//" "$HEADER_FILE" | grep -v "^#import \""; echo ) >> "$INNERBAND_HEADER_FILE"
 	fi
 done
 
 for SOURCE_FILE in $SOURCE_FILES	
 do
-	( echo ; grep -v "^//" "$SOURCE_FILE" | grep -v "^#import \""; echo ) >> "$IBOOST_SOURCE_FILE"
+	( echo ; grep -v "^//" "$SOURCE_FILE" | grep -v "^#import \""; echo ) >> "$INNERBAND_SOURCE_FILE"
 done

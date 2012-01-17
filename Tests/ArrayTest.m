@@ -1,8 +1,8 @@
 //
 //  ArrayTest.m
-//  iBoost
+//  InnerBand
 //
-//  iBoost - The iOS Booster!
+//  InnerBand - The iOS Booster!
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@
 #import "GHUnit.h"
 #import "Macros.h"
 #import "Functions.h"
-#import "NSArray+Boost.h"
-#import "NSMutableArray+Boost.h"
+#import "NSArray+InnerBand.h"
+#import "NSMutableArray+InnerBand.h"
 
 @interface ArrayTest : GHTestCase
 @end

@@ -1,8 +1,8 @@
 //
 //  CoreDataTest.m
-//  iBoost
+//  InnerBand
 //
-//  iBoost - The iOS Booster!
+//  InnerBand - The iOS Booster!
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@
 #import "GHUnit.h"
 #import "Macros.h"
 #import "Functions.h"
-#import "NSMutableArray+Boost.h"
+#import "NSMutableArray+InnerBand.h"
 #import "CoreDataStore.h"
 #import "CoreDataWidget.h"
-#import "NSManagedObject+Boost.h"
+#import "NSManagedObject+InnerBand.h"
 
 @interface CoreDataTest : GHTestCase
 

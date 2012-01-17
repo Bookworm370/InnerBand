@@ -1,6 +1,6 @@
-The iBoost library aims to supplement everyday iPhone development with a set of classes, macros, components and constants that speed up development without abstracting the SDK away from you in any way.
+The InnerBand library aims to supplement everyday iPhone development with a set of classes, macros, components and constants that speed up development without abstracting the SDK away from you in any way.
 
-# Why iBoost? #
+# Why InnerBand? #
 
 When I first started using Three20, I was in love with most aspects of it, including the new table architecture, CSS, and the URL-based navigation system.  I felt as if the ugly parts of the iPhone SDK were abstracted away and I no longer had to worry about implementing 12 hook methods to make a table.  Life was good!
 
@@ -16,16 +16,16 @@ As I was finishing my third project with it, I decided I'd had enough.  Here are
 
 That's not to say there's not a lot of neat stuff in Three20.  Some of these problems can likely be avoided with deeper knowledge, but the lack of quality, updated documentation doesn't work well with developers who are trying to write apps with it.
 
-That's why there's iBoost!
+That's why there's InnerBand!
 
 # What goodies are available? #
 
 
-With iBoost, you get enhancements to the regular SDK you've been using all along.  Here's a quick summary of what you'll find:
+With InnerBand, you get enhancements to the regular SDK you've been using all along.  Here's a quick summary of what you'll find:
 
 ## Components ##
 	
-iBoost doesn't change the UI layer.  Want a button?  Create a glossy button in
+InnerBand doesn't change the UI layer.  Want a button?  Create a glossy button in
 one line with IBButton!
 	
 Need some rich text?  Don't wrap UIWebView on your own, there's so
@@ -96,7 +96,7 @@ a lot of boilerplate code.  Even Apple places a lot of this in your AppDelegate!
 There's a better solution.
 	
 Start a project as normal -- and don't select the Core Data checkbox so none of that
-nasty code is added to your project. Import iBoost
+nasty code is added to your project. Import InnerBand
 and now Core Data is ready to go!  Just go and create a new Core Data Model.
 	
 CoreDataStore provides methods for you to use to access data easily without leaving
@@ -117,7 +117,7 @@ cannot be passed between threads!
 	
 ## Categories ##
 	
-iBoost augments many of your favorite Cocoa classes with categories to make using them,
+InnerBand augments many of your favorite Cocoa classes with categories to make using them,
 well, more useful!  None interrupt your normal development practices.  Use them or don't.
 With them, you'll be able to do lots of cool stuff!
 	
@@ -143,7 +143,7 @@ There's so much more, too!  Check out the unit tests and find your favorites...
 	
 ## Macros ##
 
-Macros are a huge time saver!  iBoost contains so many to choose from!
+Macros are a huge time saver!  InnerBand contains so many to choose from!
 	
 Box up a primitive integer into an NSNumber to store in an array with BOX_INT(5).
 Unbox it back with UNBOX_INT(myNumber).
@@ -162,27 +162,27 @@ Do some quick debugging with NSLog(RECT_TO_STR(myRect)).
 And, again, so much more...
 	
 	
-# Setting up iBoost in your application #
+# Setting up InnerBand in your application #
 
 
-There are two simple ways to include iBoost in your application:
+There are two simple ways to include InnerBand in your application:
 
   1. Copy the Source
   2. Copy the Minified Source (same as above, but with only a single .h/.m pair)      
 
 ## Copy Source ##
 
-Copying the iBoost source into your project is the most flexible and lets you update XCode without rebuilding the library, however you will have to compile it after a clean.  Still, this is the most common approach iPhone developers take for 3rd-party libraries.
+Copying the InnerBand source into your project is the most flexible and lets you update XCode without rebuilding the library, however you will have to compile it after a clean.  Still, this is the most common approach iPhone developers take for 3rd-party libraries.
 
-  1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
+  1. Download an InnerBand source package (http://github.com/ZaBlanc/InnerBand/downloads) or clone the repository with:
 	
-	git clone git@github.com:ZaBlanc/iBoost.git
+	git clone git@github.com:ZaBlanc/InnerBand.git
 
   2. Create a new XCode iPhone project if you haven't already.
 
-  3. Open the iBoost sub-directory and copy the iBoost/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
+  3. Open the InnerBand sub-directory and copy the InnerBand/ directory into your project.  You can either copy it manually and choose to "Add Existing Files..." or drag-and-drop it directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-  4. Add the CoreData and CoreText framework to each target that will use iBoost.
+  4. Add the CoreData and CoreText framework to each target that will use InnerBand.
 
   5. Done!
 
@@ -190,32 +190,32 @@ Copying the iBoost source into your project is the most flexible and lets you up
 
 Minified source is a brand new approach, borrowed from the JavaScript world, and allows you to drop a single .h/.m pair into your project rather than a whole directory of files.  As far as I know, no other projects do it this way yet, but I've always been more comfortable with importing a pair of files over big hierarchies.  So, I wrote a little script that creates one magically! :-)
 
-1. Download an iBoost source package (http://github.com/ZaBlanc/iBoost/downloads) or clone the repository with:
+1. Download an InnerBand source package (http://github.com/ZaBlanc/InnerBand/downloads) or clone the repository with:
 	
-	git clone git@github.com:ZaBlanc/iBoost.git
+	git clone git@github.com:ZaBlanc/InnerBand.git
 
 2. Create a new XCode iPhone project if you haven't already.
 
-3. From the Terminal, run iBoost/minifier/minify.sh all. If you don't wish to include the UI components and just want the macros and extensions, run iBoost/minifier/minify.sh core.
+3. From the Terminal, run InnerBand/minifier/minify.sh all. If you don't wish to include the UI components and just want the macros and extensions, run InnerBand/minifier/minify.sh core.
 	
-4. There should be two new files, iBoost.h and iBoost.m (or iBoostCore.h and iBoostCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
+4. There should be two new files, InnerBand.h and InnerBand.m (or InnerBandCore.h and InnerBandCore.m), on your Desktop.  Copy them into your project.  You can either copy them manually and choose to "Add Existing Files..." or drag-and-drop them directly.  (I prefer to include it in "Other Source" but you can put it anywhere you like.)
 
-5. Add the CoreData and CoreText framework to each target that will use iBoost.
+5. Add the CoreData and CoreText framework to each target that will use InnerBand.
 
 6. Done!
 
 # Unit tests as documentation #
 
-iBoost believes in unit testing.  Therefore, if you open the project you'll find a plethora of unit tests that demonstrate, first-hand, how to use iBoost.
+InnerBand believes in unit testing.  Therefore, if you open the project you'll find a plethora of unit tests that demonstrate, first-hand, how to use InnerBand.
 
 
 # And there's a demo! #
 
 
-Want to see the iBoost components in action? You can run the iBoost Catalog project located at iBoost/demo/Catalog/.  This demonstrates the visual features of iBoost in a way that unit tests cannot.
+Want to see the InnerBand components in action? You can run the InnerBand Catalog project located at InnerBand/demo/Catalog/.  This demonstrates the visual features of InnerBand in a way that unit tests cannot.
 
 
-# So who created iBoost? #
+# So who created InnerBand? #
 
 
-iBoost was conceived, designed, created, and is maintained by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.
+InnerBand was conceived, designed, created, and is maintained by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.

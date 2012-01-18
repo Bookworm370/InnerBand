@@ -64,9 +64,9 @@ UIImage *IMAGE(NSString *x);
 double DEG_TO_RAD(double degrees);
 double RAD_TO_DEG(double radians);
 
-NSInteger CONSTRAINTED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max);
-float CONSTRAINTED_FLOAT_VALUE(float val, float min, float max);
-double CONSTRAINTED_DOUBLE_VALUE(double val, double min, double max);
+NSInteger CONSTRAINED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max);
+float CONSTRAINED_FLOAT_VALUE(float val, float min, float max);
+double CONSTRAINED_DOUBLE_VALUE(double val, double min, double max);
 
 // STRINGS
 

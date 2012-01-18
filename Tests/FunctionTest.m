@@ -115,28 +115,28 @@
 }
 
 - (void)testNumericIntegerConstraints {
-    GHAssertEquals(0, CONSTRAINTED_INT_VALUE(-1, 0, 100), nil);    
-    GHAssertEquals(0, CONSTRAINTED_INT_VALUE(0, 0, 100), nil);    
-    GHAssertEquals(1, CONSTRAINTED_INT_VALUE(1, 0, 100), nil);    
-    GHAssertEquals(99, CONSTRAINTED_INT_VALUE(99, 0, 100), nil);    
-    GHAssertEquals(100, CONSTRAINTED_INT_VALUE(100, 0, 100), nil);    
-    GHAssertEquals(100, CONSTRAINTED_INT_VALUE(101, 0, 100), nil);    
+    GHAssertEquals(0, CONSTRAINED_INT_VALUE(-1, 0, 100), nil);    
+    GHAssertEquals(0, CONSTRAINED_INT_VALUE(0, 0, 100), nil);    
+    GHAssertEquals(1, CONSTRAINED_INT_VALUE(1, 0, 100), nil);    
+    GHAssertEquals(99, CONSTRAINED_INT_VALUE(99, 0, 100), nil);    
+    GHAssertEquals(100, CONSTRAINED_INT_VALUE(100, 0, 100), nil);    
+    GHAssertEquals(100, CONSTRAINED_INT_VALUE(101, 0, 100), nil);    
 }
 
 - (void)testNumericFloatDoubleConstraints {
-    GHAssertEqualsWithAccuracy(0.5f, CONSTRAINTED_FLOAT_VALUE(0.0f, 0.5f, 99.5f), 0.01f, nil);    
-    GHAssertEqualsWithAccuracy(0.5f, CONSTRAINTED_FLOAT_VALUE(0.5f, 0.5f, 99.5f), 0.01f, nil);    
-    GHAssertEqualsWithAccuracy(1.0f, CONSTRAINTED_FLOAT_VALUE(1.0f, 0.5f, 99.5f), 0.01f, nil);    
-    GHAssertEqualsWithAccuracy(99.0f, CONSTRAINTED_FLOAT_VALUE(99.0f, 0.5f, 99.5f), 0.01f, nil);    
-    GHAssertEqualsWithAccuracy(99.5f, CONSTRAINTED_FLOAT_VALUE(99.5f, 0.5f, 99.5f), 0.01f, nil);    
-    GHAssertEqualsWithAccuracy(99.5f, CONSTRAINTED_FLOAT_VALUE(100.0f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(0.5f, CONSTRAINED_FLOAT_VALUE(0.0f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(0.5f, CONSTRAINED_FLOAT_VALUE(0.5f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(1.0f, CONSTRAINED_FLOAT_VALUE(1.0f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(99.0f, CONSTRAINED_FLOAT_VALUE(99.0f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(99.5f, CONSTRAINED_FLOAT_VALUE(99.5f, 0.5f, 99.5f), 0.01f, nil);    
+    GHAssertEqualsWithAccuracy(99.5f, CONSTRAINED_FLOAT_VALUE(100.0f, 0.5f, 99.5f), 0.01f, nil);    
 
-    GHAssertEqualsWithAccuracy(0.5, CONSTRAINTED_DOUBLE_VALUE(0.0, 0.5, 99.5), 0.01, nil);    
-    GHAssertEqualsWithAccuracy(0.5, CONSTRAINTED_DOUBLE_VALUE(0.5, 0.5, 99.5), 0.01, nil);    
-    GHAssertEqualsWithAccuracy(1.0, CONSTRAINTED_DOUBLE_VALUE(1.0, 0.5, 99.5), 0.01, nil);    
-    GHAssertEqualsWithAccuracy(99.0, CONSTRAINTED_DOUBLE_VALUE(99.0, 0.5, 99.5), 0.01, nil);    
-    GHAssertEqualsWithAccuracy(99.5, CONSTRAINTED_DOUBLE_VALUE(99.5, 0.5, 99.5), 0.01, nil);    
-    GHAssertEqualsWithAccuracy(99.5, CONSTRAINTED_DOUBLE_VALUE(100.0, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(0.5, CONSTRAINED_DOUBLE_VALUE(0.0, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(0.5, CONSTRAINED_DOUBLE_VALUE(0.5, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(1.0, CONSTRAINED_DOUBLE_VALUE(1.0, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(99.0, CONSTRAINED_DOUBLE_VALUE(99.0, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(99.5, CONSTRAINED_DOUBLE_VALUE(99.5, 0.5, 99.5), 0.01, nil);    
+    GHAssertEqualsWithAccuracy(99.5, CONSTRAINED_DOUBLE_VALUE(100.0, 0.5, 99.5), 0.01, nil);    
 }
 
 @end

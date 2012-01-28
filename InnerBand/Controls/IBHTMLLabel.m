@@ -57,17 +57,22 @@
     return self;
 }
 
-- (void)dealloc {
-	[_text release];
-	[_textColor release];
-	[_linkColor release];
-    [super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [_text release];
+        [_textColor release];
+        [_linkColor release];
+        [super dealloc];
+    }
+#endif
 
 #pragma mark -
 
 - (void)setText:(NSString *)value {
-	[_text autorelease];
+    #if !__has_feature(objc_arc)
+        [_text autorelease];
+    #endif
+    
 	_text = [value copy];
 	[self calculateHTML];
 }
@@ -78,15 +83,21 @@
 }
 
 - (void)setTextColor:(UIColor *)value {
-	[value retain];
-	[_textColor release];
+    #if !__has_feature(objc_arc)
+        [value retain];
+        [_textColor release];
+    #endif
+    
 	_textColor = value;
 	[self calculateHTML];
 }
 
 - (void)setLinkColor:(UIColor *)value {
-	[value retain];
-	[_linkColor release];
+    #if !__has_feature(objc_arc)
+        [value retain];
+        [_linkColor release];
+    #endif
+    
 	_linkColor = value;
 	[self calculateHTML];
 }

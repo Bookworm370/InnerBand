@@ -24,19 +24,28 @@
 + (id)messageWithName:(NSString *)name isAsynchronous:(BOOL)isAsync input:(void (^)(NSData *))inputBlock output:(NSData * (^)(void))outputBlock {
     BlockBasedDispatchMessage *msg = [[BlockBasedDispatchMessage alloc] initWithName:name userInfo:nil];
     msg.asynchronous = isAsync;
-    
-    msg->inputBlock_ = Block_copy(inputBlock);
-    msg->outputBlock_ = Block_copy(outputBlock);
-    
-    return [msg autorelease];
+
+    #if __has_feature(objc_arc)
+        msg->inputBlock_ = inputBlock;
+        msg->outputBlock_ = outputBlock;
+
+        return msg;
+    #else
+        msg->inputBlock_ = Block_copy(inputBlock);
+        msg->outputBlock_ = Block_copy(outputBlock);
+        
+        return [msg autorelease];
+    #endif
 }
 
-- (void)dealloc {
-    Block_release(inputBlock_);
-    Block_release(outputBlock_);
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        Block_release(inputBlock_);
+        Block_release(outputBlock_);
 
-    [super dealloc];
-}
+        [super dealloc];
+    }
+#endif
 
 - (void)inputData:(NSData *)input {
     inputBlock_(input);

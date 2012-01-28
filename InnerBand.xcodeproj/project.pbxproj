@@ -15,8 +15,6 @@
 		02B9620F14C51327006A4F8E /* IBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B961CF14C51327006A4F8E /* IBButton.m */; };
 		02B9621014C51327006A4F8E /* IBCoreTextLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B961D014C51327006A4F8E /* IBCoreTextLabel.h */; };
 		02B9621114C51327006A4F8E /* IBCoreTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B961D114C51327006A4F8E /* IBCoreTextLabel.m */; };
-		02B9621214C51327006A4F8E /* IBHTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B961D214C51327006A4F8E /* IBHTableView.h */; };
-		02B9621314C51327006A4F8E /* IBHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B961D314C51327006A4F8E /* IBHTableView.m */; };
 		02B9621414C51327006A4F8E /* IBHTMLLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B961D414C51327006A4F8E /* IBHTMLLabel.h */; };
 		02B9621514C51327006A4F8E /* IBHTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B961D514C51327006A4F8E /* IBHTMLLabel.m */; };
 		02B9621614C51327006A4F8E /* CGContext+InnerBand.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B961D814C51327006A4F8E /* CGContext+InnerBand.h */; };
@@ -112,8 +110,6 @@
 		02B961CF14C51327006A4F8E /* IBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBButton.m; sourceTree = "<group>"; };
 		02B961D014C51327006A4F8E /* IBCoreTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCoreTextLabel.h; sourceTree = "<group>"; };
 		02B961D114C51327006A4F8E /* IBCoreTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCoreTextLabel.m; sourceTree = "<group>"; };
-		02B961D214C51327006A4F8E /* IBHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTableView.h; sourceTree = "<group>"; };
-		02B961D314C51327006A4F8E /* IBHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTableView.m; sourceTree = "<group>"; };
 		02B961D414C51327006A4F8E /* IBHTMLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBHTMLLabel.h; sourceTree = "<group>"; };
 		02B961D514C51327006A4F8E /* IBHTMLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBHTMLLabel.m; sourceTree = "<group>"; };
 		02B961D814C51327006A4F8E /* CGContext+InnerBand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGContext+InnerBand.h"; sourceTree = "<group>"; };
@@ -267,8 +263,6 @@
 				02B961CF14C51327006A4F8E /* IBButton.m */,
 				02B961D014C51327006A4F8E /* IBCoreTextLabel.h */,
 				02B961D114C51327006A4F8E /* IBCoreTextLabel.m */,
-				02B961D214C51327006A4F8E /* IBHTableView.h */,
-				02B961D314C51327006A4F8E /* IBHTableView.m */,
 				02B961D414C51327006A4F8E /* IBHTMLLabel.h */,
 				02B961D514C51327006A4F8E /* IBHTMLLabel.m */,
 			);
@@ -539,7 +533,6 @@
 				02B9620C14C51327006A4F8E /* IBAlertView.h in Headers */,
 				02B9620E14C51327006A4F8E /* IBButton.h in Headers */,
 				02B9621014C51327006A4F8E /* IBCoreTextLabel.h in Headers */,
-				02B9621214C51327006A4F8E /* IBHTableView.h in Headers */,
 				02B9621414C51327006A4F8E /* IBHTMLLabel.h in Headers */,
 				02B9621614C51327006A4F8E /* CGContext+InnerBand.h in Headers */,
 				02B9621814C51327006A4F8E /* NSArray+InnerBand.h in Headers */,
@@ -655,7 +648,6 @@
 				02B9620D14C51327006A4F8E /* IBAlertView.m in Sources */,
 				02B9620F14C51327006A4F8E /* IBButton.m in Sources */,
 				02B9621114C51327006A4F8E /* IBCoreTextLabel.m in Sources */,
-				02B9621314C51327006A4F8E /* IBHTableView.m in Sources */,
 				02B9621514C51327006A4F8E /* IBHTMLLabel.m in Sources */,
 				02B9621714C51327006A4F8E /* CGContext+InnerBand.m in Sources */,
 				02B9621914C51327006A4F8E /* NSArray+InnerBand.m in Sources */,

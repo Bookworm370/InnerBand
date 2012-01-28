@@ -19,6 +19,7 @@
 
 #import "DispatchMessage.h"
 #import "MessageCenter.h"
+#import "Macros.h"
 
 @implementation DispatchMessage
 
@@ -101,28 +102,36 @@
     
     va_end(argList);
     
-	// autorelease
-	return [message autorelease];
+    #if __has_feature(objc_arc)
+        return message;
+    #else
+        return [message autorelease];
+    #endif
 }
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo {
 	DispatchMessage *message = [[DispatchMessage alloc] initWithName:name userInfo:userInfo];
 
-	// autorelease
-	return [message autorelease];
+    #if __has_feature(objc_arc)
+        return message;
+    #else
+        return [message autorelease];
+    #endif
 }
 
-- (void)dealloc {
-	[name_ release];
-	[userInfo_ release];
-	[super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [name_ release];
+        [userInfo_ release];
+        [super dealloc];
+    }
+#endif
 
 #pragma mark -
 
 - (void)setUserInfo:(NSDictionary *)userInfo {
     NSDictionary *value = [userInfo copy];
-    [userInfo_ release];
+    SAFE_RELEASE(userInfo_);
     userInfo_ = value;
 }
 

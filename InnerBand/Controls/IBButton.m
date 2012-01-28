@@ -30,7 +30,12 @@
 @synthesize borderSize = _borderSize;
 
 +(IBButton*) glossButtonWithTitle:(NSString*)title color:(UIColor*)color {
-	IBButton *button = [[[IBButton alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        IBButton *button = [[IBButton alloc] init];
+    #else
+        IBButton *button = [[[IBButton alloc] init] autorelease];
+    #endif
+    
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeGlossy;
 	button.color = color;
@@ -42,8 +47,14 @@
 	button.titleLabel.shadowOffset = CGSizeMake (-1.0, -0.0);
 	return button;
 }
+
 +(IBButton*) softButtonWithTitle:(NSString*)title color:(UIColor*)color {
-	IBButton *button = [[[IBButton alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        IBButton *button = [[IBButton alloc] init];
+    #else
+        IBButton *button = [[[IBButton alloc] init] autorelease];
+    #endif
+
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeSoft;
 	button.color = color;
@@ -56,7 +67,12 @@
 	return button;
 }
 +(IBButton*) flatButtonWithTitle:(NSString*)title color:(UIColor*)color {
-	IBButton *button = [[[IBButton alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        IBButton *button = [[IBButton alloc] init];
+    #else
+        IBButton *button = [[[IBButton alloc] init] autorelease];
+    #endif
+    
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeFlat;
 	button.color = color;
@@ -118,7 +134,7 @@
 		NSArray *colors = [NSArray arrayWithObjects:(id)highColor.CGColor, (id)baseColor.CGColor, nil];
 		CGFloat locations[2] = { 0.0, 0.6 };
 		
-		CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
+		CGGradientRef gradient = CGGradientCreateWithColors(space, (__bridge CFArrayRef)colors, locations);
 		CGPoint start = CGPointMake(0, inset.origin.y);
 		CGPoint end = CGPointMake(0, inset.origin.y+inset.size.height);
 		CGContextDrawLinearGradient (context, gradient, start, end, 0);
@@ -143,7 +159,7 @@
 		NSArray *colors = [NSArray arrayWithObjects:(id)highColor.CGColor, (id)shineMinor.CGColor, nil];
 		CGFloat locations[2] = { 0.0, 1.0 };
 		
-		CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
+		CGGradientRef gradient = CGGradientCreateWithColors(space, (__bridge CFArrayRef)colors, locations);
 		CGPoint start = CGPointMake(0, inset.origin.y);
 		CGPoint end = CGPointMake(0, inset.origin.y+(inset.size.height/2));
 		CGContextDrawLinearGradient (context, gradient, start, end, 0);
@@ -160,10 +176,12 @@
 	CGContextStrokePath(context);
 }
 
-- (void)dealloc {
-	[_color release];
-	[_shineColor release];
-    [super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [_color release];
+        [_shineColor release];
+        [super dealloc];
+    }
+#endif
 
 @end

@@ -42,16 +42,21 @@
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo sequence:(NSArray *)messageSequence {
 	SequencedMessage *message = [[SequencedMessage alloc] initWithName:name userInfo:userInfo sequence:messageSequence];
-	
-	// autorelease
-	return [message autorelease];
+
+    #if __has_feature(objc_arc)
+        return message;
+    #else
+        return [message autorelease];
+    #endif
 }
 
-- (void)dealloc {
-	[_messageSequence release];
-    [_outputOfLastMessage release];
-	[super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [_messageSequence release];
+        [_outputOfLastMessage release];
+        [super dealloc];
+    }
+#endif
 
 #pragma mark -
 
@@ -64,12 +69,19 @@
 		[iMessage inputData:_outputOfLastMessage];
 		
 		// release
-		[_outputOfLastMessage release];
+        #if !__has_feature(objc_arc)
+            [_outputOfLastMessage release];
+        #endif
 		
 		// gather output
-		_outputOfLastMessage = [[iMessage outputData] retain];
+        #if __has_feature(objc_arc)
+            _outputOfLastMessage = [iMessage outputData];
+        #else
+            _outputOfLastMessage = [[iMessage outputData] retain];        
+        #endif
 	}
-}
+}           
+
 
 - (NSData *)outputData {
 	// this is the output of the last message we processed in inputData

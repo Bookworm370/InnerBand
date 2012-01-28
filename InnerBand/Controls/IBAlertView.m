@@ -26,7 +26,11 @@
 }
 
 + (id)alertWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle okTitle:(NSString *)okTitle dismissBlock:(void (^)(void))dismissBlock okBlock:(void (^)(void))okBlock {
-    return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock] autorelease];
+    #if __has_feature(objc_arc)
+        return [[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock];
+    #else
+        return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock] autorelease];
+    #endif
 }
 
 + (void)showDismissWithTitle:(NSString *)title message:(NSString *)message dismissBlock:(void (^)(void))dismissBlock {
@@ -37,8 +41,13 @@
     self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:dismissTitle otherButtonTitles:okTitle, nil];
     
     if (self) {
-        okCallback_ = Block_copy(okBlock);
-        dismissCallback_ = Block_copy(dismissBlock);
+        #if __has_feature(objc_arc)
+            okCallback_ = okBlock;
+            dismissCallback_ = dismissBlock;
+        #else
+            okCallback_ = Block_copy(okBlock);
+            dismissCallback_ = Block_copy(dismissBlock);
+        #endif
     }
     
     return self;
@@ -49,25 +58,35 @@
 }
 
 + (id)alertWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle dismissBlock:(void (^)(void))dismissBlock {
-    return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock] autorelease];    
+    #if __has_feature(objc_arc)
+        return [[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock];    
+    #else
+        return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock] autorelease];    
+    #endif
 }
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle dismissBlock:(void (^)(void))dismissBlock {
     self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:dismissTitle otherButtonTitles:nil];
     
     if (self) {
-        dismissCallback_ = Block_copy(dismissBlock);
+        #if __has_feature(objc_arc)
+            dismissCallback_ = dismissBlock;
+        #else
+            dismissCallback_ = Block_copy(dismissBlock);
+        #endif
     }
     
     return self;
 }                                                                                                                                                      
 
-- (void)dealloc {
-    Block_release(okCallback_);
-    Block_release(dismissCallback_);
-    
-    [super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        Block_release(okCallback_);
+        Block_release(dismissCallback_);
+        
+        [super dealloc];
+    }
+#endif
 
 #pragma mark -
 

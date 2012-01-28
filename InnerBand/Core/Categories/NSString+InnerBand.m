@@ -40,11 +40,20 @@
 }
 
 - (NSString *)asDocumentsPath {
-	static NSString* documentsPath = nil;
+    #if __has_feature(objc_arc)
+        __strong static NSString* documentsPath = nil;
+    #else
+        static NSString* documentsPath = nil;
+    #endif
 
 	if (!documentsPath) {
 		NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		documentsPath = [[dirs objectAtIndex:0] retain];
+
+        #if __has_feature(objc_arc)
+            documentsPath = [dirs objectAtIndex:0];
+        #else
+            documentsPath = [[dirs objectAtIndex:0] retain];
+        #endif
 	}
 	
 	return [documentsPath stringByAppendingPathComponent:self];

@@ -29,7 +29,13 @@
 
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, assign) UITextAlignment textAlignment;
-@property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, retain) UIColor *linkColor;
+
+#if __has_feature(objc_arc)
+    @property (nonatomic, strong) UIColor *textColor;
+    @property (nonatomic, strong) UIColor *linkColor;
+#else
+    @property (nonatomic, retain) UIColor *textColor;
+    @property (nonatomic, retain) UIColor *linkColor;
+#endif
 
 @end

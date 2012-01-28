@@ -22,8 +22,13 @@
 #import "Functions.h"
 
 // global Core Data objects
-static NSManagedObjectModel *gManagedObjectModel;
-static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
+#if __has_feature(objc_arc)
+    __strong static NSManagedObjectModel *gManagedObjectModel;
+    __strong static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
+#else
+    static NSManagedObjectModel *gManagedObjectModel;
+    static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
+#endif
 
 // main thread singleton
 static CoreDataStore *gMainStoreInstance;
@@ -47,14 +52,22 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 + (CoreDataStore *)createStore {
-	return [[[CoreDataStore alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        return [[CoreDataStore alloc] init];
+    #else
+        return [[[CoreDataStore alloc] init] autorelease];
+    #endif    
 }
 
 + (void)initialize {
 	NSError *error = nil;
 
 	// create the global managed object model
-	gManagedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    #if __has_feature(objc_arc)
+        gManagedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];    
+    #else
+        gManagedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    #endif
 
 	// create the global persistent store
     gPersistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:gManagedObjectModel];
@@ -76,11 +89,12 @@ static CoreDataStore *gMainStoreInstance;
 	return self;
 }
 				 
-- (void)dealloc {
-    [_managedObjectContext release];
-    
-	[super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [_managedObjectContext release];    
+        [super dealloc];
+    }
+#endif
 
 #pragma mark -
 
@@ -129,18 +143,13 @@ static CoreDataStore *gMainStoreInstance;
 		else {
 			NSLog(@"  %@", [error userInfo]);
 		}
-		
-		abort();
 	} 
 }
 
 #pragma mark - Deprecated Accessors (Use NSManagedObject+InnerBand)
 
 - (NSArray *)allForEntity:(NSString *)entityName error:(NSError **)error {
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-	
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 	
 	// execute
 	NSArray *ret = [_managedObjectContext executeFetchRequest:request error:error];
@@ -149,10 +158,9 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 - (NSArray *)allForEntity:(NSString *)entityName predicate:(NSPredicate *)predicate error:(NSError **)error {
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 	
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
+	// predicate
 	[request setPredicate:predicate];
 	
 	// execute
@@ -160,11 +168,10 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 - (NSArray *)allForEntity:(NSString *)entityName predicate:(NSPredicate *)predicate orderBy:(NSString *)key ascending:(BOOL)ascending error:(NSError **)error {
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-	NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:key ascending:ascending] autorelease];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+	NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key ascending:ascending];
 	
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
+	// predicate
 	[request setPredicate:predicate];
 	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	
@@ -173,11 +180,10 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 - (NSArray *)allForEntity:(NSString *)entityName orderBy:(NSString *)key ascending:(BOOL)ascending error:(NSError **)error {
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-	NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:key ascending:ascending] autorelease];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+	NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key ascending:ascending];
 	
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
+	// predicate
 	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	 
 	// execute
@@ -185,10 +191,7 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 - (NSManagedObject *)entityByName:(NSString *)entityName error:(NSError **)error {
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-	
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 	
 	// execute
 	NSArray *values = [_managedObjectContext executeFetchRequest:request error:error];
@@ -203,13 +206,11 @@ static CoreDataStore *gMainStoreInstance;
 
 - (NSManagedObject *)entityByName:(NSString *)entityName key:(NSString *)key value:(NSObject *)value error:(NSError **)error {
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", key, value];
-	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-	
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+
+	// predicate
 	[request setPredicate:predicate];
 	 
-	// entity
-	[request setEntity:[self entityDescriptionForEntity:entityName]];
-	
 	// execute
 	NSArray *values = [_managedObjectContext executeFetchRequest:request error:error];
 	

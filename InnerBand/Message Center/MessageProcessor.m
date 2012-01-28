@@ -26,18 +26,25 @@
 	self = [super init];
 	
 	if (self) {
-		_message = [message retain];
+        #if __has_feature(objc_arc)
+            _message = message;
+        #else
+            _message = [message retain];
+        #endif
+        
 		_targetActions = [targetActions copy];
 	}
 	
 	return self;
 }
 
-- (void)dealloc {
-	[_message release];
-	[_targetActions release];
-	[super dealloc];
-}
+#if !__has_feature(objc_arc)
+    - (void)dealloc {
+        [_message release];
+        [_targetActions release];
+        [super dealloc];
+    }
+#endif
 
 - (void)process {
 	// process
@@ -53,12 +60,16 @@
 		if (_message.isAsynchronous) {
 			[iTarget performSelectorOnMainThread:iAction withObject:_message waitUntilDone:NO];
 		} else {
-			[iTarget performSelector:iAction withObject:_message];			
+            #if __has_feature(objc_arc)
+                #pragma clang diagnostic push
+                #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                            [iTarget performSelector:iAction withObject:_message];
+                #pragma clang diagnostic pop						
+            #else
+                [iTarget performSelector:iAction withObject:_message];
+            #endif
 		}
 	}
-}
-
-- (void)processInThread {
 }
 
 @end

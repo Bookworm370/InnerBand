@@ -23,14 +23,24 @@
 @implementation NSNumber (InnerBand)
 
 - (NSString *)formattedCurrency {
-	NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
 	[format setNumberStyle:NSNumberFormatterCurrencyStyle];
 	
 	return [format stringFromNumber:self];
 }
 
 - (NSString *)formattedFlatCurrency {
-    NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
     [format setNumberStyle:NSNumberFormatterDecimalStyle];
     [format setMinimumFractionDigits:2];
     [format setMaximumFractionDigits:2];
@@ -39,7 +49,12 @@
 }
 
 - (NSString *)formattedCurrencyWithMinusSign {
-	NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
 	[format setNumberStyle:NSNumberFormatterCurrencyStyle];
 	[format setNegativeFormat:@"-$#,##0.00"];
 
@@ -47,14 +62,24 @@
 }
 
 - (NSString *)formattedDecimal {
-	NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
 	[format setNumberStyle:NSNumberFormatterDecimalStyle];
 	
 	return [format stringFromNumber:self];
 }
 
 - (NSString *)formattedFlatDecimal {
-	NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
 	[format setNumberStyle:NSNumberFormatterDecimalStyle];
 	[format setGroupingSeparator:@""];
 	
@@ -62,7 +87,12 @@
 }
 
 - (NSString *)formattedSpellOut {
-	NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    #else
+        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
+    #endif
+
 	[format setNumberStyle:NSNumberFormatterSpellOutStyle];
 	
 	return [format stringFromNumber:self];

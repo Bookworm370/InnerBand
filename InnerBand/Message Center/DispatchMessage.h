@@ -22,7 +22,7 @@
 
 @interface DispatchMessage : NSObject
 
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy) NSDictionary *userInfo;
 @property (nonatomic, assign, getter=isAsynchronous) BOOL asynchronous;
 

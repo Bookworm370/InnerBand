@@ -47,7 +47,11 @@
         [reversedArray addObject:iObject];
     }
     
-    return [[reversedArray copy] autorelease];
+    #if __has_feature(objc_arc)
+        return [reversedArray copy];
+    #else
+        return [[reversedArray copy] autorelease];
+    #endif
 }
 
 - (NSArray *)shuffledArray {
@@ -55,7 +59,11 @@
     
     [shuffledArray shuffle];
     
-    return [[shuffledArray copy] autorelease];
+    #if __has_feature(objc_arc)
+        return [shuffledArray copy];
+    #else
+        return [[shuffledArray copy] autorelease];
+    #endif
 }
 
 - (id)firstObject {

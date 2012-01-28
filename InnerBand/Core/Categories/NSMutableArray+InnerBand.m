@@ -30,7 +30,12 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 	CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
 	callbacks.retain = IBRetainNoOp;
 	callbacks.release = IBReleaseNoOp;
-	return [(NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks) autorelease];
+
+    #if __has_feature(objc_arc)
+        return (__bridge_transfer NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks);
+    #else
+        return [(NSMutableArray*)CFArrayCreateMutable(nil, 0, &callbacks) autorelease];
+    #endif
 }
 
 - (void)sortDiacriticInsensitiveCaseInsensitive {
@@ -52,17 +57,27 @@ static void IBReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 }
 
 - (id)popObject {
-    id pop = [[self lastObject] retain];
+    #if __has_feature(objc_arc)
+        id pop = [self lastObject];
+    #else
+        id pop = [[[self lastObject] retain] autorelease];
+    #endif
+
     [self removeLastObject];
 
-    return [pop autorelease];
+    return pop;
 }
 
 - (id)shiftObject {
     if (self.count > 0) {
-        id shft = [[self objectAtIndex:0] retain];
+        #if __has_feature(objc_arc)
+            id shft = [self objectAtIndex:0];
+        #else
+            id shft = [[[self objectAtIndex:0] retain] autorelease];
+        #endif
+
         [self removeObjectAtIndex:0];
-        return [shft autorelease];
+        return shft;
     }
 
     return nil;

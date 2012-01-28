@@ -17,10 +17,43 @@
 //  limitations under the License.
 //
 
+// COMPILER (allows us to compile on gcc and early LLVM)
+
+#if !defined(__clang__) || __clang_major__ < 3
+
+#ifndef __bridge
+#define __bridge
+#endif
+#ifndef __bridge_retained
+#define __bridge_retained
+#endif
+#ifndef __bridge_transfer
+#define __bridge_transfer
+#endif
+#ifndef __autoreleasing
+#define __autoreleasing
+#endif
+#ifndef __strong
+#define __strong
+#endif
+#ifndef __weak
+#define __weak
+#endif
+#ifndef __unsafe_unretained
+#define __unsafe_unretained
+#endif
+
+#endif
+
 // MEMORY
 
-#define SAFE_RELEASE(obj) ([obj release], obj = nil)
-#define SAFE_TIMER_RELEASE(obj) ([obj invalidate], [obj release], obj = nil)
+#if __has_feature(objc_arc)
+    #define SAFE_RELEASE(obj) 
+    #define SAFE_TIMER_RELEASE(obj) 
+#else
+    #define SAFE_RELEASE(obj) ([obj release], obj = nil)
+    #define SAFE_TIMER_RELEASE(obj) ([obj invalidate], [obj release], obj = nil)
+#endif
 
 // SELECTORS
 

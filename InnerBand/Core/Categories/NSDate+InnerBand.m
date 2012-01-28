@@ -116,7 +116,12 @@
 }
 
 - (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:NSDateFormatterNoStyle];
 	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
@@ -125,7 +130,12 @@
 }
 
 - (NSString *)formattedUTCTimeStyle:(NSDateFormatterStyle)timeStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateStyle:NSDateFormatterNoStyle];
 	[format setTimeStyle:timeStyle];
 	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
@@ -134,7 +144,12 @@
 }
 
 - (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:timeStyle];
 	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
@@ -146,7 +161,12 @@
 	//
 	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
 	//
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateFormat:datePattern];
 	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
 	
@@ -154,7 +174,12 @@
 }
 
 - (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:NSDateFormatterNoStyle];
 	
@@ -162,7 +187,12 @@
 }
 
 - (NSString *)formattedTimeStyle:(NSDateFormatterStyle)timeStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateStyle:NSDateFormatterNoStyle];
 	[format setTimeStyle:timeStyle];
 
@@ -170,7 +200,12 @@
 }
 
 - (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:timeStyle];
 	
@@ -181,7 +216,12 @@
 	//
 	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
 	//
-	NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #if __has_feature(objc_arc)
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    #else
+        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
+    #endif
+    
 	[format setDateFormat:datePattern];
 	
 	return [format stringFromDate:self];
@@ -191,7 +231,6 @@
     NSCalendar *_calendar = [NSCalendar currentCalendar];
     [_calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     NSDateComponents *_datecomp = [_calendar components:NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit fromDate:self];
-    NSLog(@"Current Date: %@",[_calendar dateFromComponents:_datecomp]);
 	return [_calendar dateFromComponents:_datecomp];
 }
 @end

@@ -33,9 +33,17 @@ typedef enum {
 	UIColor *_borderColor;
 	int _borderSize;
 }
-@property(nonatomic, retain) UIColor *color;
-@property(nonatomic, retain) UIColor *shineColor;
-@property(nonatomic, retain) UIColor *borderColor;
+
+#if __has_feature(objc_arc)
+    @property(nonatomic, strong) UIColor *color;
+    @property(nonatomic, strong) UIColor *shineColor;
+    @property(nonatomic, strong) UIColor *borderColor;
+#else
+    @property(nonatomic, retain) UIColor *color;
+    @property(nonatomic, retain) UIColor *shineColor;
+    @property(nonatomic, retain) UIColor *borderColor;
+#endif
+
 @property(nonatomic, assign) int borderSize;
 @property(nonatomic, assign) IBButtonType type;
 @property(nonatomic, assign) float cornerRadius;

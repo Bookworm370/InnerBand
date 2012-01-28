@@ -20,7 +20,6 @@ That's why there's InnerBand!
 
 # What goodies are available? #
 
-
 With InnerBand, you get enhancements to the regular SDK you've been using all along.  Here's a quick summary of what you'll find:
 
 ## Components ##
@@ -147,8 +146,8 @@ Macros are a huge time saver!  InnerBand contains so many to choose from!
 	
 Box up a primitive integer into an NSNumber to store in an array with BOX_INT(5).
 Unbox it back with UNBOX_INT(myNumber).
-	
-Free up memory cleanly with SAFE_RELEASE(myObject).
+
+If you're not yet using ARC, free up memory cleanly with SAFE_RELEASE(myObject).
 Re-assign memory with myObject = SAFE_ASSIGN(myObject, anotherObject).
 	
 Alter rectangles with RECT_INSET_BY_LEFT_TOP_RIGHT_BOTTOM(myRect, 50, 10, 5, 10).
@@ -203,6 +202,10 @@ Minified source is a brand new approach, borrowed from the JavaScript world, and
 5. Add the CoreData and CoreText framework to each target that will use InnerBand.
 
 6. Done!
+
+# A note about ARC support
+
+InnerBand supports ARC.  In fact, it does so without a branch.  The code automatically detects if ARC is being used in your project and compiles accordingly.  You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)
 
 # Unit tests as documentation #
 

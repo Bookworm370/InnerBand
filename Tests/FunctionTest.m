@@ -55,13 +55,13 @@
 	GHAssertEquals(CGRectMake(80, 100, 110, 400), rect, nil);
 
     rect = RECT_WITH_X(RECT_50_X_100_SIZED_200_BY_400, 10);
-	GHAssertEquals(CGRectMake(10, 100, 60, 80), rect, nil);
+	GHAssertEquals(CGRectMake(10, 100, 200, 400), rect, nil);
     
 	rect = RECT_WITH_Y(RECT_50_X_100_SIZED_200_BY_400, 10);
-	GHAssertEquals(CGRectMake(50, 10, 120, 400), rect, nil);
+	GHAssertEquals(CGRectMake(50, 10, 200, 400), rect, nil);
     
 	rect = RECT_WITH_X_Y(RECT_50_X_100_SIZED_200_BY_400, 10, 20);
-	GHAssertEquals(CGRectMake(10, 20, 200, 150), rect, nil);
+	GHAssertEquals(CGRectMake(10, 20, 200, 400), rect, nil);
 
 	rect = RECT_WITH_WIDTH_HEIGHT(RECT_50_X_100_SIZED_200_BY_400, 60, 80);
 	GHAssertEquals(CGRectMake(50, 100, 60, 80), rect, nil);

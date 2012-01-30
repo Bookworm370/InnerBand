@@ -30,11 +30,7 @@
 @synthesize borderSize = _borderSize;
 
 +(IBButton*) glossButtonWithTitle:(NSString*)title color:(UIColor*)color {
-    #if __has_feature(objc_arc)
-        IBButton *button = [[IBButton alloc] init];
-    #else
-        IBButton *button = [[[IBButton alloc] init] autorelease];
-    #endif
+    IBButton *button = SAFE_ARC_AUTORELEASE([[IBButton alloc] init]);
     
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeGlossy;
@@ -49,11 +45,7 @@
 }
 
 +(IBButton*) softButtonWithTitle:(NSString*)title color:(UIColor*)color {
-    #if __has_feature(objc_arc)
-        IBButton *button = [[IBButton alloc] init];
-    #else
-        IBButton *button = [[[IBButton alloc] init] autorelease];
-    #endif
+    IBButton *button = SAFE_ARC_AUTORELEASE([[IBButton alloc] init]);
 
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeSoft;
@@ -67,11 +59,7 @@
 	return button;
 }
 +(IBButton*) flatButtonWithTitle:(NSString*)title color:(UIColor*)color {
-    #if __has_feature(objc_arc)
-        IBButton *button = [[IBButton alloc] init];
-    #else
-        IBButton *button = [[[IBButton alloc] init] autorelease];
-    #endif
+    IBButton *button = SAFE_ARC_AUTORELEASE([[IBButton alloc] init]);
     
 	[button setTitle:title forState:UIControlStateNormal];
 	button.type = IBButtonTypeFlat;
@@ -176,12 +164,10 @@
 	CGContextStrokePath(context);
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_color release];
-        [_shineColor release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_color);
+    SAFE_ARC_RELEASE(_shineColor);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 @end

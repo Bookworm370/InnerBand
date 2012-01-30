@@ -18,7 +18,7 @@
 //
 
 #import "SequencedMessage.h"
-
+#import "ARCMacros.h"
 
 @implementation SequencedMessage
 
@@ -43,42 +43,31 @@
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo sequence:(NSArray *)messageSequence {
 	SequencedMessage *message = [[SequencedMessage alloc] initWithName:name userInfo:userInfo sequence:messageSequence];
 
-    #if __has_feature(objc_arc)
-        return message;
-    #else
-        return [message autorelease];
-    #endif
+	// autorelease
+    return SAFE_ARC_AUTORELEASE(message);
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_messageSequence release];
-        [_outputOfLastMessage release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_messageSequence);
+    SAFE_ARC_RELEASE(_outputOfLastMessage);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 #pragma mark -
 
 - (void)inputData:(NSData *)input {
 	_outputOfLastMessage = nil;
-	
+
 	// process each message in sequence
 	for (DispatchMessage *iMessage in _messageSequence) {
 		// process
 		[iMessage inputData:_outputOfLastMessage];
-		
+
 		// release
-        #if !__has_feature(objc_arc)
-            [_outputOfLastMessage release];
-        #endif
+        SAFE_ARC_RELEASE(_outputOfLastMessage);
 		
 		// gather output
-        #if __has_feature(objc_arc)
-            _outputOfLastMessage = [iMessage outputData];
-        #else
-            _outputOfLastMessage = [[iMessage outputData] retain];        
-        #endif
+        _outputOfLastMessage = SAFE_ARC_RETAIN([iMessage outputData]);
 	}
 }           
 

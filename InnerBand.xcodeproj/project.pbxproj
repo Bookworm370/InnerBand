@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021717AB14D5C26D0005686A /* ARCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 021717AA14D5C26D0005686A /* ARCMacros.h */; };
 		02A8698E13F7825D00F2A07B /* CoreDataWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A8698C13F7825D00F2A07B /* CoreDataWidget.h */; };
 		02A8698F13F7825D00F2A07B /* CoreDataWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A8698D13F7825D00F2A07B /* CoreDataWidget.m */; };
 		02B9620C14C51327006A4F8E /* IBAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B961CC14C51327006A4F8E /* IBAlertView.h */; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021717AA14D5C26D0005686A /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		02A8698C13F7825D00F2A07B /* CoreDataWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataWidget.h; sourceTree = "<group>"; };
 		02A8698D13F7825D00F2A07B /* CoreDataWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataWidget.m; sourceTree = "<group>"; };
 		02B961CC14C51327006A4F8E /* IBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAlertView.h; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				02B961F314C51327006A4F8E /* Constants.h */,
 				02B961F414C51327006A4F8E /* Macros.h */,
+				021717AA14D5C26D0005686A /* ARCMacros.h */,
 				02B961F514C51327006A4F8E /* Types.h */,
 			);
 			path = Macros;
@@ -559,6 +562,7 @@
 				02B9623F14C51327006A4F8E /* DispatchMessage.h in Headers */,
 				02B9624114C51327006A4F8E /* MessageCenter.h in Headers */,
 				02B9624314C51327006A4F8E /* MessageProcessor.h in Headers */,
+				021717AB14D5C26D0005686A /* ARCMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

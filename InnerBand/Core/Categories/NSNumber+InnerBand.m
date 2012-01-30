@@ -18,16 +18,12 @@
 //
 
 #import "NSNumber+InnerBand.h"
-
+#import "ARCMacros.h"
 
 @implementation NSNumber (InnerBand)
 
 - (NSString *)formattedCurrency {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
 	[format setNumberStyle:NSNumberFormatterCurrencyStyle];
 	
@@ -35,11 +31,7 @@
 }
 
 - (NSString *)formattedFlatCurrency {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
     [format setNumberStyle:NSNumberFormatterDecimalStyle];
     [format setMinimumFractionDigits:2];
@@ -49,11 +41,7 @@
 }
 
 - (NSString *)formattedCurrencyWithMinusSign {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
 	[format setNumberStyle:NSNumberFormatterCurrencyStyle];
 	[format setNegativeFormat:@"-$#,##0.00"];
@@ -62,11 +50,7 @@
 }
 
 - (NSString *)formattedDecimal {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
 	[format setNumberStyle:NSNumberFormatterDecimalStyle];
 	
@@ -74,11 +58,7 @@
 }
 
 - (NSString *)formattedFlatDecimal {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
 	[format setNumberStyle:NSNumberFormatterDecimalStyle];
 	[format setGroupingSeparator:@""];
@@ -87,11 +67,7 @@
 }
 
 - (NSString *)formattedSpellOut {
-    #if __has_feature(objc_arc)
-        NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
-    #else
-        NSNumberFormatter *format = [[[NSNumberFormatter alloc] init] autorelease];
-    #endif
+    NSNumberFormatter *format = SAFE_ARC_AUTORELEASE([[NSNumberFormatter alloc] init]);
 
 	[format setNumberStyle:NSNumberFormatterSpellOutStyle];
 	

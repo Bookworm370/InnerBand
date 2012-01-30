@@ -18,6 +18,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARCMacros.h"
 
 typedef enum {
 	IBButtonTypeGlossy,
@@ -34,16 +35,9 @@ typedef enum {
 	int _borderSize;
 }
 
-#if __has_feature(objc_arc)
-    @property(nonatomic, strong) UIColor *color;
-    @property(nonatomic, strong) UIColor *shineColor;
-    @property(nonatomic, strong) UIColor *borderColor;
-#else
-    @property(nonatomic, retain) UIColor *color;
-    @property(nonatomic, retain) UIColor *shineColor;
-    @property(nonatomic, retain) UIColor *borderColor;
-#endif
-
+@property(nonatomic, SAFE_ARC_PROP_RETAIN) UIColor *color;
+@property(nonatomic, SAFE_ARC_PROP_RETAIN) UIColor *shineColor;
+@property(nonatomic, SAFE_ARC_PROP_RETAIN) UIColor *borderColor;
 @property(nonatomic, assign) int borderSize;
 @property(nonatomic, assign) IBButtonType type;
 @property(nonatomic, assign) float cornerRadius;

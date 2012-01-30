@@ -20,6 +20,7 @@
 #import "NSDate+InnerBand.h"
 #import <time.h>
 #import "Constants.h"
+#import "ARCMacros.h"
 
 @implementation NSDate (InnerBand)
 
@@ -116,11 +117,7 @@
 }
 
 - (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
 
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:NSDateFormatterNoStyle];
@@ -130,11 +127,7 @@
 }
 
 - (NSString *)formattedUTCTimeStyle:(NSDateFormatterStyle)timeStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateStyle:NSDateFormatterNoStyle];
 	[format setTimeStyle:timeStyle];
@@ -144,11 +137,7 @@
 }
 
 - (NSString *)formattedUTCDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:timeStyle];
@@ -161,11 +150,7 @@
 	//
 	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
 	//
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateFormat:datePattern];
 	[format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
@@ -174,11 +159,7 @@
 }
 
 - (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:NSDateFormatterNoStyle];
@@ -187,11 +168,7 @@
 }
 
 - (NSString *)formattedTimeStyle:(NSDateFormatterStyle)timeStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateStyle:NSDateFormatterNoStyle];
 	[format setTimeStyle:timeStyle];
@@ -200,11 +177,7 @@
 }
 
 - (NSString *)formattedDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateStyle:dateStyle];
 	[format setTimeStyle:timeStyle];
@@ -216,11 +189,7 @@
 	//
 	// format document: http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
 	//
-    #if __has_feature(objc_arc)
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    #else
-        NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
-    #endif
+    NSDateFormatter *format = SAFE_ARC_AUTORELEASE([[NSDateFormatter alloc] init]);
     
 	[format setDateFormat:datePattern];
 	

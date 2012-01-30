@@ -52,17 +52,15 @@
 	return self;
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_text release];
-        [_attrStr release];
-        [_boldRanges release];
-        [_italicRanges release];
-        [_fontRanges release];
-        [_underlineRanges release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_text);
+    SAFE_ARC_RELEASE(_attrStr);
+    SAFE_ARC_RELEASE(_boldRanges);
+    SAFE_ARC_RELEASE(_italicRanges);
+    SAFE_ARC_RELEASE(_fontRanges);
+    SAFE_ARC_RELEASE(_underlineRanges);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 - (void)calculateHeightForAttributedString {
     CGFloat H = 0;
@@ -135,54 +133,39 @@
 }
 
 - (void)setTextColor:(UIColor *)value {
-    #if !__has_feature(objc_arc)
-        [value retain];
-        [_textColor release];
-    #endif
-    
-	_textColor = value;
+    if (value != _textColor) {
+        SAFE_ARC_RELEASE(_textColor);
+        _textColor = SAFE_ARC_RETAIN(value);
+    }
     
 	if (_text) {
 		NSMutableAttributedString *attrStr = [self createMutableAttributedStringFromText];
-        SAFE_RELEASE(_attrStr);
+        SAFE_ARC_RELEASE(_attrStr);
 
-        #if __has_feature(objc_arc)
-            _attrStr = attrStr;
-        #else
-            _attrStr = [attrStr retain];
-        #endif        
+        _attrStr = SAFE_ARC_RETAIN(attrStr);
 	}
 	
 	[self setNeedsDisplay];
 }
 
 - (void)setFont:(UIFont *)aFont {
-    #if !__has_feature(objc_arc)
-        [font release];
-        [aFont retain];
-    #endif
-    font = aFont;
+    SAFE_ARC_RELEASE(font);
+    font = SAFE_ARC_RETAIN(aFont);
     
     if (_text) {
 		NSMutableAttributedString *attrStr = [self createMutableAttributedStringFromText];
-        SAFE_RELEASE(_attrStr);
-
-        #if !__has_feature(objc_arc)
-            [attrStr retain];
-        #endif
-        
-		_attrStr = attrStr;
+        SAFE_ARC_RELEASE(_attrStr);
+        _attrStr = SAFE_ARC_RETAIN(attrStr);
 	}
     
     [self calculateHeightForAttributedString];
 }
 
 - (void)setText:(NSString *)value {
-    #if !__has_feature(objc_arc)
-        [value release];
-        [_text retain];
-    #endif
-	_text = value;
+    if (_text != value) {
+        SAFE_ARC_RELEASE(_text);
+        _text = SAFE_ARC_RETAIN(value);
+    }
     
 	[_boldRanges removeAllObjects];
 	[_italicRanges removeAllObjects];
@@ -191,13 +174,8 @@
 	
 	if (_text) {
 		NSMutableAttributedString *attrStr = [self createMutableAttributedStringFromText];
-        SAFE_RELEASE(_attrStr);
-
-        #if !__has_feature(objc_arc)
-                [attrStr retain];
-        #endif
-                
-        _attrStr = attrStr;
+        SAFE_ARC_RELEASE(_attrStr);
+        _attrStr = SAFE_ARC_RETAIN(attrStr);
 	}
     
     [self calculateHeightForAttributedString];
@@ -247,11 +225,7 @@
 			medicalLoss += 7;
 		} else if ([scanner scanString:@"<font " intoString:nil]) {
 			[scanner scanUpToString:@">" intoString:&scanStr];
-            #if __has_feature(objc_arc)
-                NSString *fontName = [scanStr copy];
-            #else
-                NSString *fontName = [[scanStr copy] autorelease];
-            #endif
+            NSString *fontName = SAFE_ARC_AUTORELEASE([scanStr copy]);
 			[scanner scanString:@">" intoString:nil];
 			
 			// font
@@ -269,12 +243,7 @@
 }
 
 - (NSMutableAttributedString *)createAttributesStringFromCatalog:(NSString *)str {
-    #if __has_feature(objc_arc)
-        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:str];
-    #else
-        NSMutableAttributedString *attrString = [[[NSMutableAttributedString alloc] initWithString:str] autorelease];
-    #endif
-
+    NSMutableAttributedString *attrString = SAFE_ARC_AUTORELEASE([[NSMutableAttributedString alloc] initWithString:str]);
 	
 	[attrString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)_textColor.CGColor range:NSMakeRange(0, str.length)];
     

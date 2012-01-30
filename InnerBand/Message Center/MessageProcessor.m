@@ -19,6 +19,7 @@
 
 #import "MessageProcessor.h"
 #import "DispatchMessage.h"
+#import "ARCMacros.h"
 
 @implementation MessageProcessor
 
@@ -26,25 +27,18 @@
 	self = [super init];
 	
 	if (self) {
-        #if __has_feature(objc_arc)
-            _message = message;
-        #else
-            _message = [message retain];
-        #endif
-        
+        _message = SAFE_ARC_RETAIN(message);
 		_targetActions = [targetActions copy];
 	}
 	
 	return self;
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_message release];
-        [_targetActions release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_message);
+    SAFE_ARC_RELEASE(_targetActions);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 - (void)process {
 	// process

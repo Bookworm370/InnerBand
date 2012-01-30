@@ -18,6 +18,7 @@
 //
 
 #import "BlockBasedDispatchMessage.h"
+#import "ARCMacros.h"
 
 @implementation BlockBasedDispatchMessage
 
@@ -25,27 +26,17 @@
     BlockBasedDispatchMessage *msg = [[BlockBasedDispatchMessage alloc] initWithName:name userInfo:nil];
     msg.asynchronous = isAsync;
 
-    #if __has_feature(objc_arc)
-        msg->inputBlock_ = inputBlock;
-        msg->outputBlock_ = outputBlock;
+    msg->inputBlock_ = SAFE_ARC_BLOCK_COPY(inputBlock);
+    msg->outputBlock_ = SAFE_ARC_BLOCK_COPY(outputBlock);
 
-        return msg;
-    #else
-        msg->inputBlock_ = Block_copy(inputBlock);
-        msg->outputBlock_ = Block_copy(outputBlock);
-        
-        return [msg autorelease];
-    #endif
+    return SAFE_ARC_AUTORELEASE(msg);
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        Block_release(inputBlock_);
-        Block_release(outputBlock_);
-
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_BLOCK_RELEASE(inputBlock_);
+    SAFE_ARC_BLOCK_RELEASE(outputBlock_);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 - (void)inputData:(NSData *)input {
     inputBlock_(input);

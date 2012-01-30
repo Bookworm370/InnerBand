@@ -20,15 +20,11 @@
 #import "CoreDataStore.h"
 #import "Macros.h"
 #import "Functions.h"
+#import "ARCMacros.h"
 
 // global Core Data objects
-#if __has_feature(objc_arc)
-    __strong static NSManagedObjectModel *gManagedObjectModel;
-    __strong static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
-#else
-    static NSManagedObjectModel *gManagedObjectModel;
-    static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
-#endif
+__strong static NSManagedObjectModel *gManagedObjectModel;
+__strong static NSPersistentStoreCoordinator *gPersistentStoreCoordinator;
 
 // main thread singleton
 static CoreDataStore *gMainStoreInstance;
@@ -52,22 +48,14 @@ static CoreDataStore *gMainStoreInstance;
 }
 
 + (CoreDataStore *)createStore {
-    #if __has_feature(objc_arc)
-        return [[CoreDataStore alloc] init];
-    #else
-        return [[[CoreDataStore alloc] init] autorelease];
-    #endif    
+    return SAFE_ARC_AUTORELEASE([[CoreDataStore alloc] init]);
 }
 
 + (void)initialize {
 	NSError *error = nil;
 
 	// create the global managed object model
-    #if __has_feature(objc_arc)
-        gManagedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];    
-    #else
-        gManagedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-    #endif
+    gManagedObjectModel = SAFE_ARC_RETAIN([NSManagedObjectModel mergedModelFromBundles:nil]);    
 
 	// create the global persistent store
     gPersistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:gManagedObjectModel];
@@ -89,12 +77,10 @@ static CoreDataStore *gMainStoreInstance;
 	return self;
 }
 				 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_managedObjectContext release];    
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_managedObjectContext);    
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 #pragma mark -
 
@@ -106,10 +92,14 @@ static CoreDataStore *gMainStoreInstance;
 	NSError *error = nil;
 	
 	// clear existing stack
-	SAFE_RELEASE(gManagedObjectModel);
-	SAFE_RELEASE(gPersistentStoreCoordinator);
-	SAFE_RELEASE(_managedObjectContext);
+	SAFE_ARC_RELEASE(gManagedObjectModel);
+	SAFE_ARC_RELEASE(gPersistentStoreCoordinator);
+	SAFE_ARC_RELEASE(_managedObjectContext);
 	
+    gManagedObjectModel = nil;
+    gPersistentStoreCoordinator = nil;
+    _managedObjectContext = nil;
+    
 	// remove persistence file
 	NSString *storeLocation = [DOCUMENTS_DIR() stringByAppendingPathComponent:@"CoreDataStore.sqlite"];
 	NSURL *storeURL = [NSURL fileURLWithPath:storeLocation];

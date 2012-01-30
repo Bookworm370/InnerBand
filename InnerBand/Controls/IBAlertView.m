@@ -18,6 +18,7 @@
 //
 
 #import "IBAlertView.h"
+#import "ARCMacros.h"
 
 @implementation IBAlertView
 
@@ -26,11 +27,7 @@
 }
 
 + (id)alertWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle okTitle:(NSString *)okTitle dismissBlock:(void (^)(void))dismissBlock okBlock:(void (^)(void))okBlock {
-    #if __has_feature(objc_arc)
-        return [[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock];
-    #else
-        return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock] autorelease];
-    #endif
+    return SAFE_ARC_AUTORELEASE([[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle okTitle:okTitle dismissBlock:dismissBlock okBlock:okBlock]);
 }
 
 + (void)showDismissWithTitle:(NSString *)title message:(NSString *)message dismissBlock:(void (^)(void))dismissBlock {
@@ -41,13 +38,8 @@
     self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:dismissTitle otherButtonTitles:okTitle, nil];
     
     if (self) {
-        #if __has_feature(objc_arc)
-            okCallback_ = okBlock;
-            dismissCallback_ = dismissBlock;
-        #else
-            okCallback_ = Block_copy(okBlock);
-            dismissCallback_ = Block_copy(dismissBlock);
-        #endif
+        okCallback_ = SAFE_ARC_BLOCK_COPY(okBlock);
+        dismissCallback_ = SAFE_ARC_BLOCK_COPY(dismissBlock);
     }
     
     return self;
@@ -58,35 +50,24 @@
 }
 
 + (id)alertWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle dismissBlock:(void (^)(void))dismissBlock {
-    #if __has_feature(objc_arc)
-        return [[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock];    
-    #else
-        return [[[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock] autorelease];    
-    #endif
+    return SAFE_ARC_AUTORELEASE([[IBAlertView alloc] initWithTitle:title message:message dismissTitle:dismissTitle dismissBlock:dismissBlock]);    
 }
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message dismissTitle:(NSString *)dismissTitle dismissBlock:(void (^)(void))dismissBlock {
     self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:dismissTitle otherButtonTitles:nil];
     
     if (self) {
-        #if __has_feature(objc_arc)
-            dismissCallback_ = dismissBlock;
-        #else
-            dismissCallback_ = Block_copy(dismissBlock);
-        #endif
+        dismissCallback_ = SAFE_ARC_BLOCK_COPY(dismissBlock);
     }
     
     return self;
 }                                                                                                                                                      
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        Block_release(okCallback_);
-        Block_release(dismissCallback_);
-        
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_BLOCK_RELEASE(okCallback_);
+    SAFE_ARC_BLOCK_RELEASE(dismissCallback_);    
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 #pragma mark -
 

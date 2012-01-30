@@ -22,6 +22,7 @@
 #import "Macros.h"
 #import "MessageCenter.h"
 #import "Functions.h"
+#import "ARCMacros.h"
 
 @implementation HTTPGetRequestMessage
 
@@ -34,20 +35,14 @@
     message->_url = [url copy];
 	
 	// autorelease
-    #if __has_feature(objc_arc)
-        return message;
-    #else
-        return [message autorelease];
-    #endif
+    return SAFE_ARC_AUTORELEASE(message);
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_url release];
-        [_responseData release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_url);
+    SAFE_ARC_RELEASE(_responseData);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 #pragma mark -
 
@@ -82,7 +77,7 @@
             [updatedUserInfo setObject:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
             self.userInfo = updatedUserInfo;
             
-            SAFE_RELEASE(updatedUserInfo);
+            SAFE_ARC_RELEASE(updatedUserInfo);
 		}
 	} else {
 		_responseData = nil;

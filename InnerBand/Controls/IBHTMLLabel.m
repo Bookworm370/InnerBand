@@ -57,22 +57,17 @@
     return self;
 }
 
-#if !__has_feature(objc_arc)
-    - (void)dealloc {
-        [_text release];
-        [_textColor release];
-        [_linkColor release];
-        [super dealloc];
-    }
-#endif
+- (void)dealloc {
+    SAFE_ARC_RELEASE(_text);
+    SAFE_ARC_RELEASE(_textColor);
+    SAFE_ARC_RELEASE(_linkColor);
+    SAFE_ARC_SUPER_DEALLOC();
+}
 
 #pragma mark -
 
 - (void)setText:(NSString *)value {
-    #if !__has_feature(objc_arc)
-        [_text autorelease];
-    #endif
-    
+    SAFE_ARC_AUTORELEASE(_text);
 	_text = [value copy];
 	[self calculateHTML];
 }
@@ -83,22 +78,20 @@
 }
 
 - (void)setTextColor:(UIColor *)value {
-    #if !__has_feature(objc_arc)
-        [value retain];
-        [_textColor release];
-    #endif
+    if (_textColor != value) {
+        SAFE_ARC_RELEASE(_textColor);
+        _textColor = SAFE_ARC_RETAIN(value);
+    }
     
-	_textColor = value;
 	[self calculateHTML];
 }
 
 - (void)setLinkColor:(UIColor *)value {
-    #if !__has_feature(objc_arc)
-        [value retain];
-        [_linkColor release];
-    #endif
-    
-	_linkColor = value;
+    if (_linkColor != value) {
+        SAFE_ARC_RELEASE(_linkColor);
+        _linkColor = SAFE_ARC_RETAIN(value);
+    }
+
 	[self calculateHTML];
 }
 

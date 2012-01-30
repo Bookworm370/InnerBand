@@ -22,6 +22,7 @@
 #import "MessageProcessor.h"
 #import "NSObject+InnerBand.h"
 #import "Macros.h"
+#import "ARCMacros.h"
 
 @interface MessageCenter (private)
 
@@ -248,18 +249,14 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 		MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
 
 		[processor process];
-		SAFE_RELEASE(processor);
+		SAFE_ARC_RELEASE(processor);
 	}
 }
 
 + (void)runProcessorInThread:(DispatchMessage *)message targetActions:(NSArray *)targetActions {
 	// pool
-    #if __has_feature(objc_arc)
-        @autoreleasepool {
-    #else
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    #endif
-
+    SAFE_ARC_AUTORELEASE_POOL_START();
+    
 	// process message
 	MessageProcessor *processor = [[MessageProcessor alloc] initWithMessage:message targetActions:targetActions];
 
@@ -267,14 +264,10 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	[processor process];
 
 	// release
-	SAFE_RELEASE(processor);
+	SAFE_ARC_RELEASE(processor);
 	
 	// pool
-    #if __has_feature(objc_arc)
-        }
-    #else
-        [pool release];
-    #endif
+    SAFE_ARC_AUTORELEASE_POOL_END();
 }
 
 #pragma mark -

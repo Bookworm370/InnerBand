@@ -18,7 +18,7 @@
 //
 
 #import "NSString+InnerBand.h"
-
+#import "ARCMacros.h"
 
 @implementation NSString (InnerBand)
 
@@ -40,20 +40,12 @@
 }
 
 - (NSString *)asDocumentsPath {
-    #if __has_feature(objc_arc)
-        __strong static NSString* documentsPath = nil;
-    #else
-        static NSString* documentsPath = nil;
-    #endif
+    __strong static NSString* documentsPath = nil;
 
 	if (!documentsPath) {
 		NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 
-        #if __has_feature(objc_arc)
-            documentsPath = [dirs objectAtIndex:0];
-        #else
-            documentsPath = [[dirs objectAtIndex:0] retain];
-        #endif
+        documentsPath = SAFE_ARC_RETAIN([dirs objectAtIndex:0]);
 	}
 	
 	return [documentsPath stringByAppendingPathComponent:self];

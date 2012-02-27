@@ -41,10 +41,15 @@
 - (void)dealloc {
     SAFE_ARC_RELEASE(_url);
     SAFE_ARC_RELEASE(_responseData);
+    SAFE_ARC_RELEASE(_headersDict);
     SAFE_ARC_SUPER_DEALLOC();
 }
 
 #pragma mark -
+
+- (void)addHeaderValue:(NSString *)value forKey:(NSString *)key {
+    [_headersDict setValue:value forKey:key];
+}
 
 - (void)inputData:(NSData *)input {
 	NSString *subbedURL = _url;
@@ -67,6 +72,8 @@
 	
 	// generate request
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:subbedURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [request setAllHTTPHeaderFields:_headersDict];
+
 	NSData *content = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 
 	if (!error) {

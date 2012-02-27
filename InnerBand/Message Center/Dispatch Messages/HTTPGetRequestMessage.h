@@ -39,8 +39,11 @@
 @interface HTTPGetRequestMessage : DispatchMessage {
 	NSString *_url;
 	NSMutableData *_responseData;
+	NSMutableDictionary *_headersDict;
 }
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url;
-	
+
+- (void)addHeaderValue:(NSString *)value forKey:(NSString *)key;
+
 @end

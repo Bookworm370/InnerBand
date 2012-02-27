@@ -26,8 +26,11 @@
 	NSString *_url;
     NSString *_body;
 	NSMutableData *_responseData;
+	NSMutableDictionary *_headersDict;
 }
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url body:(NSString *)body;
+
+- (void)addHeaderValue:(NSString *)value forKey:(NSString *)key;
 
 @end

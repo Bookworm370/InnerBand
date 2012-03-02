@@ -19,6 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DispatchMessage.h"
+#import "Types.h"
 
 /*
  * 
@@ -40,9 +41,11 @@
 	NSString *_url;
 	NSMutableData *_responseData;
 	NSMutableDictionary *_headersDict;
+    ib_http_proc_t _processBlock;
 }
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url;
++ (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url processBlock:(ib_http_proc_t)processBlock;
 
 - (void)addHeaderValue:(NSString *)value forKey:(NSString *)key;
 

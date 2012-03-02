@@ -19,4 +19,4 @@
 
 typedef NSInteger (^ib_enum_bool_t)(id);
 typedef id (^ib_enum_id_t)(id);
-
+typedef void (^ib_http_proc_t)(NSData *, NSInteger);

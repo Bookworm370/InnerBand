@@ -19,6 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DispatchMessage.h"
+#import "Types.h"
 
 #define HTTP_STATUS_CODE @"HTTP_STATUS_CODE"
 
@@ -27,9 +28,11 @@
     NSString *_body;
 	NSMutableData *_responseData;
 	NSMutableDictionary *_headersDict;
+    ib_http_proc_t _processBlock;
 }
 
 + (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url body:(NSString *)body;
++ (id)messageWithName:(NSString *)name userInfo:(NSDictionary *)userInfo url:(NSString *)url body:(NSString *)body processBlock:(ib_http_proc_t)processBlock;
 
 - (void)addHeaderValue:(NSString *)value forKey:(NSString *)key;
 

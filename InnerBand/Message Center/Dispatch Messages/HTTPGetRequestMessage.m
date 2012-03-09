@@ -33,6 +33,7 @@
 	message.asynchronous = YES;
 	
     message->_url = [url copy];
+	message->_headersDict = [[NSMutableDictionary alloc] init];
 	
 	// autorelease
     return SAFE_ARC_AUTORELEASE(message);

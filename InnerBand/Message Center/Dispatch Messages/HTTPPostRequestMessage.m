@@ -22,6 +22,7 @@
 	message.asynchronous = YES;
 	
 	message->_url = [url copy];
+	message->_headersDict = [[NSMutableDictionary alloc] init];
 	message->_body = [body copy];
 
 	// autorelease
@@ -35,6 +36,7 @@
 	message.asynchronous = YES;
 	
 	message->_url = [url copy];
+	message->_headersDict = [[NSMutableDictionary alloc] init];
 	message->_body = [body copy];
     message->_processBlock = SAFE_ARC_BLOCK_COPY(processBlock);
     
@@ -79,6 +81,7 @@
 	// generate request
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:subbedURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:_headersDict];
     [request setHTTPBody:[_body dataUsingEncoding:NSUTF8StringEncoding]];
 	NSData *content = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     

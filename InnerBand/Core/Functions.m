@@ -153,3 +153,56 @@ BOOL IS_GPS_ENABLED_FOR_APP(void) {
     return YES;
 }
 
+// DISPATCHERS
+
+void DISPATCH_TO_MAIN_QUEUE(BOOL isAsync, void (^block)()) {
+    if (isAsync) {
+        dispatch_async(dispatch_get_main_queue(), block);
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), block);        
+    }
+}
+
+void DISPATCH_TO_GLOBAL_QUEUE(dispatch_queue_priority_t priority, BOOL isAsync, void (^block)()) {
+    if (isAsync) {    
+        dispatch_async(dispatch_get_global_queue(priority, 0), block);
+    } else {
+        dispatch_sync(dispatch_get_global_queue(priority, 0), block);        
+    }
+}
+
+void DISPATCH_TO_CURRENT_QUEUE(BOOL isAsync, void (^block)()) {
+    if (isAsync) {    
+        dispatch_async(dispatch_get_current_queue(), block);
+    } else {
+        dispatch_sync(dispatch_get_current_queue(), block);        
+    }
+}
+
+void DISPATCH_TO_QUEUE(dispatch_queue_t queue, BOOL isAsync, void (^block)()) {
+    if (isAsync) {    
+        dispatch_async(queue, block);
+    } else {
+        dispatch_sync(queue, block);
+    }
+}
+
+void DISPATCH_TO_MAIN_QUEUE_AFTER(NSTimeInterval delay, void (^block)()) {
+    dispatch_time_t runTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
+    dispatch_after(runTime, dispatch_get_main_queue(), block);
+}
+
+void DISPATCH_TO_GLOBAL_QUEUE_AFTER(NSTimeInterval delay, dispatch_queue_priority_t priority, void (^block)()) {
+    dispatch_time_t runTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
+    dispatch_after(runTime, dispatch_get_global_queue(priority, 0), block);
+}
+
+void DISPATCH_TO_CURRENT_QUEUE_AFTER(NSTimeInterval delay, void (^block)()) {
+    dispatch_time_t runTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
+    dispatch_after(runTime, dispatch_get_current_queue(), block);
+}
+
+void DISPATCH_TO_QUEUE_AFTER(NSTimeInterval delay, dispatch_queue_t queue, void (^block)()) {
+    dispatch_time_t runTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
+    dispatch_after(runTime, queue, block);
+}

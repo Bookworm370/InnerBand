@@ -77,7 +77,7 @@
 }
 
 - (void)destroy {
-    [[CoreDataStore mainStore] removeEntity:self];
+    [self.managedObjectContext deleteObject:self];
 }
 
 + (void)destroyAll {

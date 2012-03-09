@@ -30,3 +30,4 @@
 // SELECTORS
 
 #define SEL(x) @selector(x)
+#define L(key) (NSLocalizedString((key), nil))

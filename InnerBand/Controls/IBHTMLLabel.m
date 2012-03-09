@@ -67,7 +67,7 @@
 #pragma mark -
 
 - (void)setText:(NSString *)value {
-    SAFE_ARC_AUTORELEASE(_text);
+    _text = SAFE_ARC_AUTORELEASE(_text);
 	_text = [value copy];
 	[self calculateHTML];
 }

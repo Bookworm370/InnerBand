@@ -51,4 +51,6 @@
 
 - (NSDate *)dateAsMidnight;
 
+- (BOOL)isSameDay:(NSDate *)rhs;
+
 @end

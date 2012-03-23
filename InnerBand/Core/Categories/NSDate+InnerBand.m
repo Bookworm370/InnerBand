@@ -202,5 +202,14 @@
     NSDateComponents *_datecomp = [_calendar components:NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit fromDate:self];
 	return [_calendar dateFromComponents:_datecomp];
 }
+
+- (BOOL)isSameDay:(NSDate *)rhs { 
+	NSCalendar* calendar = [NSCalendar currentCalendar];
+	NSDateComponents *comps = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
+	NSDateComponents *compsRHS = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:rhs];
+    
+	return [comps year] == [compsRHS year] && [comps month] == [compsRHS month] && [comps day] == [compsRHS day];
+}
+
 @end
 

@@ -22,6 +22,7 @@
 #import "Functions.h"
 #import "NSString+InnerBand.h"
 #import "NSMutableString+InnerBand.h"
+#import "NSString+XMLEncoding.h"
 
 @interface StringTest : GHTestCase
 @end
@@ -120,6 +121,15 @@
     [str trim];
     
     GHAssertEqualObjects(@"A", str, nil);
+}
+
+- (void)testXMLEncoding {
+    GHAssertEqualObjects(@"", [@"" stringWithXMLSanitizingAndEscaping], nil);
+    GHAssertEqualObjects(@"amp", [@"amp" stringWithXMLSanitizingAndEscaping], nil);
+    GHAssertEqualObjects(@"&amp;", [@"&" stringWithXMLSanitizingAndEscaping], nil);
+    GHAssertEqualObjects(@"&lt;", [@"<" stringWithXMLSanitizingAndEscaping], nil);
+    GHAssertEqualObjects(@"&gt;", [@">" stringWithXMLSanitizingAndEscaping], nil);
+    GHAssertEqualObjects(@"&lt;&lt;", [@"<<" stringWithXMLSanitizingAndEscaping], nil);
 }
 
 @end

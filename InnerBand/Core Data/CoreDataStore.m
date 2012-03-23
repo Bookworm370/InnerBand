@@ -69,6 +69,10 @@ static CoreDataStore *gMainStoreInstance;
     }    
 }
 
++ (CoreDataStore *)createStoreWithContext:(NSManagedObjectContext *)context {
+    return SAFE_ARC_AUTORELEASE([[CoreDataStore alloc] initWithContext:context]);
+}
+
 - (id)init {
 	if ((self = [super init])) {
 		[self createManagedObjectContext];
@@ -76,7 +80,15 @@ static CoreDataStore *gMainStoreInstance;
 	
 	return self;
 }
-				 
+
+- (id)initWithContext:(NSManagedObjectContext *)context {
+	if ((self = [super init])) {
+        _managedObjectContext = SAFE_ARC_RETAIN(context);
+	}
+	
+	return self;
+}
+
 - (void)dealloc {
     SAFE_ARC_RELEASE(_managedObjectContext);    
     SAFE_ARC_SUPER_DEALLOC();

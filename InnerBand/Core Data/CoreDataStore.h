@@ -28,6 +28,9 @@
 
 + (CoreDataStore *)mainStore;
 + (CoreDataStore *)createStore;
++ (CoreDataStore *)createStoreWithContext:(NSManagedObjectContext *)context;
+
+- (id)initWithContext:(NSManagedObjectContext *)context;
 
 /* Clears all data from peristent store and re-initializes (great for unit testing!) */
 - (void)clearAllData;

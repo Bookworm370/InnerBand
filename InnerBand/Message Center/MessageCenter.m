@@ -23,6 +23,8 @@
 #import "NSObject+InnerBand.h"
 #import "Macros.h"
 #import "ARCMacros.h"
+#import "NSMutableArray+InnerBand.h"
+#import "TargetAction.h"
 
 @interface MessageCenter (private)
 
@@ -74,7 +76,11 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	// add listener
 	NSMutableArray *targetActions = [MessageCenter getTargetActionsForMessageName:name source:source];
-	NSDictionary *targetAction = [NSDictionary dictionaryWithObjectsAndKeys:target, @"target", NSStringFromSelector(action), @"action", nil]; 
+    TargetAction *targetAction = [[TargetAction alloc] init];
+    
+    targetAction.target = target;
+    targetAction.action = NSStringFromSelector(action);
+    
 	[targetActions addObject:targetAction];
 }
 
@@ -85,12 +91,12 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	// remove all matching target/action pairs
 	for (NSInteger i = targetActions.count - 1; i >= 0; --i) {
-		NSDictionary *iDictionary = (NSDictionary *)[targetActions objectAtIndex:i];
-		NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
+		TargetAction *targetAction = (TargetAction *)[targetActions objectAtIndex:i];
+		NSObject *iTarget = targetAction.target;
 		
 		// remove if matched
 		if (iTarget == target) {
-			SEL iAction = NSSelectorFromString((NSString *)[iDictionary objectForKey:@"action"]);
+			SEL iAction = NSSelectorFromString(targetAction.action);
 			
 			if (iAction == action) {
 				[targetActions removeObjectAtIndex:i];
@@ -104,8 +110,8 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	// remove all matching targets
 	for (NSInteger i = targetActions.count - 1; i >= 0; --i) {
-		NSDictionary *iDictionary = (NSDictionary *)[targetActions objectAtIndex:i];
-		NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
+		TargetAction *targetAction = (TargetAction *)[targetActions objectAtIndex:i];
+		NSObject *iTarget = targetAction.target;
 		
 		// remove if matched
 		if (iTarget == target) {
@@ -119,12 +125,12 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 		for (NSMutableArray *iTargetActions in iMessageNames) {
 			// remove all matching target/action pairs
 			for (NSInteger i = iTargetActions.count - 1; i >= 0; --i) {
-				NSDictionary *iDictionary = (NSDictionary *)[iTargetActions objectAtIndex:i];
-				NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
+                TargetAction *targetAction = (TargetAction *)[iTargetActions objectAtIndex:i];
+                NSObject *iTarget = targetAction.target;
 				
 				// remove if matched
 				if (iTarget == target) {
-					SEL iAction = NSSelectorFromString((NSString *)[iDictionary objectForKey:@"action"]);
+                    SEL iAction = NSSelectorFromString(targetAction.action);
 					
 					if (iAction == action) {
 						[iTargetActions removeObjectAtIndex:i];
@@ -143,8 +149,8 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 			
 			// remove all matching target/action pairs
 			for (NSInteger i = iTargetActions.count - 1; i >= 0; --i) {
-				NSDictionary *iDictionary = (NSDictionary *)[iTargetActions objectAtIndex:i];
-				NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
+                TargetAction *targetAction = (TargetAction *)[iTargetActions objectAtIndex:i];
+                NSObject *iTarget = targetAction.target;
 				
 				// remove if matched
 				if (iTarget == target) {

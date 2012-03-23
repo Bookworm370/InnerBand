@@ -20,6 +20,7 @@
 #import "MessageProcessor.h"
 #import "DispatchMessage.h"
 #import "ARCMacros.h"
+#import "TargetAction.h"
 
 @implementation MessageProcessor
 
@@ -46,9 +47,9 @@
 	
 	// dispatch for all target/action pairs
 	for (NSInteger i = _targetActions.count - 1; i >= 0; --i) {
-		NSDictionary *iDictionary = (NSDictionary *)[_targetActions objectAtIndex:i];
-		NSObject *iTarget = (NSObject *)[iDictionary objectForKey:@"target"];
-		SEL iAction = NSSelectorFromString((NSString *)[iDictionary objectForKey:@"action"]);
+        TargetAction *targetAction = (TargetAction *)[_targetActions objectAtIndex:i];
+		NSObject *iTarget = targetAction.target;
+		SEL iAction = NSSelectorFromString(targetAction.action);
 		
 		// perform on main thread
 		if (_message.isAsynchronous) {

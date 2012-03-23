@@ -47,6 +47,7 @@ CGRect RECT_WITH_X_Y(CGRect rect, float x, float y);
 CGRect RECT_WITH_WIDTH_HEIGHT(CGRect rect, float width, float height);
 CGRect RECT_WITH_WIDTH(CGRect rect, float width);
 CGRect RECT_WITH_HEIGHT(CGRect rect, float height);
+CGRect RECT_WITH_HEIGHT_FROM_BOTTOM(CGRect rect, float height);
 
 CGRect RECT_INSET_BY_LEFT_TOP_RIGHT_BOTTOM(CGRect rect, float left, float top, float right, float bottom);
 CGRect RECT_INSET_BY_TOP_BOTTOM(CGRect rect, float top, float bottom);

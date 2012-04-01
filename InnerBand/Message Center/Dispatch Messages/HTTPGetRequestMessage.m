@@ -96,14 +96,11 @@
 		_responseData = [content mutableCopy];
         
 		if (response) {
-            NSMutableDictionary *updatedUserInfo = [self.userInfo mutableCopy];
             [self setUserInfoValue:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
             
             if (_processBlock) {
                 _processBlock(_responseData, response.statusCode);
             }
-            
-            SAFE_ARC_RELEASE(updatedUserInfo);
 		} else if (_processBlock) {
             _processBlock(_responseData, 0);
         }

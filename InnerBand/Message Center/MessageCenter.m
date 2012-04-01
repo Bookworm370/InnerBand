@@ -76,7 +76,7 @@ static NSString *getSourceIdentifier(NSObject *obj) {
 	
 	// add listener
 	NSMutableArray *targetActions = [MessageCenter getTargetActionsForMessageName:name source:source];
-    TargetAction *targetAction = [[TargetAction alloc] init];
+    TargetAction *targetAction = SAFE_ARC_AUTORELEASE([[TargetAction alloc] init]);
     
     targetAction.target = target;
     targetAction.action = NSStringFromSelector(action);

@@ -20,10 +20,12 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DispatchMessage : NSObject
+@interface DispatchMessage : NSObject {
+    NSMutableDictionary *userInfo_;
+}
 
 @property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, copy) NSDictionary *userInfo;
+@property (nonatomic, readonly) NSDictionary *userInfo;
 @property (nonatomic, assign, getter=isAsynchronous) BOOL asynchronous;
 
 - (id)initWithName:(NSString *)name userInfo:(NSDictionary *)userInfo;
@@ -33,6 +35,8 @@
 
 - (NSString *)name;
 - (NSDictionary *)userInfo;
+
+- (void)setUserInfoValue:(id)value forKey:(NSString *)key;
 
 - (void)inputData:(NSData *)input;
 - (NSData *)outputData;

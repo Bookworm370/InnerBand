@@ -207,9 +207,11 @@
 
 - (void)testObjectsAndKeys {
     DispatchMessage *msg = [DispatchMessage messageWithName:@"anon" andObjectsAndKeys:BOX_INT(1), @"one", BOX_INT(2), @"two", nil];
-    
     GHAssertEqualObjects(BOX_INT(1), [msg.userInfo objectForKey:@"one"], nil);
     GHAssertEqualObjects(BOX_INT(2), [msg.userInfo objectForKey:@"two"], nil);
+    
+    [msg setUserInfoValue:BOX_INT(3) forKey:@"three"];
+    GHAssertEqualObjects(BOX_INT(3), [msg.userInfo objectForKey:@"three"], nil);
 }
 
 - (void)methodToFire {

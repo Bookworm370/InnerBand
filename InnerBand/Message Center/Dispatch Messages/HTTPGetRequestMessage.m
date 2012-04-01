@@ -97,8 +97,7 @@
         
 		if (response) {
             NSMutableDictionary *updatedUserInfo = [self.userInfo mutableCopy];
-            [updatedUserInfo setObject:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
-            self.userInfo = updatedUserInfo;
+            [self setUserInfoValue:BOX_INT(response.statusCode) forKey:HTTP_STATUS_CODE];
             
             if (_processBlock) {
                 _processBlock(_responseData, response.statusCode);

@@ -26,14 +26,13 @@
 
 @synthesize asynchronous = asynchronous_;
 @synthesize name = name_;
-@synthesize userInfo = userInfo_;
 
 - (id)init {
 	self = [super init];
 	
 	if (self) {
 		name_ = nil;
-		userInfo_ = nil;
+        userInfo_ = [[NSMutableDictionary alloc] init];
 		asynchronous_ = NO;
 	}
 	
@@ -45,7 +44,7 @@
 
 	if (self) {
 		name_ = [name copy];
-		userInfo_ = [userInfo mutableCopy];
+        userInfo_ = [userInfo mutableCopy];
 	}
 	
 	return self;
@@ -98,7 +97,7 @@
         
         va_end(argList);        
     }
-    
+
 	DispatchMessage *message = [[DispatchMessage alloc] initWithName:name userInfo:userInfo];
     
     va_end(argList);
@@ -120,10 +119,12 @@
 
 #pragma mark -
 
-- (void)setUserInfo:(NSDictionary *)userInfo {
-    NSDictionary *value = [userInfo mutableCopy];
-    SAFE_ARC_RELEASE(userInfo_);
-    userInfo_ = value;
+- (NSDictionary *)userInfo {
+    return SAFE_ARC_AUTORELEASE([userInfo_ copy]);
+}
+
+- (void)setUserInfoValue:(id)value forKey:(NSString *)key {
+    [userInfo_ setValue:value forKey:key];
 }
 
 #pragma mark -

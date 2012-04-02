@@ -211,6 +211,9 @@ InnerBand supports ARC.  In fact, it does so without a branch.  The code automat
 
 InnerBand believes in unit testing.  Therefore, if you open the project you'll find a plethora of unit tests that demonstrate, first-hand, how to use InnerBand.
 
+# The Tutorial #
+
+The official, multi-part tutorial begins at [InnerBand Tutorial Part 1: Introduction and Functions](http://raptureinvenice.com/innerband-1/).
 
 # And there's a demo! #
 

@@ -69,6 +69,13 @@ NSInteger CONSTRAINED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max);
 float CONSTRAINED_FLOAT_VALUE(float val, float min, float max);
 double CONSTRAINED_DOUBLE_VALUE(double val, double min, double max);
 
+// COMPARES
+
+BOOL fequal(double a, double b);
+BOOL fequalf(float a, float b);
+BOOL fequalzero(double a);
+BOOL fequalzerof(float a);
+
 // STRINGS
 
 BOOL IS_EMPTY_STRING(NSString *str);

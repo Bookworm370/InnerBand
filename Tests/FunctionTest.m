@@ -139,4 +139,17 @@
     GHAssertEqualsWithAccuracy(99.5, CONSTRAINED_DOUBLE_VALUE(100.0, 0.5, 99.5), 0.01, nil);    
 }
 
+- (void)testFloatComparisons {
+    GHAssertTrue(fequal(0.0, 0.0), nil);
+    GHAssertTrue(fequal(0.5, 0.5), nil);
+    GHAssertFalse(fequal(0.0, 0.5), nil);
+    GHAssertTrue(fequalf(0.0f, 0.0f), nil);
+    GHAssertTrue(fequalf(0.5f, 0.5f), nil);
+    GHAssertFalse(fequalf(0.0f, 0.5f), nil);
+    GHAssertTrue(fequalzero(0.0), nil);
+    GHAssertTrue(fequalzerof(0.0f), nil);
+    GHAssertFalse(fequalzero(1.0), nil);
+    GHAssertFalse(fequalzerof(1.0f), nil);
+}
+
 @end

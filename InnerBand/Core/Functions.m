@@ -68,6 +68,13 @@ NSInteger CONSTRAINED_INT_VALUE(NSInteger val, NSInteger min, NSInteger max) { r
 float CONSTRAINED_FLOAT_VALUE(float val, float min, float max) { return MIN(MAX(val, min), max); }
 double CONSTRAINED_DOUBLE_VALUE(double val, double min, double max) { return MIN(MAX(val, min), max); }
 
+// COMPARES
+
+BOOL fequal(double a, double b) { return (fabs(a - b) < FLT_EPSILON); }
+BOOL fequalf(float a, float b) { return (fabsf(a - b) < FLT_EPSILON); }
+BOOL fequalzero(double a) { return (fabs(a) < FLT_EPSILON); }
+BOOL fequalzerof(float a) { return (fabsf(a) < FLT_EPSILON); }
+
 // STRINGS
 
 BOOL IS_EMPTY_STRING(NSString *str) { return !str || ![str isKindOfClass:NSString.class] || [str length] == 0; }
